@@ -15,8 +15,18 @@ export async function GET(
       where: {
         id: +id,
       },
+      include: {
+        user: true,
+      },
     });
-    return NextResponse.json(data);
+    return NextResponse.json({
+      id: data?.id,
+      title: data?.title,
+      description: data?.description,
+      createdAt: data?.createdAt,
+      updatedAt: data?.updatedAt,
+      email: data?.user.email,
+    });
   } catch (error) {
     return new NextResponse('Error', { status: 500 });
   }

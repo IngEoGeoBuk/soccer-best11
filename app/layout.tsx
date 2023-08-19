@@ -12,7 +12,6 @@ import AuthProvider from './context/auth.provider';
 import ErrorFallback from './components/errorFallback';
 
 const inter = Inter({ subsets: ['latin'] });
-
 const queryClient = new QueryClient();
 
 export const metadata = {

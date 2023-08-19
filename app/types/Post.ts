@@ -5,6 +5,15 @@ export interface CreatePost {
   description: string;
 }
 
+export interface ViewPostList {
+  id: number;
+  email: string;
+  image: string;
+  title: string;
+  createdAt: string;
+  likes: number;
+}
+
 export interface PostLike extends Post {
   likes: number;
 }

@@ -2,79 +2,132 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { useSearchParams, redirect } from 'next/navigation';
+import Image from 'next/image';
 
-import { useQuery } from '@tanstack/react-query';
+import { useSearchParams, redirect, useRouter } from 'next/navigation';
+
+import { useInfiniteQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 import { useSession } from 'next-auth/react';
-import Spinner from '../components/common/spinner';
 import AlertBox from '../components/common/alertBox';
-// import Pagination from './components/pagination';
-import PostListSkeleton from './components/skeleton';
-import PostList from './components/postList';
+import PostSkeletonList from './components/postSkeletonList';
+import dateFormat from '../hook/dateFormat';
+import { ViewPostList } from '../types/Post';
 
-async function getPosts(page = 0, type = '') {
+async function getPosts(nextLastId: number, type: string) {
   const typeQuery = type ? `&type=${type}` : '';
-  const { data } = await axios.get(`/api/posts?page=${page}${typeQuery}`);
+  const { data } = await axios.get(`/api/posts?id=${nextLastId}${typeQuery}`);
   return data;
 }
 
 function Home() {
   const searchParams = useSearchParams();
-  // page Query로 해야 하는 이유: 새로고침 할 시 이전 페이지 사라짐.
-  const page = Number(searchParams.get('page')) === 0 ? 1 : Number(searchParams.get('page'));
+  const router = useRouter();
+
+  const { data: session } = useSession();
+  // type Query로 해야 하는 이유: 새로고침 할 시 이전 페이지 사라짐.
   const type = searchParams.get('type') ?? '';
-  const { data: session, status } = useSession();
-  // const [page, setPage] = useState(1);
-
-  const { isLoading, error, data } = useQuery({
-    queryKey: ['posts', { page }, { type }],
-    queryFn: () => getPosts(page, type),
-    keepPreviousData: true,
-    staleTime: 5000,
-  });
-
   if (type === 'my' && !session?.user?.email) {
     redirect('/signin');
   }
 
-  if (isLoading) {
-    return <PostListSkeleton />;
-  }
+  const {
+    status,
+    data,
+    isFetchingNextPage,
+    fetchNextPage,
+    hasNextPage,
+  } = useInfiniteQuery({
+    queryKey: ['posts', { type }],
+    queryFn: ({ pageParam = 0 }) => getPosts(pageParam, type),
+    getNextPageParam: (lastPage) => lastPage.nextLastId ?? undefined,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: true,
+    refetchOnMount: true,
+    keepPreviousData: true,
+  });
 
-  if (error) {
-    return <AlertBox />;
-  }
-
-  if (data?.post) {
+  if (status === 'loading') {
     return (
       <div className="w-full">
-        <PostList post={data.post} />
-        {/* <Pagination
-          page={page}
-          hasPrevious={data.hasPrevious}
-          previousPage={data.previousPage}
-          hasNext={data.hasNext}
-          nextPage={data.nextPage}
-          pageList={data.pageList}
-        /> */}
-        {status === 'loading' ? (
-          <Spinner />
-        ) : (
-          <div className="text-right">
-            {status === 'authenticated' ? (
-              <Link href="/posts/write" className="btn-primary">
-                create
-              </Link>
-            ) : (
-              null
-            )}
-          </div>
-        )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
+          <PostSkeletonList />
+        </div>
       </div>
     );
   }
+
+  if (status === 'error') {
+    return <AlertBox />;
+  }
+
+  return (
+    <div className="w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
+        {data.pages.map((page) => (
+          <React.Fragment key={page.nextLastId}>
+            {page.data.map((item: ViewPostList) => (
+              <button
+                key={item.id}
+                className="max-w-full p-4 border border-gray-200 rounded shadow md:p-6 dark:border-gray-700 text-left"
+                type="button"
+                onClick={() => {
+                  router.push(`/posts/view/${item.id}`);
+                }}
+              >
+                <div className="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700 relative">
+                  <Image
+                    src="/images/champions.png"
+                    fill
+                    alt="fuyf"
+                  />
+                </div>
+                <div className="flex items-start space-x-4">
+                  <Image className="w-10 h-10 rounded-full" src={item.image} alt="" width={40} height={40} />
+                  <div className="font-medium dark:text-white">
+                    <div>{item.title}</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{item.email}</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">{dateFormat(new Date(item.createdAt))}</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                      Like:
+                      {' '}
+                      {String(item.likes)}
+                    </div>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </React.Fragment>
+        ))}
+        {isFetchingNextPage && <PostSkeletonList /> }
+      </div>
+      <div className="flex py-5 justify-center">
+        <button
+          type="button"
+          disabled={!hasNextPage || isFetchingNextPage}
+          onClick={() => {
+            fetchNextPage();
+          }}
+        >
+          More
+          <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+          </svg>
+        </button>
+      </div>
+      <div className="text-right">
+        {session && (
+          <>
+            <br />
+            <Link href="/posts/write" className="btn-primary">
+              create
+            </Link>
+          </>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default Home;

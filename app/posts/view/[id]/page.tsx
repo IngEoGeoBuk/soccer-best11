@@ -15,6 +15,10 @@ import VoteBox from './components/VoteBox';
 import CommentBox from './components/commentBox';
 import Modal from './components/modal';
 
+interface ViewPost extends Post {
+  email: string;
+}
+
 async function getPost(id: string) {
   const { data } = await axios.get(`/api/posts/${id}`);
   return data;
@@ -24,7 +28,7 @@ function Index() {
   const { id } = useParams();
   const email = useSession().data?.user?.email;
 
-  const { isLoading, error, data } = useQuery<Post>({
+  const { isLoading, error, data } = useQuery<ViewPost>({
     queryKey: ['posts', id],
     queryFn: () => getPost(id),
     keepPreviousData: true,

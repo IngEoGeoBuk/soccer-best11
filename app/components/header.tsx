@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
+
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -33,6 +35,7 @@ function Header() {
 
   const type = searchParams.get('type') ?? '';
   const router = useRouter();
+  const queryClient = useQueryClient();
 
   const [showAside, setShowAside] = useState<boolean>(false);
 
@@ -54,7 +57,10 @@ function Header() {
             <button
               type="button"
               className="flex items-center"
-              onClick={() => router.push('/')}
+              onClick={async () => {
+                queryClient.resetQueries(['posts']);
+                router.push('/');
+              }}
             >
               <Image
                 src="/images/logo.png"

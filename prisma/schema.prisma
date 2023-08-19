@@ -45,14 +45,9 @@ model User {
   Like     Like[]
 }
 
-model Test {
-  id Int @id @default(autoincrement())
-}
-
 model Post {
   id          Int       @id @default(autoincrement())
   userId      String
-  email       String
   title       String
   description String
   createdAt   DateTime  @default(now())
