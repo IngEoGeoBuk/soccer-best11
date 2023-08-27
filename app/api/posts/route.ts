@@ -13,8 +13,7 @@ export async function GET(
   try {
     const currentUser = await getCurrentUser();
 
-    // const perPage = 10;
-    const perPage = 3;
+    const perPage = 10;
     const type = new URL(request.url).searchParams.get('type');
     const id = Number(new URL(request.url).searchParams.get('id'));
 

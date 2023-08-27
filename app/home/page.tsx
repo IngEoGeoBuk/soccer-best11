@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -8,6 +8,7 @@ import { useSearchParams, redirect, useRouter } from 'next/navigation';
 
 import { useInfiniteQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { useInView } from 'react-intersection-observer';
 
 import { useSession } from 'next-auth/react';
 import AlertBox from '../components/common/alertBox';
@@ -24,6 +25,7 @@ async function getPosts(nextLastId: number, type: string) {
 function Home() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const { ref, inView } = useInView();
 
   const { data: session } = useSession();
   // type Query로 해야 하는 이유: 새로고침 할 시 이전 페이지 사라짐.
@@ -47,6 +49,13 @@ function Home() {
     refetchOnMount: true,
     keepPreviousData: true,
   });
+
+  useEffect(() => {
+    if (inView) {
+      fetchNextPage();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView]);
 
   if (status === 'loading') {
     return (
@@ -104,15 +113,15 @@ function Home() {
       </div>
       <div className="flex py-5 justify-center">
         <button
+          ref={ref}
           type="button"
           disabled={!hasNextPage || isFetchingNextPage}
           onClick={() => {
             fetchNextPage();
           }}
         >
-          More
-          <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+          <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1v12m0 0 4-4m-4 4L1 9" />
           </svg>
         </button>
       </div>
