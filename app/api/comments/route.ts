@@ -15,7 +15,6 @@ export async function POST(
     const comment = await prisma!.comment.create({
       data: {
         userId: currentUser.id,
-        email: currentUser.email,
         content: data.content.substring(0, 100),
         createdAt: new Date(),
         updatedAt: null,

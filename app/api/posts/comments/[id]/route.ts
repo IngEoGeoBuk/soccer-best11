@@ -15,7 +15,12 @@ export async function GET(
         postId: +id,
       },
       include: {
-        replies: true,
+        user: true,
+        replies: {
+          include: {
+            user: true,
+          },
+        },
       },
     });
     const filteredData = data.map((item) => (
@@ -26,7 +31,14 @@ export async function GET(
           email: '',
           content: '',
         }
-        : item
+        : {
+          ...item,
+          email: item.user.email,
+          replies: item.replies.map((item2) => ({
+            ...item2,
+            email: item2.user.email,
+          })),
+        }
     ));
     return NextResponse.json(filteredData);
   } catch (error) {

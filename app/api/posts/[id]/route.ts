@@ -20,11 +20,7 @@ export async function GET(
       },
     });
     return NextResponse.json({
-      id: data?.id,
-      title: data?.title,
-      description: data?.description,
-      createdAt: data?.createdAt,
-      updatedAt: data?.updatedAt,
+      ...data,
       email: data?.user.email,
     });
   } catch (error) {

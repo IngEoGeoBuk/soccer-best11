@@ -24,10 +24,10 @@ export async function GET(
 
     const returnWhereQuery = () => {
       if (type === 'my' && id) {
-        return Prisma!.sql`WHERE p.id < ${id} AND p.email = ${currentUser!.email!}`;
+        return Prisma!.sql`WHERE p.id < ${id} AND u.email = ${currentUser!.email!}`;
       }
       if (type === 'my' && !id) {
-        return Prisma!.sql`WHERE p.email = ${currentUser!.email!}`;
+        return Prisma!.sql`WHERE u.email = ${currentUser!.email!}`;
       }
       if (!type && id) {
         return Prisma!.sql`WHERE p.id < ${id}`;

@@ -63,7 +63,6 @@ model Comment {
   id        Int       @id @default(autoincrement())
   userId    String
   postId    Int
-  email     String
   content   String
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
@@ -79,7 +78,6 @@ model Reply {
   userId    String
   postId    Int
   commentId Int
-  email     String
   content   String
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt

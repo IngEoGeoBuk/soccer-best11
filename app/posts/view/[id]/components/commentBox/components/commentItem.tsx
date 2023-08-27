@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 
-import { Comment, Reply } from '@prisma/client';
 import { useSession } from 'next-auth/react';
 import dateFormat from '@/app/hook/dateFormat';
 
+import { ViewComment } from '@/app/types/Comment';
 import ReplyBox from '../../replyBox';
 import EditCommentBox from './editCommentBox';
 import AddReplyBox from '../../replyBox/components/addReplyBox';
 import DeletedCommentItem from './deletedCommentItem';
 
-interface ViewComment extends Comment {
-  replies: Reply[];
-}
-
 interface Interface {
-  comment: ViewComment
+  comment: ViewComment;
   setShowModal: (value: number) => void;
 }
 

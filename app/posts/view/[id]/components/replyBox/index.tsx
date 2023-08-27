@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Reply } from '@prisma/client';
+import { ViewReply } from '@/app/types/Reply';
 import ReplyItem from './components/replyItem';
 
 import Modal from './components/modal';
 
 interface Interface {
-  replies: Reply[];
+  replies: ViewReply[];
 }
 
 function Index({ replies } : Interface) {
