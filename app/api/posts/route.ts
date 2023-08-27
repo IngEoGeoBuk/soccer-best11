@@ -16,22 +16,17 @@ export async function GET(
     const perPage = 10;
     const type = new URL(request.url).searchParams.get('type');
     const id = Number(new URL(request.url).searchParams.get('id'));
+    const search = new URL(request.url).searchParams.get('search') ? `%${new URL(request.url).searchParams.get('search')}%` : '';
 
     if (type === 'my' && !currentUser) {
       return NextResponse.error();
     }
 
     const returnWhereQuery = () => {
-      if (type === 'my' && id) {
-        return Prisma!.sql`WHERE p.id < ${id} AND u.email = ${currentUser!.email!}`;
-      }
-      if (type === 'my' && !id) {
-        return Prisma!.sql`WHERE u.email = ${currentUser!.email!}`;
-      }
-      if (!type && id) {
-        return Prisma!.sql`WHERE p.id < ${id}`;
-      }
-      return Prisma!.sql``;
+      const searchQuery = search ? Prisma!.sql`AND p.title ILIKE ${search}` : Prisma.empty;
+      const typeQuery = type === 'my' ? Prisma!.sql`AND u.email = ${currentUser!.email!}` : Prisma.empty;
+      const idQuery = id ? Prisma!.sql`AND p.id < ${id}` : Prisma.empty;
+      return Prisma!.sql`WHERE p.id IS NOT NULL ${searchQuery} ${typeQuery} ${idQuery}`;
     };
 
     const returnHavingQuery = () => {
