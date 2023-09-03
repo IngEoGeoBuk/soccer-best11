@@ -22,6 +22,11 @@ export async function GET(
           },
         },
       },
+      orderBy: [
+        {
+          createdAt: 'asc',
+        },
+      ],
     });
     const filteredData = data.map((item) => (
       item.deletedAt
