@@ -9,7 +9,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Post } from '@prisma/client';
 import AlertBox from '@/app/components/common/alertBox';
 import { CreatePost } from '@/app/types/Post';
-import PostDetailSkeleton from '../../view/[id]/components/skeleton';
+import PostDetailSkeleton from '../../components/skeleton';
 
 interface ViewPost extends Post {
   email: string;

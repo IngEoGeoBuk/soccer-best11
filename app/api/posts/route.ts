@@ -79,10 +79,19 @@ export async function POST(
         description: body.title.substring(0, 300),
         createdAt: new Date(),
         updatedAt: null,
-        ...body,
       },
     });
-    return NextResponse.json(post);
+
+    const postPlayerData = body.playerIds.map((item: number) => ({
+      postId: post.id,
+      playerId: item,
+    }));
+    const postPlayer = await prisma!.postPlayer.createMany({
+      data: postPlayerData, skipDuplicates: true,
+    });
+    return NextResponse.json({
+      post, postPlayer,
+    });
   } catch (error) {
     return new NextResponse('Error', { status: 500 });
   }

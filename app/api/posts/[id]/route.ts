@@ -17,6 +17,7 @@ export async function GET(
       },
       include: {
         user: true,
+        postPlayers: true,
       },
     });
     return NextResponse.json({

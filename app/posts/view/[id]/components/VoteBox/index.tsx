@@ -49,12 +49,12 @@ function Index() {
       setShowToast('Please login.');
       setTimeout(() => {
         setShowToast('');
-      }, 1000);
+      }, 2000);
     } else if (data?.clicked) {
       setShowToast('You have already liked it.');
       setTimeout(() => {
         setShowToast('');
-      }, 1000);
+      }, 2000);
     } else {
       postLikeMutation.mutate();
     }

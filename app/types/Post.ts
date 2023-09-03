@@ -3,6 +3,7 @@ import { Post } from '@prisma/client';
 export interface CreatePost {
   title: string;
   description: string;
+  playerIds: number[];
 }
 
 export interface ViewPostList {

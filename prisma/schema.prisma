@@ -42,7 +42,7 @@ model User {
   posts    Post[]
   comments Comment[]
   replies  Reply[]
-  Like     Like[]
+  likes     Like[]
 }
 
 model Post {
@@ -53,10 +53,20 @@ model Post {
   createdAt   DateTime  @default(now())
   updatedAt   DateTime? @updatedAt
 
-  user    User      @relation(fields: [userId], references: [id])
-  Comment Comment[]
-  Reply   Reply[]
-  Like    Like[]
+  user        User      @relation(fields: [userId], references: [id])
+  
+  comments     Comment[]
+  replies       Reply[]
+  likes        Like[]
+  postPlayers  PostPlayer[]
+}
+
+model PostPlayer {
+  id          Int       @id @default(autoincrement())
+  postId      Int
+  playerId    Int
+
+  post    Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
 }
 
 model Comment {
@@ -70,6 +80,7 @@ model Comment {
 
   user    User    @relation(fields: [userId], references: [id])
   post    Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  
   replies Reply[]
 }
 
@@ -96,4 +107,11 @@ model Like {
 
   user User @relation(fields: [userId], references: [id])
   post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model Player {
+  id          Int       @id
+  name        String
+  nationality String
+  club        String
 }

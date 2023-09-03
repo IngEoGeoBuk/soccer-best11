@@ -8,7 +8,7 @@ import { useParams } from 'next/navigation';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { Post } from '@prisma/client';
-import PostDetailSkeleton from '@/app/posts/view/[id]/components/skeleton';
+import PostDetailSkeleton from '@/app/posts/components/skeleton';
 import dateFormat from '@/app/hook/dateFormat';
 import AlertBox from '@/app/components/common/alertBox';
 import VoteBox from './components/VoteBox';
@@ -17,6 +17,7 @@ import Modal from './components/modal';
 
 interface ViewPost extends Post {
   email: string;
+  playerIds: number[];
 }
 
 async function getPost(id: string) {

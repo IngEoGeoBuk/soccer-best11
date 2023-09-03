@@ -6,6 +6,9 @@ import axios from 'axios';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useSession } from 'next-auth/react';
 import { CreatePost } from '@/app/types/Post';
+import { usePost } from '@/app/context/post.provider';
+import SelectPlayerSection from '../components/selectPlayerSection';
+import PlayerListSection from '../components/playerListSection';
 
 function Create() {
   useSession({
@@ -28,15 +31,25 @@ function Create() {
     },
   });
 
+  const { selectedPlayers, setToastMessage } = usePost();
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    addPostMutation.mutate({
-      title,
-      description,
-    });
+    if (selectedPlayers.length < 11) {
+      setToastMessage('Please select 11 players.');
+      document.getElementById('playerListSection')!.scrollIntoView();
+      setTimeout(() => {
+        setToastMessage('');
+      }, 2000);
+    } else {
+      addPostMutation.mutate({
+        title,
+        description,
+        playerIds: selectedPlayers.map((item) => item!.id),
+      });
+    }
   };
 
   return (
@@ -57,6 +70,9 @@ function Create() {
             />
           </label>
         </div>
+        <SelectPlayerSection />
+        <PlayerListSection />
+        <br />
         <div className="mb-6">
           <label htmlFor="description">
             <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</p>
