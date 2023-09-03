@@ -28,6 +28,7 @@ yarn-error.log*
 .env*.local
 .env
 postgreSQL.txt
+data-list
 
 # vercel
 .vercel

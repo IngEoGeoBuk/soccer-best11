@@ -20,7 +20,7 @@ function Create() {
   const addPost = async (post: CreatePost) => axios.post('/api/posts', post);
   const addPostMutation = useMutation(addPost, {
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['posts'] });
+      queryClient.resetQueries(['posts']);
       router.push('/');
     },
     onError: (error) => {
