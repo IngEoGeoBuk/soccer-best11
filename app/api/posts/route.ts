@@ -76,7 +76,7 @@ export async function POST(
       data: {
         userId: currentUser.id,
         title: body.title.substring(0, 30),
-        description: body.title.substring(0, 300),
+        description: body.description.substring(0, 300),
         createdAt: new Date(),
         updatedAt: null,
       },

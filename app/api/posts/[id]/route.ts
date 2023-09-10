@@ -87,14 +87,29 @@ export async function PUT(
     const post = await prisma!.post.update({
       data: {
         title: body.title.substring(0, 30),
-        description: body.title.substring(0, 300),
-        ...body,
+        description: body.description.substring(0, 300),
       },
       where: {
         id: +id,
       },
     });
-    return NextResponse.json(post);
+
+    await prisma!.postPlayer.deleteMany({
+      where: {
+        postId: +id,
+      },
+    });
+    const postPlayerData = body.playerIds.map((item: number) => ({
+      postId: post.id,
+      playerId: item,
+    }));
+    const postPlayer = await prisma!.postPlayer.createMany({
+      data: postPlayerData, skipDuplicates: true,
+    });
+
+    return NextResponse.json({
+      post, postPlayer,
+    });
   } catch (error) {
     return new NextResponse('Error', { status: 500 });
   }

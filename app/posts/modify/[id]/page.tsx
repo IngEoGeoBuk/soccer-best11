@@ -1,18 +1,22 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 
 import { useParams, redirect, useRouter } from 'next/navigation';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { Post } from '@prisma/client';
+import { Player, Post } from '@prisma/client';
 import AlertBox from '@/app/components/common/alertBox';
 import { CreatePost } from '@/app/types/Post';
+import { usePost } from '@/app/context/post.provider';
 import PostDetailSkeleton from '../../components/skeleton';
+import SelectPlayerSection from '../../components/selectPlayerSection';
+import PlayerListSection from '../../components/playerListSection';
 
 interface ViewPost extends Post {
   email: string;
+  players: Player[];
 }
 
 async function getPost(id: string) {
@@ -50,16 +54,32 @@ function Index() {
     },
   });
 
+  const { selectedPlayers, setSelectedPlayers, setToastMessage } = usePost();
   const [title, setTitle] = useState<string>(data?.title!);
   const [description, setDescription] = useState<string>(data?.description!);
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    updatePostMutation.mutate({
-      title,
-      description,
-    });
+    if (selectedPlayers.length < 11) {
+      setToastMessage('Please select 11 players.');
+      document.getElementById('playerListSection')!.scrollIntoView();
+      setTimeout(() => {
+        setToastMessage('');
+      }, 2000);
+    } else {
+      updatePostMutation.mutate({
+        title,
+        description,
+        playerIds: selectedPlayers.map((item) => item!.id),
+      });
+    }
   };
+
+  useEffect(() => {
+    if (data?.players) {
+      setSelectedPlayers(data.players);
+    }
+  }, [data?.players, setSelectedPlayers]);
 
   if (isLoading) {
     return <PostDetailSkeleton />;
@@ -77,7 +97,6 @@ function Index() {
   if (data) {
     return (
       <div className="p-5">
-
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label htmlFor="title">
@@ -93,6 +112,9 @@ function Index() {
               />
             </label>
           </div>
+          <SelectPlayerSection />
+          <PlayerListSection />
+          <br />
           <div className="mb-6">
             <label htmlFor="description">
               <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</p>
