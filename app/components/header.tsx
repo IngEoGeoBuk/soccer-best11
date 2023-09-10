@@ -44,6 +44,20 @@ function Header() {
     }
   };
 
+  const clickLogoOrHome = async () => {
+    if (pathname === '/' && !type) {
+      queryClient.resetQueries(['posts']);
+    }
+    router.push('/');
+  };
+
+  const clickMy = async () => {
+    if (pathname === '/' && type === 'my') {
+      queryClient.resetQueries(['posts']);
+    }
+    router.push('/?type=my');
+  };
+
   useEffect(() => {
     window.addEventListener('resize', handleResize);
   }, []);
@@ -57,8 +71,7 @@ function Header() {
               type="button"
               className="flex items-center"
               onClick={async () => {
-                queryClient.resetQueries(['posts']);
-                router.push('/');
+                await clickLogoOrHome();
               }}
             >
               <Image
@@ -79,32 +92,35 @@ function Header() {
             </button>
             <div className="hidden w-full md:block md:w-auto" id="navbar-multi-level">
               <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                <li>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      queryClient.resetQueries(['posts']);
-                      router.push('/');
-                    }}
-                    className={!type && pathname === '/' ? 'header-item-clicked' : 'header-item'}
-                  >
-                    Home
-                  </button>
-                </li>
-                {session && (
-                  <li>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        queryClient.resetQueries(['posts']);
-                        router.push('/?type=my');
-                      }}
-                      className={type === 'my' && pathname === '/' ? 'header-item-clicked' : 'header-item'}
-                    >
-                      My
-                    </button>
-                  </li>
-                )}
+                {pathname === '/'
+                  && (
+                  <>
+                    <li>
+                      <button
+                        type="button"
+                        onClick={async () => {
+                          await clickLogoOrHome();
+                        }}
+                        className={!type && pathname === '/' ? 'header-item-clicked' : 'header-item'}
+                      >
+                        Home
+                      </button>
+                    </li>
+                    {session && (
+                    <li>
+                      <button
+                        type="button"
+                        onClick={async () => {
+                          await clickMy();
+                        }}
+                        className={type === 'my' && pathname === '/' ? 'header-item-clicked' : 'header-item'}
+                      >
+                        My
+                      </button>
+                    </li>
+                    )}
+                  </>
+                  )}
                 <li>
                   <LoginAndLogout className="header-item" />
                 </li>
@@ -117,30 +133,35 @@ function Header() {
         <aside className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full translate-x-0">
           <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
             <ul className="space-y-2 font-medium">
-              <li>
-                <button
-                  type="button"
-                  className={!type && pathname === '/' ? 'aside-menu-clicked' : 'aside-menu'}
-                  onClick={() => {
-                    router.push('/');
-                    setShowAside(false);
-                  }}
-                >
-                  <span>Home</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className={type === 'my' && pathname === '/' ? 'aside-menu-clicked' : 'aside-menu'}
-                  onClick={() => {
-                    router.push('?type=my');
-                    setShowAside(false);
-                  }}
-                >
-                  <span>My</span>
-                </button>
-              </li>
+              {pathname === '/'
+                && (
+                <>
+                  <li>
+                    <button
+                      type="button"
+                      className={!type && pathname === '/' ? 'aside-menu-clicked' : 'aside-menu'}
+                      onClick={async () => {
+                        await clickLogoOrHome();
+                        setShowAside(false);
+                      }}
+                    >
+                      <span>Home</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className={type === 'my' && pathname === '/' ? 'aside-menu-clicked' : 'aside-menu'}
+                      onClick={async () => {
+                        await clickMy();
+                        setShowAside(false);
+                      }}
+                    >
+                      <span>My</span>
+                    </button>
+                  </li>
+                </>
+                )}
               <li>
                 <span><LoginAndLogout className="aside-menu" /></span>
               </li>
