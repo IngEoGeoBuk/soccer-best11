@@ -45,7 +45,7 @@ function SelectedPlayerBox({ value } : { value: number }) {
         src="/images/avatar.png"
         width={60}
         height={60}
-        alt="dd"
+        alt="emypt-player"
       />
       <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
         Name
@@ -108,4 +108,29 @@ function ListPlayerBox({ player } : { player: Player }) {
   );
 }
 
-export { ListPlayerBox, SelectedPlayerBox };
+function ViewPlayerBox({ player } : { player: Player }) {
+  return (
+    <button
+      type="button"
+      className="player-card cursor-default"
+    >
+      <Image
+        src={`/images/club/${player.club}.png`}
+        width={36}
+        height={36}
+        alt={player.club}
+      />
+      <Image
+        src={`https://firebasestorage.googleapis.com/v0/b/soccer-best11.appspot.com/o/face%2F${player.id}.png?alt=media`}
+        width={60}
+        height={60}
+        alt={String(player.club)}
+      />
+      <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        {player.name}
+      </p>
+    </button>
+  );
+}
+
+export { ListPlayerBox, SelectedPlayerBox, ViewPlayerBox };

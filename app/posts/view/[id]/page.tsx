@@ -7,17 +7,18 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
-import { Post } from '@prisma/client';
+import { Player, Post } from '@prisma/client';
 import PostDetailSkeleton from '@/app/posts/components/skeleton';
 import dateFormat from '@/app/hook/dateFormat';
 import AlertBox from '@/app/components/common/alertBox';
 import VoteBox from './components/VoteBox';
 import CommentBox from './components/commentBox';
 import Modal from './components/modal';
+import ViewPlayersSection from './components/viewPlayersSection';
 
 interface ViewPost extends Post {
   email: string;
-  playerIds: number[];
+  players: Player[];
 }
 
 async function getPost(id: string) {
@@ -57,6 +58,8 @@ function Index() {
             </p>
           </div>
           <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{data.title}</p>
+          <br />
+          <ViewPlayersSection players={data.players} />
           <br />
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Description</h3>
           <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{data.description}</p>

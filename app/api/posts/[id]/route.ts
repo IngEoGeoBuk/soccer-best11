@@ -20,9 +20,25 @@ export async function GET(
         postPlayers: true,
       },
     });
+
+    const players: any[] = [];
+    for (let i = 0; i < data!.postPlayers.length; i += 1) {
+      players.push(prisma!.player.findUnique({
+        where: {
+          id: +data!.postPlayers[i].playerId,
+        },
+      }));
+    }
+
     return NextResponse.json({
-      ...data,
+      id: data?.id,
+      userId: data?.userId,
+      title: data?.title,
+      description: data?.description,
+      createdAt: data?.createdAt,
+      updatedAt: data?.updatedAt,
       email: data?.user.email,
+      players: await Promise.all(players),
     });
   } catch (error) {
     return new NextResponse('Error', { status: 500 });

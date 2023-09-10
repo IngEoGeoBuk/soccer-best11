@@ -56,7 +56,7 @@ model Post {
   user        User      @relation(fields: [userId], references: [id])
   
   comments     Comment[]
-  replies       Reply[]
+  replies      Reply[]
   likes        Like[]
   postPlayers  PostPlayer[]
 }
