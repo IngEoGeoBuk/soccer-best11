@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 // export async default로 하니까 안 됨.
 import { NextResponse } from 'next/server';
+import { Prisma } from '@prisma/client';
 import prisma from '@/app/libs/prismadb';
 import getCurrentUser from '@/app/actions/getCurrentUser';
 
@@ -21,14 +22,15 @@ export async function GET(
       },
     });
 
-    const players: any[] = [];
-    for (let i = 0; i < data!.postPlayers.length; i += 1) {
-      players.push(prisma!.player.findUnique({
-        where: {
-          id: +data!.postPlayers[i].playerId,
-        },
-      }));
-    }
+    const postPlayerIdList: number[] = data!.postPlayers.map((item) => item.id);
+    // https://stackoverflow.com/questions/68418224/prisma-queryraw-with-variable-length-parameter-list
+    const players = await prisma!.$queryRaw`
+      SELECT o.id as "postPlayerId", o."playerId" as id, p.name, p.nationality, p.club
+      FROM "PostPlayer" o
+      LEFT JOIN "Player" p ON p.id = o."playerId"
+      WHERE o.id IN (${Prisma.join(postPlayerIdList)})
+      ORDER BY o.id
+    `;
 
     return NextResponse.json({
       id: data?.id,
@@ -38,7 +40,7 @@ export async function GET(
       createdAt: data?.createdAt,
       updatedAt: data?.updatedAt,
       email: data?.user.email,
-      players: await Promise.all(players),
+      players,
     });
   } catch (error) {
     return new NextResponse('Error', { status: 500 });
