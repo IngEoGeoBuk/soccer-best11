@@ -7,19 +7,14 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
-import { Player, Post } from '@prisma/client';
 import PostDetailSkeleton from '@/app/posts/components/skeleton';
 import dateFormat from '@/app/hook/dateFormat';
 import AlertBox from '@/app/components/common/alertBox';
+import { ViewPost } from '@/app/types/Post';
 import VoteBox from './components/VoteBox';
 import CommentBox from './components/commentBox';
 import Modal from './components/modal';
 import ViewPlayersSection from './components/viewPlayersSection';
-
-interface ViewPost extends Post {
-  email: string;
-  players: Player[];
-}
 
 async function getPost(id: string) {
   const { data } = await axios.get(`/api/posts/${id}`);

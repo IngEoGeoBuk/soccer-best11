@@ -6,18 +6,12 @@ import { useSession } from 'next-auth/react';
 
 import { useParams, redirect, useRouter } from 'next/navigation';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { Player, Post } from '@prisma/client';
 import AlertBox from '@/app/components/common/alertBox';
-import { CreatePost } from '@/app/types/Post';
+import { UpdatePost, ViewPlayer, ViewPost } from '@/app/types/Post';
 import { usePost } from '@/app/context/post.provider';
 import PostDetailSkeleton from '../../components/skeleton';
 import SelectPlayerSection from '../../components/selectPlayerSection';
 import PlayerListSection from '../../components/playerListSection';
-
-interface ViewPost extends Post {
-  email: string;
-  players: Player[];
-}
 
 async function getPost(id: string) {
   const { data } = await axios.get(`/api/posts/${id}`);
@@ -43,7 +37,7 @@ function Index() {
   });
 
   const queryClient = useQueryClient();
-  const updatePost = async (post: CreatePost) => axios.put(`/api/posts/${id}`, post);
+  const updatePost = async (post: UpdatePost) => axios.put(`/api/posts/${id}`, post);
   const updatePostMutation = useMutation(updatePost, {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['posts', id] });
@@ -57,6 +51,7 @@ function Index() {
   const { selectedPlayers, setSelectedPlayers, setToastMessage } = usePost();
   const [title, setTitle] = useState<string>(data?.title!);
   const [description, setDescription] = useState<string>(data?.description!);
+  const [initialSelectedPlayers, setInitialSelectedPlayers] = useState<ViewPlayer[]>([]);
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -67,16 +62,26 @@ function Index() {
         setToastMessage('');
       }, 2000);
     } else {
+      const changedPlayers = [];
+      for (let i = 0; i < 11; i += 1) {
+        if (initialSelectedPlayers[i].id !== selectedPlayers[i]!.id) {
+          changedPlayers.push({
+            postPlayerId: initialSelectedPlayers[i].postPlayerId,
+            changedId: selectedPlayers[i]!.id,
+          });
+        }
+      }
       updatePostMutation.mutate({
         title,
         description,
-        playerIds: selectedPlayers.map((item) => item!.id),
+        changedPlayers,
       });
     }
   };
 
   useEffect(() => {
     if (data?.players) {
+      setInitialSelectedPlayers(data.players);
       setSelectedPlayers(data.players);
     }
   }, [data?.players, setSelectedPlayers]);

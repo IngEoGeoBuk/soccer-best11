@@ -4,6 +4,7 @@ import { NextResponse } from 'next/server';
 import { Prisma } from '@prisma/client';
 import prisma from '@/app/libs/prismadb';
 import getCurrentUser from '@/app/actions/getCurrentUser';
+import { ChangedPlayer } from '@/app/types/Post';
 
 // request 안 쓰여도 선언해야 함. 지우면 에러 남.
 export async function GET(
@@ -96,21 +97,19 @@ export async function PUT(
       },
     });
 
-    await prisma!.postPlayer.deleteMany({
-      where: {
-        postId: +id,
-      },
-    });
-    const postPlayerData = body.playerIds.map((item: number) => ({
-      postId: post.id,
-      playerId: item,
-    }));
-    const postPlayer = await prisma!.postPlayer.createMany({
-      data: postPlayerData, skipDuplicates: true,
+    const players = body.changedPlayers.map(async (item: ChangedPlayer) => {
+      await prisma!.postPlayer.update({
+        data: {
+          playerId: +item.changedId,
+        },
+        where: {
+          id: +item.postPlayerId,
+        },
+      });
     });
 
     return NextResponse.json({
-      post, postPlayer,
+      post, players,
     });
   } catch (error) {
     return new NextResponse('Error', { status: 500 });

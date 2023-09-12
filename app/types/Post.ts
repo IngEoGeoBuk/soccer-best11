@@ -1,9 +1,20 @@
-import { Post } from '@prisma/client';
+import { Player, Post } from '@prisma/client';
 
 export interface CreatePost {
   title: string;
   description: string;
   playerIds: number[];
+}
+
+export interface ChangedPlayer {
+  postPlayerId: number;
+  changedId: number;
+}
+
+export interface UpdatePost {
+  title: string;
+  description: string;
+  changedPlayers: ChangedPlayer[]
 }
 
 export interface ViewPostList {
@@ -17,4 +28,13 @@ export interface ViewPostList {
 
 export interface PostLike extends Post {
   likes: number;
+}
+
+export interface ViewPlayer extends Player {
+  postPlayerId: number;
+}
+
+export interface ViewPost extends Post {
+  email: string;
+  players: ViewPlayer[];
 }
