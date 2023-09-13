@@ -58,6 +58,13 @@ function Header() {
     router.push('/?type=my');
   };
 
+  const clickBest = async () => {
+    if (pathname === '/' && type === 'best') {
+      queryClient.resetQueries(['posts']);
+    }
+    router.push('/?type=best');
+  };
+
   useEffect(() => {
     window.addEventListener('resize', handleResize);
   }, []);
@@ -106,6 +113,17 @@ function Header() {
                         Home
                       </button>
                     </li>
+                    <li>
+                      <button
+                        type="button"
+                        onClick={async () => {
+                          await clickBest();
+                        }}
+                        className={type === 'best' && pathname === '/' ? 'header-item-clicked' : 'header-item'}
+                      >
+                        Best
+                      </button>
+                    </li>
                     {session && (
                     <li>
                       <button
@@ -148,6 +166,19 @@ function Header() {
                       <span>Home</span>
                     </button>
                   </li>
+                  <li>
+                    <button
+                      type="button"
+                      className={type === 'best' && pathname === '/' ? 'aside-menu-clicked' : 'aside-menu'}
+                      onClick={async () => {
+                        await clickBest();
+                        setShowAside(false);
+                      }}
+                    >
+                      <span>Best</span>
+                    </button>
+                  </li>
+
                   <li>
                     <button
                       type="button"
