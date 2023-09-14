@@ -97,6 +97,8 @@ function Index() {
       </div>
     );
   }
+
+  return null;
 }
 
 export default Index;

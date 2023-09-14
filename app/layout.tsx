@@ -14,11 +14,6 @@ import ErrorFallback from './components/errorFallback';
 const inter = Inter({ subsets: ['latin'] });
 const queryClient = new QueryClient();
 
-export const metadata = {
-  title: 'Soccer best 11',
-  description: 'Generate your best team!',
-};
-
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">

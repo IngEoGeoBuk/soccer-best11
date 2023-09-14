@@ -103,6 +103,8 @@ function PlayerListSection() {
       </div>
     );
   }
+
+  return null;
 }
 
 export default PlayerListSection;
