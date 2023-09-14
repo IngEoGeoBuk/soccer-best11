@@ -8,7 +8,7 @@ import {
 import { Player } from '@prisma/client';
 import AlertBox from '@/app/components/common/alertBox';
 import ToastBox from '@/app/components/common/toastBox';
-import { usePost } from '@/app/context/post.provider';
+import { usePost } from '@/app/context/post-context';
 import { ListPlayerBox } from './playerBox';
 import PlayerListSectionSkeleton from './playerListSectionSkeleton';
 

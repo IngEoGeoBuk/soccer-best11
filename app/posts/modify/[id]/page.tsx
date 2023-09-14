@@ -8,7 +8,7 @@ import { useParams, redirect, useRouter } from 'next/navigation';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import AlertBox from '@/app/components/common/alertBox';
 import { UpdatePost, ViewPlayer, ViewPost } from '@/app/types/Post';
-import { usePost } from '@/app/context/post.provider';
+import { usePost } from '@/app/context/post-context';
 import PostDetailSkeleton from '../../components/skeleton';
 import SelectPlayerSection from '../../components/selectPlayerSection';
 import PlayerListSection from '../../components/playerListSection';

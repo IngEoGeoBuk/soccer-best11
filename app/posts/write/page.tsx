@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useSession } from 'next-auth/react';
 import { CreatePost } from '@/app/types/Post';
-import { usePost } from '@/app/context/post.provider';
+import { usePost } from '@/app/context/post-context';
 import SelectPlayerSection from '../components/selectPlayerSection';
 import PlayerListSection from '../components/playerListSection';
 

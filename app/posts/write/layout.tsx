@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { PostProvider } from '@/app/context/post.provider';
+import { PostProvider } from '@/app/context/post-context';
 
 export const metadata = {
   title: 'Soccer best 11',

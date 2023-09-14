@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Player } from '@prisma/client';
-import { usePost } from '@/app/context/post.provider';
+import { usePost } from '@/app/context/post-context';
 
 function SelectedPlayerBox({ value } : { value: number }) {
   const { selectedCard, setSelectedCard, selectedPlayers } = usePost();

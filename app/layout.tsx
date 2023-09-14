@@ -8,7 +8,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ErrorBoundary } from 'react-error-boundary';
 import Footer from './components/footer';
 import Header from './components/header';
-import AuthProvider from './context/auth.provider';
+import AuthProvider from './context/auth-context';
 import ErrorFallback from './components/errorFallback';
 
 const inter = Inter({ subsets: ['latin'] });
