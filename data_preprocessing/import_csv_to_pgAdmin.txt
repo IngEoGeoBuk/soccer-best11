@@ -1,0 +1,4 @@
+COPY "Player"("id", "name", "nationality", "club")
+FROM 'D:\filtered_data.csv'
+DELIMITER ','
+CSV HEADER;

@@ -16,7 +16,7 @@ const National = ['ENG', 'ESP', 'ITA', 'GER', 'NED', 'FRA', 'POR'];
 const Club = [
   ['MCI', 'LIV', 'ARS', 'CHE', 'MUN'],
   ['MAD', 'FCB', 'ATM'],
-  ['INT', 'JUV', 'MIL', 'NAP', 'ROM'],
+  ['INT', 'JUV', 'MIL'],
   ['BAY', 'DOR', 'RBL'],
   ['AJA', 'PSV', 'FEY'],
   ['PSG', 'LYO', 'OLM'],
@@ -30,7 +30,7 @@ async function getPlayersByClub(club: string) {
 
 function PlayerListSection() {
   const { toastMessage, setToastMessage } = usePost();
-  const [national, setNational] = useState<number>(0);
+  const [national, setNational] = useState<number>(3);
   const [club, setClub] = useState<number>(0);
 
   const {
