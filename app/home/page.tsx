@@ -129,7 +129,7 @@ function Home() {
                   <Image className="w-10 h-10 rounded-full" src={item.image} alt="" width={40} height={40} />
                   <div className="font-medium dark:text-white">
                     <div>{item.title}</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{item.email}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.email}</div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">{dateFormat(new Date(item.createdAt))}</div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">
                       Like:
