@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Create your Best11!
+![screensh](./readme_img/about.gif)
+#
+[Features]
+1. Google login
+2. CRUD(Posts, comments, replies and likes)
+#
+[Technologies Used]
+1. next.js 13
+2. tailwindcss
+3. react-query
+4. prisma
+5. postgresql
+6. next-auth(google login)
+7. firebase
+#
+[ERD]
 
-## Getting Started
+![screensh](./readme_img/erd.png)
+#
+[Setting .env]
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. DATABASE_URL: postgresql url  
+2. GOOGLE_CLIENT_ID: google OAuth 2.0 client Id  
+3. GOOGLE_CLIENT_SECRET: google OAuth 2.0 client secret  
+4. SOCCER_BEST11_SERVER: your API URL (ex: http://localhost:3000)  
+5. NEXTAUTH_SECRET="NEXTAUTH_SECRET"
+6. import /data_preprocessiong/filtered_data.csv to your db table, 'Player'
+#
+[Detail]
+1. Support dark & light mode  
+2. Support Infinite Scroll + Pagination(posts)  
+3. Support my page(View posts I wrote.)
+4. Support best page(View posts received more than 2 recommendations. You can edit it.)  
+4. Support Mobile ver(Responsive Web Design)  
