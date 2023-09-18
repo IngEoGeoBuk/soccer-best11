@@ -67,6 +67,7 @@ model PostPlayer {
   playerId    Int
 
   post    Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  player  Player  @relation(fields: [playerId], references: [id])
 }
 
 model Comment {
@@ -114,4 +115,6 @@ model Player {
   name        String
   nationality String
   club        String
+
+  postPlayers  PostPlayer[]
 }
