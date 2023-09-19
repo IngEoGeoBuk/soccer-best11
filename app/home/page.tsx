@@ -28,13 +28,17 @@ function Home() {
   const router = useRouter();
   const { ref, inView } = useInView();
 
-  const { data: session } = useSession();
   // type Query로 해야 하는 이유: 새로고침 할 시 이전 페이지 사라짐.
   const type = searchParams.get('type') ?? '';
   const search = searchParams.get('search') ?? '';
-  if (type === 'my' && !session?.user?.email) {
-    redirect('/signin');
-  }
+  const { data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      if (type === 'my' && !session?.user?.email) {
+        redirect('/signin');
+      }
+    },
+  });
 
   const {
     status,

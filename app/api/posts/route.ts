@@ -19,7 +19,7 @@ export async function GET(
     const search = new URL(request.url).searchParams.get('search') ? `%${new URL(request.url).searchParams.get('search')}%` : '';
 
     if (type === 'my' && !currentUser) {
-      return NextResponse.error();
+      return new NextResponse('There is no login', { status: 404 });
     }
 
     const returnWhereQuery = () => {
