@@ -112,7 +112,7 @@ function Home() {
       </form>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
         {data.pages.map((page) => (
-          <React.Fragment key={page.nextLastId}>
+          <React.Fragment key={page.nextLastId ?? 0}>
             {page.data.map((item: ViewPostList) => (
               <button
                 key={item.id}
@@ -126,7 +126,8 @@ function Home() {
                   <Image
                     src="/images/champions.png"
                     fill
-                    alt="fuyf"
+                    alt="champs"
+                    priority
                   />
                 </div>
                 <div className="flex items-start space-x-4">
