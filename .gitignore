@@ -36,3 +36,6 @@ data-list
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# firebase
+.firebase

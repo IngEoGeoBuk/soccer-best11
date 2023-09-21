@@ -113,7 +113,7 @@ function Home() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
         {data.pages.map((page) => (
           <React.Fragment key={page.nextLastId ?? 0}>
-            {page.data.map((item: ViewPostList) => (
+            {page.data?.map((item: ViewPostList) => (
               <button
                 key={item.id}
                 className="max-w-full p-4 border border-gray-200 rounded shadow md:p-6 dark:border-gray-700 text-left"
