@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { Player } from '@prisma/client';
 import { usePost } from '@/app/context/post-context';
 
+const firebaseStorageUrl = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_URL;
+
 function SelectedPlayerBox({ value } : { value: number }) {
   const { selectedCard, setSelectedCard, selectedPlayers } = usePost();
 
@@ -21,7 +23,7 @@ function SelectedPlayerBox({ value } : { value: number }) {
           alt={player.club}
         />
         <Image
-          src={`https://firebasestorage.googleapis.com/v0/b/soccer-best11.appspot.com/o/face%2F${player.id}.png?alt=media`}
+          src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
           width={60}
           height={60}
           alt={String(player.club)}
@@ -96,7 +98,7 @@ function ListPlayerBox({ player } : { player: Player }) {
         alt={player.club}
       />
       <Image
-        src={`https://firebasestorage.googleapis.com/v0/b/soccer-best11.appspot.com/o/face%2F${player.id}.png?alt=media`}
+        src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
         width={60}
         height={60}
         alt={String(player.club)}
@@ -121,7 +123,7 @@ function ViewPlayerBox({ player } : { player: Player }) {
         alt={player.club}
       />
       <Image
-        src={`https://firebasestorage.googleapis.com/v0/b/soccer-best11.appspot.com/o/face%2F${player.id}.png?alt=media`}
+        src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
         width={60}
         height={60}
         alt={String(player.club)}
