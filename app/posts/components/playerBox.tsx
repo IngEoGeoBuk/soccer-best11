@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Player } from '@prisma/client';
 import { usePost } from '@/app/context/post-context';
 
 const firebaseStorageUrl = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_URL;
+
+function ImageWithFallback({ src } : { src: string }) {
+  const [imgSrc, setImgSrc] = useState(src);
+  return (
+    <Image
+      src={imgSrc}
+      onError={() => {
+        setImgSrc('/images/avatar.png');
+      }}
+      width={60}
+      height={60}
+      alt="player-box"
+    />
+  );
+}
 
 function SelectedPlayerBox({ value } : { value: number }) {
   const { selectedCard, setSelectedCard, selectedPlayers } = usePost();
@@ -22,11 +37,8 @@ function SelectedPlayerBox({ value } : { value: number }) {
           height={36}
           alt={player.club}
         />
-        <Image
+        <ImageWithFallback
           src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
-          width={60}
-          height={60}
-          alt={String(player.club)}
         />
         <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
           {player.name}
@@ -97,11 +109,8 @@ function ListPlayerBox({ player } : { player: Player }) {
         height={36}
         alt={player.club}
       />
-      <Image
+      <ImageWithFallback
         src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
-        width={60}
-        height={60}
-        alt={String(player.club)}
       />
       <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
         {player.name}
@@ -122,11 +131,8 @@ function ViewPlayerBox({ player } : { player: Player }) {
         height={36}
         alt={player.club}
       />
-      <Image
+      <ImageWithFallback
         src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
-        width={60}
-        height={60}
-        alt={String(player.club)}
       />
       <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
         {player.name}
