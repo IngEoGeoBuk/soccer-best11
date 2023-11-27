@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { PostProvider } from '@/app/context/post-context';
 
 export default function RootLayout({
   children,
@@ -9,6 +8,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <PostProvider>{children}</PostProvider>
+    <div>
+      { children }
+    </div>
   );
 }

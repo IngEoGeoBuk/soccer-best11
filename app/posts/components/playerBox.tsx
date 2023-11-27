@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { Player } from '@prisma/client';
-import { usePost } from '@/app/context/post-context';
+import usePostStore from '@/app/store/post';
 
 const firebaseStorageUrl = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_URL;
 
-function ImageWithFallback({ src } : { src: string }) {
-  const [imgSrc, setImgSrc] = useState(src);
+function PlayerPaceImg({ src } : { src: string }) {
   return (
     <Image
-      src={imgSrc}
-      onError={() => {
-        setImgSrc('/images/avatar.png');
-      }}
+      src={src}
       width={60}
       height={60}
       alt="player-box"
@@ -21,14 +17,14 @@ function ImageWithFallback({ src } : { src: string }) {
 }
 
 function SelectedPlayerBox({ value } : { value: number }) {
-  const { selectedCard, setSelectedCard, selectedPlayers } = usePost();
+  const { selectedCard, updateSelectedCard, selectedPlayers } = usePostStore((store) => store);
 
   const player = selectedPlayers[value];
   if (player) {
     return (
       <button
         type="button"
-        onClick={() => setSelectedCard(value)}
+        onClick={() => updateSelectedCard(value)}
         className={selectedCard === value ? 'player-card-selected' : 'player-card'}
       >
         <Image
@@ -37,7 +33,7 @@ function SelectedPlayerBox({ value } : { value: number }) {
           height={36}
           alt={player.club}
         />
-        <ImageWithFallback
+        <PlayerPaceImg
           src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
         />
         <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
@@ -49,7 +45,7 @@ function SelectedPlayerBox({ value } : { value: number }) {
   return (
     <button
       type="button"
-      onClick={() => setSelectedCard(value)}
+      onClick={() => updateSelectedCard(value)}
       className={selectedCard === value ? 'player-card-selected' : 'player-card'}
     >
       <div
@@ -70,31 +66,31 @@ function SelectedPlayerBox({ value } : { value: number }) {
 
 function ListPlayerBox({ player } : { player: Player }) {
   const {
-    selectedCard, setSelectedCard, selectedPlayers, setSelectedPlayers, setToastMessage,
-  } = usePost();
+    selectedCard, updateSelectedCard, selectedPlayers, updateSelectedPlayers, updateToastMessage,
+  } = usePostStore((store) => store);
 
   const clickFnc = () => {
     if (selectedCard === -1) {
-      setToastMessage('Please select a position card first.');
+      updateToastMessage('Please select a position card first.');
       document.getElementById('playerListSection')!.scrollIntoView();
       setTimeout(() => {
-        setToastMessage('');
+        updateToastMessage('');
       }, 2000);
       return;
     }
     if (selectedPlayers.includes(player)) {
-      setToastMessage('You have already chosen the player.');
+      updateToastMessage('You have already chosen the player.');
       document.getElementById('playerListSection')!.scrollIntoView();
       setTimeout(() => {
-        setToastMessage('');
+        updateToastMessage('');
       }, 2000);
       return;
     }
 
     const newArray = [...selectedPlayers];
     newArray[selectedCard] = player;
-    setSelectedPlayers(newArray);
-    setSelectedCard(-1);
+    updateSelectedPlayers(newArray);
+    updateSelectedCard(-1);
   };
 
   return (
@@ -109,7 +105,7 @@ function ListPlayerBox({ player } : { player: Player }) {
         height={36}
         alt={player.club}
       />
-      <ImageWithFallback
+      <PlayerPaceImg
         src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
       />
       <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
@@ -131,7 +127,7 @@ function ViewPlayerBox({ player } : { player: Player }) {
         height={36}
         alt={player.club}
       />
-      <ImageWithFallback
+      <PlayerPaceImg
         src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
       />
       <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">

@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useSession } from 'next-auth/react';
 import { CreatePost } from '@/app/types/Post';
-import { usePost } from '@/app/context/post-context';
+import usePostStore from '@/app/store/post';
 import SelectPlayerSection from '../components/selectPlayerSection';
 import PlayerListSection from '../components/playerListSection';
 
@@ -31,17 +31,18 @@ function Create() {
     },
   });
 
-  const { selectedPlayers, setToastMessage } = usePost();
+  const { selectedPlayers, updateToastMessage } = usePostStore((store) => store);
+
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
     if (selectedPlayers.length < 11) {
-      setToastMessage('Please select 11 players.');
+      updateToastMessage('Please select 11 players.');
       document.getElementById('playerListSection')!.scrollIntoView();
       setTimeout(() => {
-        setToastMessage('');
+        updateToastMessage('');
       }, 2000);
     } else {
       addPostMutation.mutate({

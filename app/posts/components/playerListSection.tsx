@@ -8,7 +8,7 @@ import {
 import { Player } from '@prisma/client';
 import AlertBox from '@/app/components/common/alertBox';
 import ToastBox from '@/app/components/common/toastBox';
-import { usePost } from '@/app/context/post-context';
+import usePostStore from '@/app/store/post';
 import { ListPlayerBox } from './playerBox';
 import PlayerListSectionSkeleton from './playerListSectionSkeleton';
 
@@ -29,7 +29,8 @@ async function getPlayersByClub(club: string) {
 }
 
 function PlayerListSection() {
-  const { toastMessage, setToastMessage } = usePost();
+  const { toastMessage, updateToastMessage } = usePostStore((store) => store);
+
   const [national, setNational] = useState<number>(3);
   const [club, setClub] = useState<number>(0);
 
@@ -89,7 +90,7 @@ function PlayerListSection() {
         </ul>
         <br />
         {toastMessage
-          && <ToastBox message={toastMessage} clickClose={() => setToastMessage('')} />}
+          && <ToastBox message={toastMessage} clickClose={() => updateToastMessage('')} />}
         <div className="w-full">
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 xl:grid-cols-12 gap-1">
             {data.map((item) => (

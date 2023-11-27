@@ -8,7 +8,7 @@ import { useParams, redirect, useRouter } from 'next/navigation';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import AlertBox from '@/app/components/common/alertBox';
 import { UpdatePost, ViewPlayer, ViewPost } from '@/app/types/Post';
-import { usePost } from '@/app/context/post-context';
+import usePostStore from '@/app/store/post';
 import PostDetailSkeleton from '../../components/skeleton';
 import SelectPlayerSection from '../../components/selectPlayerSection';
 import PlayerListSection from '../../components/playerListSection';
@@ -48,7 +48,12 @@ function Index() {
     },
   });
 
-  const { selectedPlayers, setSelectedPlayers, setToastMessage } = usePost();
+  const {
+    selectedPlayers,
+    updateSelectedPlayers,
+    updateToastMessage,
+  } = usePostStore((store) => store);
+
   const [title, setTitle] = useState<string>(data?.title!);
   const [description, setDescription] = useState<string>(data?.description!);
   const [initialSelectedPlayers, setInitialSelectedPlayers] = useState<ViewPlayer[]>([]);
@@ -56,10 +61,10 @@ function Index() {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     if (selectedPlayers.length < 11) {
-      setToastMessage('Please select 11 players.');
+      updateToastMessage('Please select 11 players.');
       document.getElementById('playerListSection')!.scrollIntoView();
       setTimeout(() => {
-        setToastMessage('');
+        updateToastMessage('');
       }, 2000);
     } else {
       const changedPlayers = [];
@@ -82,9 +87,9 @@ function Index() {
   useEffect(() => {
     if (data?.players) {
       setInitialSelectedPlayers(data.players);
-      setSelectedPlayers(data.players);
+      updateSelectedPlayers(data.players);
     }
-  }, [data?.players, setSelectedPlayers]);
+  }, [data?.players, updateSelectedPlayers]);
 
   if (isLoading) {
     return <PostDetailSkeleton />;
