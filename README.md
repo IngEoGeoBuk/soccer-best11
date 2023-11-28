@@ -13,6 +13,7 @@
 5. postgresql
 6. next-auth(google login)
 7. firebase
+8. zustand
 #
 [ERD]
 
