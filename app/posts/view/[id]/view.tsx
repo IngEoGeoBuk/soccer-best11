@@ -28,7 +28,7 @@ function Index() {
   const { isLoading, error, data } = useQuery<ViewPost>({
     queryKey: ['posts', id],
     queryFn: () => getPost(id as string),
-    staleTime: 5000,
+    staleTime: 1000 * 60 * 1,
   });
 
   const [showModal, setShowModal] = useState(false);

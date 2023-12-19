@@ -26,7 +26,7 @@ function Index() {
     queryKey: ['comments', { postId: +id }],
     queryFn: () => getComments(id as string),
     placeholderData: keepPreviousData,
-    staleTime: 5000,
+    staleTime: 1000 * 30,
   });
 
   if (isLoading) {

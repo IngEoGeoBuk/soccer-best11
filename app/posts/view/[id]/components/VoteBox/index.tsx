@@ -33,7 +33,7 @@ function Index() {
     queryKey: ['like', { postId: +id }],
     queryFn: () => getLikes(id as string),
     placeholderData: keepPreviousData,
-    staleTime: 5000,
+    staleTime: 1000 * 30,
   });
 
   const postLike = async () => axios.post('/api/likes', { postId: +id });

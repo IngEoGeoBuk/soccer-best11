@@ -35,7 +35,7 @@ function Index() {
     queryKey: ['posts', id],
     queryFn: () => getPost(id as string),
     placeholderData: keepPreviousData,
-    staleTime: 5000,
+    staleTime: 1000 * 60 * 1,
   });
 
   const queryClient = useQueryClient();

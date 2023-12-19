@@ -43,7 +43,7 @@ function PlayerListSection() {
     refetchOnWindowFocus: false,
     refetchOnReconnect: true,
     refetchOnMount: true,
-    staleTime: 1000 * 60,
+    staleTime: 1000 * 60 * 5,
     gcTime: 1000 * 60 * 8,
     placeholderData: keepPreviousData,
   });
