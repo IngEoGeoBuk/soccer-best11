@@ -27,8 +27,7 @@ function Index() {
 
   const { isLoading, error, data } = useQuery<ViewPost>({
     queryKey: ['posts', id],
-    queryFn: () => getPost(id),
-    keepPreviousData: true,
+    queryFn: () => getPost(id as string),
     staleTime: 5000,
   });
 

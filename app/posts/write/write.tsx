@@ -14,19 +14,20 @@ function Create() {
   useSession({
     required: true,
     onUnauthenticated() {
-      redirect('/signin');
+      redirect('/signIn');
     },
   });
 
   const queryClient = useQueryClient();
   const router = useRouter();
   const addPost = async (post: CreatePost) => axios.post('/api/posts', post);
-  const addPostMutation = useMutation(addPost, {
+  const addPostMutation = useMutation({
+    mutationFn: addPost,
     onSuccess: () => {
-      queryClient.resetQueries(['posts']);
+      queryClient.resetQueries({ queryKey: ['posts'] });
       router.push('/');
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       throw error;
     },
   });

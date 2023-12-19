@@ -5,7 +5,9 @@ import axios from 'axios';
 import { useSession } from 'next-auth/react';
 
 import { useParams, redirect, useRouter } from 'next/navigation';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import {
+  keepPreviousData, useMutation, useQuery, useQueryClient,
+} from '@tanstack/react-query';
 import AlertBox from '@/app/components/common/alertBox';
 import { UpdatePost, ViewPlayer, ViewPost } from '@/app/types/Post';
 import usePostStore from '@/app/store/post';
@@ -25,25 +27,26 @@ function Index() {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
-      redirect('/signin');
+      redirect('/signIn');
     },
   });
 
   const { isLoading, error, data } = useQuery<ViewPost>({
     queryKey: ['posts', id],
-    queryFn: () => getPost(id),
-    keepPreviousData: true,
+    queryFn: () => getPost(id as string),
+    placeholderData: keepPreviousData,
     staleTime: 5000,
   });
 
   const queryClient = useQueryClient();
   const updatePost = async (post: UpdatePost) => axios.put(`/api/posts/${id}`, post);
-  const updatePostMutation = useMutation(updatePost, {
+  const updatePostMutation = useMutation({
+    mutationFn: updatePost,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['posts', id] });
       router.push(`/posts/view/${id}`);
     },
-    onError: (err) => {
+    onError: (err: Error) => {
       throw err;
     },
   });
@@ -101,7 +104,7 @@ function Index() {
 
   if (session?.user?.email !== data?.email) {
     // 다른 사람 게시글 수정 들어갈 경우 로그인 페이지로 이동시키기.
-    router.push('/signin');
+    router.push('/signIn');
   }
 
   if (data) {

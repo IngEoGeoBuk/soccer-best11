@@ -20,13 +20,14 @@ function EditCommentBox({ defaultValue, showModify, setShowModify } : Interface)
   const updateComment = async (content: string) => axios.put(`/api/comments/${showModify}`, {
     content,
   });
-  const updateCommentMutation = useMutation(updateComment, {
+  const updateCommentMutation = useMutation({
+    mutationFn: updateComment,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['comments', { postId: +id }] });
       setShowModify(0);
       setValue('');
     },
-    onError: (err) => {
+    onError: (err: Error) => {
       throw err;
     },
   });

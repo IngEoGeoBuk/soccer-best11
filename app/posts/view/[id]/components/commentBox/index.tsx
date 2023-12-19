@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 import { useParams } from 'next/navigation';
@@ -24,8 +24,8 @@ function Index() {
 
   const { isLoading, error, data } = useQuery<ViewComment[]>({
     queryKey: ['comments', { postId: +id }],
-    queryFn: () => getComments(id),
-    keepPreviousData: true,
+    queryFn: () => getComments(id as string),
+    placeholderData: keepPreviousData,
     staleTime: 5000,
   });
 

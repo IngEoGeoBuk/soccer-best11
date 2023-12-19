@@ -20,13 +20,14 @@ function EditReplyBox({ defaultValue, showModify, setShowModify } : Interface) {
   const updateReply = async (content: string) => axios.put(`/api/replies/${showModify}`, {
     content,
   });
-  const updateReplyMutation = useMutation(updateReply, {
+  const updateReplyMutation = useMutation({
+    mutationFn: updateReply,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['comments', { postId: +id }] });
       setShowModify(0);
       setValue('');
     },
-    onError: (err) => {
+    onError: (err: Error) => {
       throw err;
     },
   });

@@ -13,12 +13,13 @@ function Modal({ setShowModal }: Interface) {
   const queryClient = useQueryClient();
   const router = useRouter();
   const deletePost = async () => axios.delete(`/api/posts/${id}`);
-  const deletePostMutation = useMutation(deletePost, {
+  const deletePostMutation = useMutation({
+    mutationFn: deletePost,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['posts', id] });
       router.push('/');
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       throw error;
     },
   });

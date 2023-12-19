@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {
+  keepPreviousData,
   useQuery,
 } from '@tanstack/react-query';
 import { Player } from '@prisma/client';
@@ -39,15 +40,15 @@ function PlayerListSection() {
   } = useQuery<Player[]>({
     queryKey: ['players', Club[national][club]],
     queryFn: () => getPlayersByClub(Club[national][club]),
-    keepPreviousData: true,
     refetchOnWindowFocus: false,
     refetchOnReconnect: true,
     refetchOnMount: true,
     staleTime: 1000 * 60,
-    cacheTime: 1000 * 60 * 8,
+    gcTime: 1000 * 60 * 8,
+    placeholderData: keepPreviousData,
   });
 
-  if (status === 'loading' || isFetching) {
+  if (status === 'pending' || isFetching) {
     return <PlayerListSectionSkeleton />;
   }
 

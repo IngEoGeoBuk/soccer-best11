@@ -14,12 +14,13 @@ function Modal({ showModal, setShowModal }: Interface) {
   const { id } = useParams();
   const queryClient = useQueryClient();
   const deleteComment = async () => axios.delete(`/api/comments/${showModal}`);
-  const deleteCommentMutation = useMutation(deleteComment, {
+  const deleteCommentMutation = useMutation({
+    mutationFn: deleteComment,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['comments', { postId: +id }] });
       setShowModal(0);
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       throw error;
     },
   });

@@ -1,14 +1,14 @@
 import React from 'react';
-import Signin from './signin';
+import SignIn from './signIn';
 
 export const metadata = {
-  title: 'Soccer Best11 - Signin',
+  title: 'Soccer Best11 - SignIn',
   description: 'Generate your best team!',
 };
 
 const page = () => (
   <div>
-    <Signin />
+    <SignIn />
   </div>
 );
 

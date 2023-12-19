@@ -15,13 +15,14 @@ function AddReplyBox({ showReply, setShowReply }: Interface) {
   const [value, setValue] = useState<string>('');
 
   const addReply = async (content: string) => axios.post('/api/replies', { postId: +id, commentId: +showReply, content });
-  const addReplyMutation = useMutation(addReply, {
+  const addReplyMutation = useMutation({
+    mutationFn: addReply,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['comments', { postId: +id }] });
       setValue('');
       setShowReply(0);
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       throw error;
     },
   });

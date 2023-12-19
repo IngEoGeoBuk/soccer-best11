@@ -10,12 +10,13 @@ function AddCommentBox() {
   const [value, setValue] = useState<string>('');
 
   const addComment = async (content: string) => axios.post('/api/comments', { postId: +id, content });
-  const addCommentMutation = useMutation(addComment, {
+  const addCommentMutation = useMutation({
+    mutationFn: addComment,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['comments', { postId: +id }] });
       setValue('');
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       throw error;
     },
   });
