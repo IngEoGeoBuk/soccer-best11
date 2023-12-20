@@ -26,6 +26,7 @@ function SelectedPlayerBox({ value } : { value: number }) {
         type="button"
         onClick={() => updateSelectedCard(value)}
         className={selectedCard === value ? 'player-card-selected' : 'player-card'}
+        data-testid={`selected-player-${value}`}
       >
         <Image
           src={`/images/club/${player.club}.png`}
@@ -47,6 +48,7 @@ function SelectedPlayerBox({ value } : { value: number }) {
       type="button"
       onClick={() => updateSelectedCard(value)}
       className={selectedCard === value ? 'player-card-selected' : 'player-card'}
+      data-testid={`selected-player-${value}`}
     >
       <div
         className="w-[36px] h-[36px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
@@ -55,7 +57,7 @@ function SelectedPlayerBox({ value } : { value: number }) {
         src="/images/avatar.png"
         width={60}
         height={60}
-        alt="emypt-player"
+        alt="empty-player"
       />
       <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
         Name
@@ -98,6 +100,7 @@ function ListPlayerBox({ player } : { player: Player }) {
       type="button"
       onClick={() => clickFnc()}
       className="player-card"
+      data-testid={`list-player-${player.id}`}
     >
       <Image
         src={`/images/club/${player.club}.png`}

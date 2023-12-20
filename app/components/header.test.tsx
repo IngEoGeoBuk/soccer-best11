@@ -44,6 +44,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const queryClient = new QueryClient();
+
 beforeEach(() => {
   queryClient.clear(); // Clear the query client before each test
   render(<QueryClientProvider client={queryClient}><Header /></QueryClientProvider>);

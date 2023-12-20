@@ -63,6 +63,7 @@ function PlayerListSection() {
           {National.map((item, key) => (
             <li className="mr-2" key={item}>
               <button
+                data-testid={`national-${item}`}
                 type="button"
                 className={national === key ? 'player-tab-selected' : 'player-tab'}
                 onClick={() => {
@@ -79,6 +80,7 @@ function PlayerListSection() {
           {Club[national].map((item, key) => (
             <li className="mr-2" key={item}>
               <button
+                data-testid={`club-${item}`}
                 type="button"
                 className={club === key ? 'player-tab-selected' : 'player-tab'}
                 onClick={() => {
