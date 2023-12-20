@@ -179,6 +179,7 @@ function Home() {
       </div>
     );
   }
+  return null;
 }
 
 export default Home;
