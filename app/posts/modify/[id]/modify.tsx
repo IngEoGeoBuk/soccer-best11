@@ -31,6 +31,13 @@ function Index() {
     },
   });
 
+  const {
+    selectedPlayers,
+    updateSelectedPlayers,
+    updateToastMessage,
+    resetPost,
+  } = usePostStore((store) => store);
+
   const { isLoading, error, data } = useQuery<ViewPost>({
     queryKey: ['posts', id],
     queryFn: () => getPost(id as string),
@@ -44,18 +51,13 @@ function Index() {
     mutationFn: updatePost,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['posts', id] });
+      resetPost();
       router.push(`/posts/view/${id}`);
     },
     onError: (err: Error) => {
       throw err;
     },
   });
-
-  const {
-    selectedPlayers,
-    updateSelectedPlayers,
-    updateToastMessage,
-  } = usePostStore((store) => store);
 
   const [title, setTitle] = useState<string>(data?.title!);
   const [description, setDescription] = useState<string>(data?.description!);
