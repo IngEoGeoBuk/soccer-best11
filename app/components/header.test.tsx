@@ -27,6 +27,7 @@ jest.mock('next-auth/react', () => {
     __esModule: true,
     ...originalModule,
     useSession: jest.fn(() => ({
+      // login spec
       data: {
         expires: new Date(Date.now() + 2 * 86400).toISOString(),
         user: {
@@ -36,6 +37,7 @@ jest.mock('next-auth/react', () => {
         },
       },
       status: 'authenticated',
+
       // // no login spec
       // data: null,
       // status: 'unauthenticated',
@@ -57,7 +59,6 @@ describe('Header', () => {
     ).toBeInTheDocument();
   });
   // it('If you are not logged in, you can check the login text.', async () => {
-  //   screen.debug();
   //   expect(
   //     screen.getByText('login'),
   //   ).toBeInTheDocument();

@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import React from 'react';
+import axios from 'axios';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import userEvent from '@testing-library/user-event';
@@ -55,7 +56,7 @@ describe('Submit', () => {
   });
 
   it('You can\'t create the post without description', async () => {
-    const descriptionTextarea = screen.getByLabelText('title');
+    const descriptionTextarea = screen.getByLabelText('description');
     expect(descriptionTextarea).toBeInvalid();
     fireEvent.change(descriptionTextarea, { target: { value: 'New Description' } });
     expect(descriptionTextarea).toBeValid();
@@ -116,6 +117,10 @@ describe('Select Player', () => {
   });
 
   it('You can\'t choose the same player in duplicate.', async () => {
+    // select T. Müller in selected-player-0.
+    await userEvent.click(screen.getByTestId('selected-player-0'));
+    await userEvent.click(screen.getByTestId('list-player-189596'));
+
     // no player in selected-player-1.
     expect(screen.getByTestId('selected-player-1')).toHaveTextContent('Name');
     // select selected-player-1 and select T. Müller again
@@ -126,24 +131,69 @@ describe('Select Player', () => {
     expect(screen.getByTestId('selected-player-1')).not.toHaveTextContent('T. Müller');
   });
 
-  // it('You must select 11 players to create a post.', async () => {
-  //   // close toast box
-  //   await userEvent.click(screen.getByTestId('close-toast-danger-btn'));
+  it('You must select 11 players to create a post.', async () => {
+    // fill the text input
+    const titleInput = screen.getByLabelText('title');
+    fireEvent.change(titleInput, { target: { value: 'New Title' } });
 
-  //   // fill the text input
-  //   const titleInput = screen.getByLabelText('title');
-  //   fireEvent.change(titleInput, { target: { value: 'New Title' } });
+    // fill the description textarea
+    const descriptionTextarea = screen.getByLabelText('description');
+    fireEvent.change(descriptionTextarea, { target: { value: 'New Description' } });
 
-  //   // fill the description textarea
-  //   const descriptionTextarea = screen.getByLabelText('title');
-  //   fireEvent.change(descriptionTextarea, { target: { value: 'New Description' } });
+    // select only 2 players.
+    await userEvent.click(screen.getByTestId('selected-player-0'));
+    await userEvent.click(screen.getByTestId('list-player-189596'));
 
-  //   // select only 2 players.
-  //   await userEvent.click(screen.getByTestId('list-player-209658'));
+    await userEvent.click(screen.getByTestId('selected-player-1'));
+    await userEvent.click(screen.getByTestId('list-player-209658'));
 
-  //   // click the create btn
-  //   fireEvent.click(screen.getByTestId('create-post-btn'));
-  //   // expect(screen.getByText('Please select 11 players.')).toBeInTheDocument();
-  //   expect(1).toBe(1);
-  // });
+    // click the create btn
+    await userEvent.click(screen.getByTestId('create-post-btn'));
+    // screen.debug(undefined, Infinity);
+    expect(screen.getByText('Please select 11 players.')).toBeInTheDocument();
+
+    // [post] api/posts doesn't work.
+    expect(axios.post).not.toHaveBeenCalledWith('/api/posts', {});
+  });
+});
+
+describe('create a post', () => {
+  it('fill all condition', async () => {
+    const titleInput = screen.getByLabelText('title');
+    fireEvent.change(titleInput, { target: { value: 'New Title' } });
+    const descriptionTextarea = screen.getByLabelText('description');
+    fireEvent.change(descriptionTextarea, { target: { value: 'New Description' } });
+    const playerIds = [
+      189596,
+      209658,
+      212622,
+      167495,
+      229558,
+      213345,
+      235243,
+      234396,
+      222492,
+      256790,
+      268421,
+    ];
+    async function selectElevenPlayers() {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < 11; i++) {
+        // eslint-disable-next-line no-await-in-loop
+        await userEvent.click(screen.getByTestId(`selected-player-${i}`));
+        // eslint-disable-next-line no-await-in-loop
+        await userEvent.click(screen.getByTestId(`list-player-${playerIds[i]}`));
+        // Additional test logic
+      }
+    }
+    await selectElevenPlayers();
+    await userEvent.click(screen.getByTestId('create-post-btn'));
+
+    // [post] api/posts works after click submit button.
+    expect(axios.post).toHaveBeenCalledWith('/api/posts', {
+      title: 'New Title',
+      description: 'New Description',
+      playerIds,
+    });
+  });
 });

@@ -47,6 +47,30 @@ module.exports = {
             nationality: 'NED',
             club: 'BAY',
           },
+          {
+            id: 234396,
+            name: 'A. Davies',
+            nationality: 'Canada',
+            club: 'BAY',
+          },
+          {
+            id: 222492,
+            name: 'L. Sané',
+            nationality: 'GER',
+            club: 'BAY',
+          },
+          {
+            id: 256790,
+            name: 'J. Musiala',
+            nationality: 'GER',
+            club: 'BAY',
+          },
+          {
+            id: 268421,
+            name: 'M. Tel',
+            nationality: 'FRA',
+            club: 'BAY',
+          },
         ],
       });
     }
@@ -113,17 +137,12 @@ module.exports = {
     }
     return null;
   }),
-  // post: jest.fn((url) => {
-  //   if (url === '/something') {
-  //     return Promise.resolve({
-  //       data: 'data',
-  //     });
-  //   }
-  //   if (url === '/something2') {
-  //     return Promise.resolve({
-  //       data: 'data2',
-  //     });
-  //   }
-  //   return null;
-  // }),
+  post: jest.fn((url) => {
+    if (url === '/api/posts') {
+      return Promise.resolve({
+        data: 'post created',
+      });
+    }
+    return null;
+  }),
 };
