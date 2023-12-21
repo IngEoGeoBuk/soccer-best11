@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { redirect, useRouter } from 'next/navigation';
 import axios from 'axios';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -39,7 +39,7 @@ function Create() {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    if (selectedPlayers.length < 11) {
+    if (selectedPlayers.filter((item) => item?.id).length < 11) {
       updateToastMessage('Please select 11 players.');
       document.getElementById('playerListSection')!.scrollIntoView();
       setTimeout(() => {
@@ -53,6 +53,10 @@ function Create() {
       });
     }
   };
+
+  useEffect(() => {
+    resetPost();
+  }, [resetPost]);
 
   return (
     <div className="p-5">
