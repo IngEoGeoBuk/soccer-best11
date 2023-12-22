@@ -36,7 +36,14 @@ jest.mock('next-auth/react', () => {
   };
 });
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // ✅ turns retries off
+      retry: false,
+    },
+  },
+});
 
 beforeAll(() => {
   queryClient.clear();

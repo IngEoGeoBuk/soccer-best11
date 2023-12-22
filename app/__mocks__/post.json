@@ -1,0 +1,88 @@
+{
+  "id": 8,
+  "userId": "clmkkuaeq0000rhoy6xif9zv5",
+  "title": "dfdf",
+  "description": "asdsad",
+  "createdAt": "2023-12-21T08:55:07.245Z",
+  "updatedAt": null,
+  "email": "you3667@vaultmicro.com",
+  "players": [
+    {
+      "postPlayerId": 78,
+      "id": 209658,
+      "name": "L. Goretzka",
+      "nationality": "GER",
+      "club": "BAY"
+    },
+    {
+      "postPlayerId": 79,
+      "id": 212622,
+      "name": "J. Kimmich",
+      "nationality": "GER",
+      "club": "BAY"
+    },
+    {
+      "postPlayerId": 80,
+      "id": 208722,
+      "name": "S. Mané",
+      "nationality": "Senegal",
+      "club": "BAY"
+    },
+    {
+      "postPlayerId": 81,
+      "id": 208333,
+      "name": "E. Can",
+      "nationality": "GER",
+      "club": "DOR"
+    },
+    {
+      "postPlayerId": 82,
+      "id": 252371,
+      "name": "J. Bellingham",
+      "nationality": "ENG",
+      "club": "DOR"
+    },
+    {
+      "postPlayerId": 83,
+      "id": 209889,
+      "name": "R. Guerreiro",
+      "nationality": "POR",
+      "club": "DOR"
+    },
+    {
+      "postPlayerId": 84,
+      "id": 188350,
+      "name": "M. Reus",
+      "nationality": "GER",
+      "club": "DOR"
+    },
+    {
+      "postPlayerId": 85,
+      "id": 202371,
+      "name": "T. Meunier",
+      "nationality": "Belgium",
+      "club": "DOR"
+    },
+    {
+      "postPlayerId": 86,
+      "id": 218339,
+      "name": "M. Dahoud",
+      "nationality": "GER",
+      "club": "DOR"
+    },
+    {
+      "postPlayerId": 87,
+      "id": 203486,
+      "name": "T. Hazard",
+      "nationality": "Belgium",
+      "club": "DOR"
+    },
+    {
+      "postPlayerId": 88,
+      "id": 112316,
+      "name": "20 J. Mathieu",
+      "nationality": "FRA",
+      "club": "POR"
+    }
+  ]
+}

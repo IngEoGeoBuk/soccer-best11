@@ -6,8 +6,6 @@ import Image from 'next/image';
 
 import { useSearchParams, redirect, useRouter } from 'next/navigation';
 
-import { keepPreviousData, useInfiniteQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useInView } from 'react-intersection-observer';
 
 import { useSession } from 'next-auth/react';
@@ -15,13 +13,7 @@ import AlertBox from '../components/common/alertBox';
 import PostSkeletonList from './components/postSkeletonList';
 import dateFormat from '../hook/dateFormat';
 import { ViewPostList } from '../types/Post';
-
-async function getPosts(nextLastId: number, type: string, search: string) {
-  const typeQuery = type ? `&type=${type}` : '';
-  const searchQuery = search ? `&search=${search}` : '';
-  const { data } = await axios.get(`/api/posts?id=${nextLastId}${typeQuery}${searchQuery}`);
-  return data;
-}
+import usePostsQuery from '../hook/usePostsQuery';
 
 function Home() {
   const searchParams = useSearchParams();
@@ -46,16 +38,7 @@ function Home() {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useInfiniteQuery({
-    queryKey: ['posts', { type }, { search }],
-    initialPageParam: 0,
-    queryFn: ({ pageParam }) => getPosts(pageParam, type, search),
-    getNextPageParam: (lastPage) => lastPage.nextLastId ?? undefined,
-    refetchOnWindowFocus: false,
-    refetchOnReconnect: true,
-    refetchOnMount: true,
-    placeholderData: keepPreviousData,
-  });
+  } = usePostsQuery(type, search);
 
   const [value, setValue] = useState<string>('');
   const handleSubmit = (event: any) => {
@@ -77,7 +60,7 @@ function Home() {
 
   if (status === 'pending') {
     return (
-      <div className="w-full">
+      <div className="w-full" data-testid="home-loading">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
           <PostSkeletonList />
         </div>
@@ -91,7 +74,7 @@ function Home() {
 
   if (status === 'success') {
     return (
-      <div className="w-full">
+      <div className="w-full" data-testid="home-success">
         <form onSubmit={handleSubmit} className="pt-5">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -101,6 +84,7 @@ function Home() {
             </div>
             <input
               type="search"
+              aria-label="search"
               id="default-search"
               className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search Mockups, Logos..."

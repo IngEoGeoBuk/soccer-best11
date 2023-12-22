@@ -45,7 +45,14 @@ jest.mock('next-auth/react', () => {
   };
 });
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // ✅ turns retries off
+      retry: false,
+    },
+  },
+});
 
 beforeEach(() => {
   queryClient.clear(); // Clear the query client before each test
@@ -53,11 +60,14 @@ beforeEach(() => {
 });
 
 describe('Header', () => {
+  // login result
   it('If you are logged in, you can check the logout text.', async () => {
     expect(
       screen.getByText('logout'),
     ).toBeInTheDocument();
   });
+
+  // // logout result
   // it('If you are not logged in, you can check the login text.', async () => {
   //   expect(
   //     screen.getByText('login'),
