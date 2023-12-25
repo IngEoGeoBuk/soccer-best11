@@ -43,7 +43,7 @@ function Index() {
 
   if (data) {
     return (
-      <>
+      <div data-testid="view-post">
         <div className="p-5">
           <div className="flex justify-between">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Title</h3>
@@ -78,7 +78,7 @@ function Index() {
             setShowModal={setShowModal}
           />
         )}
-      </>
+      </div>
     );
   }
 

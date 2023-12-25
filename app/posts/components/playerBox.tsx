@@ -123,6 +123,7 @@ function ViewPlayerBox({ player } : { player: Player }) {
     <button
       type="button"
       className="player-card cursor-default"
+      data-testid={`view-player-${player.id}`}
     >
       <Image
         src={`/images/club/${player.club}.png`}

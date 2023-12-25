@@ -20,7 +20,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
   const [showReply, setShowReply] = useState<number>(0);
 
   return (
-    <>
+    <div data-testid={`comment-${comment.id}`}>
       {comment.deletedAt
         ? <DeletedCommentItem />
         : (
@@ -43,6 +43,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
                 <div className="flex gap-4">
                   <button
                     type="button"
+                    data-testid={`modify-comment-${comment.id}`}
                     onClick={() => {
                       setShowModify(comment.id);
                     }}
@@ -55,6 +56,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
                   </button>
                   <button
                     type="button"
+                    data-testid={`delete-comment-${comment.id}`}
                     onClick={() => setShowModal(comment.id)}
                   >
                     <svg className="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
@@ -82,6 +84,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
                 <button
                   type="button"
                   className="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400"
+                  data-testid={`show-reply-${comment.id}`}
                   onClick={() => setShowReply(comment.id)}
                 >
                   <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
@@ -101,7 +104,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
       <ReplyBox
         replies={comment.replies}
       />
-    </>
+    </div>
   );
 }
 

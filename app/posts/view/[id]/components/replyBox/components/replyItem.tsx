@@ -35,6 +35,7 @@ function ReplyItem({ reply, setShowModal }: Interface) {
           <div className="flex gap-4">
             <button
               type="button"
+              data-testid={`modify-reply-${reply.id}`}
               onClick={() => setShowModify(reply.id)}
             >
               <svg className="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
@@ -45,6 +46,7 @@ function ReplyItem({ reply, setShowModal }: Interface) {
             </button>
             <button
               type="button"
+              data-testid={`delete-reply-${reply.id}`}
               onClick={() => setShowModal(reply.id)}
             >
               <svg className="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">

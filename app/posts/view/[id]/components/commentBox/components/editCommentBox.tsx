@@ -39,6 +39,7 @@ function EditCommentBox({ defaultValue, showModify, setShowModify } : Interface)
 
   return (
     <EditFrame
+      id={showModify}
       handleSubmit={handleSubmit}
       type="comment"
       value={value}

@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface Interface {
+  id: number;
   handleSubmit: (event: any) => void;
   type: string;
   value: string;
@@ -9,6 +10,7 @@ interface Interface {
 }
 
 function EditFrame({
+  id,
   handleSubmit,
   type,
   value,
@@ -16,7 +18,7 @@ function EditFrame({
   cancelFunc,
 } : Interface) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} data-testid={`edit-${type}-${id}-form`}>
       <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
         <div className="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
           <textarea
@@ -40,6 +42,7 @@ function EditFrame({
           <button
             type="button"
             className="btn-secondary"
+            data-testid={`edit-${type}-${id}-no-btn`}
             onClick={() => cancelFunc()}
           >
             Cancel

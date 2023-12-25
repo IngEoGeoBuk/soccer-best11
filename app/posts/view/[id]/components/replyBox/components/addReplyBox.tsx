@@ -31,7 +31,7 @@ function AddReplyBox({ showReply, setShowReply }: Interface) {
     addReplyMutation.mutate(value);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} data-testid={`add-reply-box-${showReply}`}>
       <div className="mb-4 lg:ml-12 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
         <div className="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
           <textarea

@@ -2,6 +2,9 @@ const posts = require('./posts.json');
 const BAY = require('./BAY.json');
 const MCI = require('./MCI.json');
 const LIV = require('./LIV.json');
+const post = require('./post/post.json');
+const comments = require('./post/comments.json');
+const likes = require('./post/likes.json');
 
 export {};
 
@@ -27,14 +30,19 @@ module.exports = {
         data: posts,
       });
     }
-    if (url === '/api/posts?id=0&type=my') {
+    if (url === '/api/posts/8') {
       return Promise.resolve({
-        data: posts.filter((item: any) => item.email === 'you3667@gmail.com'),
+        data: post,
       });
     }
-    if (url === '/api/posts?id=0&search=post1') {
+    if (url === '/api/posts/likes/8') {
       return Promise.resolve({
-        data: posts.filter((item: any) => item.title === 'post 1'),
+        data: likes,
+      });
+    }
+    if (url === '/api/posts/comments/8') {
+      return Promise.resolve({
+        data: comments,
       });
     }
     return null;

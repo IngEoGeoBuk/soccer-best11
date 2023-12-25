@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "userId": "clpgue4mh0000vcjg9k57h466",
+    "postId": 6,
+    "content": "comment 1",
+    "createdAt": "2023-12-25T12:31:17.731Z",
+    "updatedAt": null,
+    "deletedAt": null,
+    "user": {
+      "id": "clpgue4mh0000vcjg9k57h466",
+      "name": "강성우",
+      "email": "you3667@gmail.com",
+      "emailVerified": null,
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocKJP_8_zdi8WHxRNSHDePNI5TN3l-X2UnsWDn_9K-4W=s96-c",
+      "createdAt": "2023-11-27T11:45:10.890Z",
+      "updatedAt": "2023-11-27T11:45:10.890Z"
+    },
+    "replies": [
+      {
+        "id": 1,
+        "userId": "clpgue4mh0000vcjg9k57h466",
+        "postId": 6,
+        "commentId": 1,
+        "content": "reply 1",
+        "createdAt": "2023-12-25T12:32:03.475Z",
+        "updatedAt": null,
+        "user": {
+          "id": "clpgue4mh0000vcjg9k57h466",
+          "name": "강성우",
+          "email": "you3667@gmail.com",
+          "emailVerified": null,
+          "image": "https://lh3.googleusercontent.com/a/ACg8ocKJP_8_zdi8WHxRNSHDePNI5TN3l-X2UnsWDn_9K-4W=s96-c",
+          "createdAt": "2023-11-27T11:45:10.890Z",
+          "updatedAt": "2023-11-27T11:45:10.890Z"
+        },
+        "email": "you3667@gmail.com"
+      }
+    ],
+    "email": "you3667@gmail.com"
+  },
+  {
+    "id": 2,
+    "userId": "clqkwdrvp0000fpqeva3l5mkl",
+    "postId": 6,
+    "content": "comment 2",
+    "createdAt": "2023-12-25T12:31:46.661Z",
+    "updatedAt": null,
+    "deletedAt": null,
+    "user": {
+      "id": "clqkwdrvp0000fpqeva3l5mkl",
+      "name": "강성우",
+      "email": "you3667@vaultmicro.com",
+      "emailVerified": null,
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocK2DDbv4myKc_vRIPDJAfg4kkKfn7tr-cSDil4sLvpONw=s96-c",
+      "createdAt": "2023-12-25T12:31:40.646Z",
+      "updatedAt": "2023-12-25T12:31:40.646Z"
+    },
+    "replies": [],
+    "email": "you3667@vaultmicro.com"
+  },
+  {
+    "id": 3,
+    "userId": "clqkwdrvp0000fpqeva3l5mkl",
+    "postId": 6,
+    "content": "comment 3",
+    "createdAt": "2023-12-25T12:31:52.120Z",
+    "updatedAt": "2023-12-26T12:31:52.120Z",
+    "deletedAt": null,
+    "user": {
+      "id": "clqkwdrvp0000fpqeva3l5mkl",
+      "name": "강성우",
+      "email": "you3667@vaultmicro.com",
+      "emailVerified": null,
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocK2DDbv4myKc_vRIPDJAfg4kkKfn7tr-cSDil4sLvpONw=s96-c",
+      "createdAt": "2023-12-25T12:31:40.646Z",
+      "updatedAt": "2023-12-25T12:31:40.646Z"
+    },
+    "replies": [],
+    "email": "you3667@vaultmicro.com"
+  },
+  {
+    "id": 4,
+    "userId": "clpgue4mh0000vcjg9k57h466",
+    "postId": 6,
+    "content": "comment 1",
+    "createdAt": "2023-12-25T12:31:17.731Z",
+    "updatedAt": null,
+    "deletedAt": "2023-12-26T12:31:52.120Z",
+    "user": {
+      "id": "clpgue4mh0000vcjg9k57h466",
+      "name": "강성우",
+      "email": "you3667@gmail.com",
+      "emailVerified": null,
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocKJP_8_zdi8WHxRNSHDePNI5TN3l-X2UnsWDn_9K-4W=s96-c",
+      "createdAt": "2023-11-27T11:45:10.890Z",
+      "updatedAt": "2023-11-27T11:45:10.890Z"
+    },
+    "replies": [
+      {
+        "id": 2,
+        "userId": "clpgue4mh0000vcjg9k57h466",
+        "postId": 6,
+        "commentId": 4,
+        "content": "reply 2",
+        "createdAt": "2023-12-25T12:32:17.731Z",
+        "updatedAt": null,
+        "user": {
+          "id": "clpgue4mh0000vcjg9k57h466",
+          "name": "강성우",
+          "email": "you3667@gmail.com",
+          "emailVerified": null,
+          "image": "https://lh3.googleusercontent.com/a/ACg8ocKJP_8_zdi8WHxRNSHDePNI5TN3l-X2UnsWDn_9K-4W=s96-c",
+          "createdAt": "2023-11-27T11:45:10.890Z",
+          "updatedAt": "2023-11-27T11:45:10.890Z"
+        },
+        "email": "you3667@gmail.com"
+      }
+    ],
+    "email": "you3667@gmail.com"
+  }
+]

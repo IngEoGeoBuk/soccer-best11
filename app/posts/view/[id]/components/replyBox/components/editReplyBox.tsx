@@ -39,6 +39,7 @@ function EditReplyBox({ defaultValue, showModify, setShowModify } : Interface) {
 
   return (
     <EditFrame
+      id={showModify}
       handleSubmit={handleSubmit}
       type="reply"
       value={value}
