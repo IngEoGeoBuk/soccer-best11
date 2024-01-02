@@ -4,10 +4,10 @@ import { useSession } from 'next-auth/react';
 import dateFormat from '@/app/hook/dateFormat';
 
 import { ViewComment } from '@/app/types/Comment';
-import ReplyBox from '../../replyBox';
 import EditCommentBox from './editCommentBox';
-import AddReplyBox from '../../replyBox/components/addReplyBox';
+import AddReplyBox from '../../repliesBox/components/addReplyBox';
 import DeletedCommentItem from './deletedCommentItem';
+import RepliesBox from '../../repliesBox';
 
 interface Interface {
   comment: ViewComment;
@@ -18,6 +18,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
   const email = useSession().data?.user?.email;
   const [showModify, setShowModify] = useState<number>(0);
   const [showReply, setShowReply] = useState<number>(0);
+  const [showReplies, setShowReplies] = useState<boolean>(false);
 
   return (
     <div data-testid={`comment-${comment.id}`}>
@@ -84,26 +85,45 @@ function CommentItem({ comment, setShowModal }: Interface) {
                 <button
                   type="button"
                   className="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400"
-                  data-testid={`show-reply-${comment.id}`}
                   onClick={() => setShowReply(comment.id)}
                 >
                   <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                  Reply
+                  Add Reply
                 </button>
               </div>
               )}
+              {comment.repliesCount !== 0 && (
+                <div className="flex items-center mt-2 space-x-4">
+                  <button
+                    type="button"
+                    className="flex items-center text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 rounded"
+                    onClick={() => setShowReplies(!showReplies)}
+                  >
+                    <svg className="mr-1 w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 10">
+                      {showReplies
+                        ? <path d="M15.434 1.235A2 2 0 0 0 13.586 0H2.414A2 2 0 0 0 1 3.414L6.586 9a2 2 0 0 0 2.828 0L15 3.414a2 2 0 0 0 .434-2.179Z" />
+                        : <path d="M9.207 1A2 2 0 0 0 6.38 1L.793 6.586A2 2 0 0 0 2.207 10H13.38a2 2 0 0 0 1.414-3.414L9.207 1Z" />}
+                    </svg>
+                    {comment.repliesCount}
+                    {' '}
+                    replies
+                  </button>
+                </div>
+              )}
             </article>
             {showReply === comment.id && (
-            <AddReplyBox
-              showReply={showReply}
-              setShowReply={setShowReply}
-            />
+              <AddReplyBox
+                showReply={showReply}
+                setShowReply={setShowReply}
+              />
             )}
           </>
         )}
-      <ReplyBox
-        replies={comment.replies}
-      />
+      {comment.repliesCount !== 0 && showReplies && (
+        <RepliesBox
+          commentId={comment.id}
+        />
+      )}
     </div>
   );
 }
