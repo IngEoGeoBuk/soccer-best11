@@ -75,7 +75,10 @@ function Index() {
 
   if (data) {
     return (
-      <div className="w-full flex flex-col items-center">
+      <div
+        data-testid={`vote-box-${id}`}
+        className="w-full flex flex-col items-center"
+      >
         <div className="flex justify-center gap-5">
           <button
             type="button"
@@ -96,7 +99,8 @@ function Index() {
               <div className="ml-3 text-sm font-normal">{showToast}</div>
             </div>
           )
-          : <div style={{ height: '56px' }} />}
+          : <div style={{ height: '6px' }} />}
+        <br />
       </div>
     );
   }

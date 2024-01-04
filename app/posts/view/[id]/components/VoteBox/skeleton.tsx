@@ -3,10 +3,9 @@ import React from 'react';
 function Skeleton() {
   return (
     <>
-      <div className="flex justify-center gap-5">
-        <button
-          type="button"
-          className="btn-primary"
+      <div className="flex justify-center gap-5 animate-pulse">
+        <div
+          className="btn-primary cursor-default"
         >
           <div className="flex flex-col justify-center items-center gap-1">
             <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -14,7 +13,7 @@ function Skeleton() {
             </svg>
             <p>0</p>
           </div>
-        </button>
+        </div>
       </div>
       <div style={{ height: '56px' }} />
     </>

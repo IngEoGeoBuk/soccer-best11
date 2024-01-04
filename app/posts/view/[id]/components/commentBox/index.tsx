@@ -43,7 +43,7 @@ function Index() {
 
   if (status === 'success' && data) {
     return (
-      <>
+      <div data-testid={`comment-box-${id}`}>
         {email && <AddCommentBox />}
         {data.pages.map((page) => (
           <React.Fragment key={page.nextLastId ?? 0}>
@@ -79,7 +79,7 @@ function Index() {
             setShowModal={setShowModal}
           />
         )}
-      </>
+      </div>
     );
   }
 
