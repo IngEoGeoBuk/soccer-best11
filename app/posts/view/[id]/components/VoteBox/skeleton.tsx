@@ -2,7 +2,7 @@ import React from 'react';
 
 function Skeleton() {
   return (
-    <>
+    <div data-testid="vote-box-loading">
       <div className="flex justify-center gap-5 animate-pulse">
         <div
           className="btn-primary cursor-default"
@@ -16,8 +16,7 @@ function Skeleton() {
         </div>
       </div>
       <div style={{ height: '56px' }} />
-    </>
-
+    </div>
   );
 }
 

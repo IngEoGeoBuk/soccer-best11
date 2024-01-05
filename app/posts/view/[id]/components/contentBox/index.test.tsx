@@ -65,7 +65,6 @@ describe('View post', () => {
       data: post,
     }));
     render(<QueryClientProvider client={queryClient}><ContentBox /></QueryClientProvider>);
-    screen.debug(undefined, Infinity);
     expect(screen.getByText('post3')).toBeInTheDocument();
     expect(screen.getByText('post3 description')).toBeInTheDocument();
     expect(screen.getByTestId('view-player-209658')).toHaveTextContent('L. Goretzka');

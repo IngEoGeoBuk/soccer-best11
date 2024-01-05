@@ -20,7 +20,7 @@ function Index() {
   const [showToast, setShowToast] = useState<string>('');
 
   const {
-    isLoading, error, data,
+    status, data,
   } = useLikeQuery(Number(id));
 
   const postLike = async () => axios.post('/api/likes', { postId: +id });
@@ -50,17 +50,17 @@ function Index() {
     }
   };
 
-  if (isLoading) {
+  if (status === 'pending') {
     return (
       <Skeleton />
     );
   }
 
-  if (error) {
+  if (status === 'error') {
     return <AlertBox />;
   }
 
-  if (data) {
+  if (status === 'success' && data) {
     return (
       <div
         data-testid={`vote-box-${id}`}
@@ -68,12 +68,13 @@ function Index() {
       >
         <div className="flex justify-center gap-5">
           <button
+            data-testid="vote-btn"
             type="button"
             className="btn-primary"
             onClick={async () => clickLike()}
           >
             <div className="flex flex-col justify-center items-center gap-1">
-              <svg className={`h-8 w-8 ${data?.clicked ? 'text-yellow-500' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg id="check-voted" className={`h-8 w-8 ${data?.clicked ? 'text-yellow-500' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
               </svg>
               <p>{String(data?.like)}</p>
