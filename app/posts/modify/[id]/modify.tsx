@@ -6,19 +6,15 @@ import { useSession } from 'next-auth/react';
 
 import { useParams, redirect, useRouter } from 'next/navigation';
 import {
-  keepPreviousData, useMutation, useQuery, useQueryClient,
+  useMutation, useQueryClient,
 } from '@tanstack/react-query';
 import AlertBox from '@/app/components/common/alertBox';
-import { UpdatePost, ViewPlayer, ViewPost } from '@/app/types/Post';
+import { UpdatePost, ViewPlayer } from '@/app/types/Post';
 import usePostStore from '@/app/store/post';
+import usePostQuery from '@/app/hook/useQuery/usePostQuery';
 import PostDetailSkeleton from '../../components/skeleton';
 import SelectPlayerSection from '../../components/selectPlayerSection';
 import PlayerListSection from '../../components/playerListSection';
-
-async function getPost(id: string) {
-  const { data } = await axios.get(`/api/posts/${id}`);
-  return data;
-}
 
 function Index() {
   const { id } = useParams();
@@ -38,12 +34,11 @@ function Index() {
     resetPost,
   } = usePostStore((store) => store);
 
-  const { isLoading, error, data } = useQuery<ViewPost>({
-    queryKey: ['posts', id],
-    queryFn: () => getPost(id as string),
-    placeholderData: keepPreviousData,
-    staleTime: 1000 * 60 * 1,
-  });
+  const {
+    isLoading,
+    error,
+    data,
+  } = usePostQuery(id as string);
 
   const queryClient = useQueryClient();
   const updatePost = async (post: UpdatePost) => axios.put(`/api/posts/${id}`, post);

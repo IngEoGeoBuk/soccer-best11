@@ -1,33 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import axios from 'axios';
-import {
-  keepPreviousData,
-  useQuery,
-} from '@tanstack/react-query';
-import { Player } from '@prisma/client';
 import AlertBox from '@/app/components/common/alertBox';
 import ToastBox from '@/app/components/common/toastBox';
 import usePostStore from '@/app/store/post';
+import Club from '@/app/constants/Club';
+import National from '@/app/constants/National';
+import usePlayersQuery from '@/app/hook/useQuery/usePlayersQuery';
 import { ListPlayerBox } from './playerBox';
 import PlayerListSectionSkeleton from './playerListSectionSkeleton';
-
-const National = ['ENG', 'ESP', 'ITA', 'GER', 'NED', 'FRA', 'POR'];
-const Club = [
-  ['MCI', 'LIV', 'ARS', 'CHE', 'MUN'],
-  ['MAD', 'FCB', 'ATM'],
-  ['INT', 'JUV', 'MIL'],
-  ['BAY', 'DOR', 'RBL'],
-  ['AJA', 'PSV', 'FEY'],
-  ['PSG', 'LYO', 'OLM'],
-  ['POR', 'SLB', 'SLI'],
-];
-
-async function getPlayersByClub(club: string) {
-  const { data } = await axios.get(`/api/players?club=${club}`);
-  return data;
-}
 
 function PlayerListSection() {
   const { toastMessage, updateToastMessage } = usePostStore((store) => store);
@@ -37,16 +18,7 @@ function PlayerListSection() {
 
   const {
     data, error, status, isFetching,
-  } = useQuery<Player[]>({
-    queryKey: ['players', Club[national][club]],
-    queryFn: () => getPlayersByClub(Club[national][club]),
-    refetchOnWindowFocus: false,
-    refetchOnReconnect: true,
-    refetchOnMount: true,
-    staleTime: 1000 * 60 * 5,
-    gcTime: 1000 * 60 * 8,
-    placeholderData: keepPreviousData,
-  });
+  } = usePlayersQuery(national, club);
 
   if (status === 'pending' || isFetching) {
     return <PlayerListSectionSkeleton />;

@@ -6,21 +6,12 @@ import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import {
-  useQuery, useMutation, useQueryClient, keepPreviousData,
+  useMutation, useQueryClient,
 } from '@tanstack/react-query';
 import axios from 'axios';
 import AlertBox from '@/app/components/common/alertBox';
+import useLikeQuery from '@/app/hook/useQuery/useLikeQuery';
 import Skeleton from './skeleton';
-
-interface Vote {
-  like: number;
-  clicked: boolean;
-}
-
-async function getLikes(id: string) {
-  const { data } = await axios.get(`/api/posts/likes/${id}`);
-  return data;
-}
 
 function Index() {
   const { id } = useParams();
@@ -28,13 +19,9 @@ function Index() {
   const { data: session } = useSession();
   const [showToast, setShowToast] = useState<string>('');
 
-  // like 관련 코드
-  const { isLoading, error, data } = useQuery<Vote>({
-    queryKey: ['like', { postId: +id }],
-    queryFn: () => getLikes(id as string),
-    placeholderData: keepPreviousData,
-    staleTime: 1000 * 30,
-  });
+  const {
+    isLoading, error, data,
+  } = useLikeQuery(Number(id));
 
   const postLike = async () => axios.post('/api/likes', { postId: +id });
   const postLikeMutation = useMutation({

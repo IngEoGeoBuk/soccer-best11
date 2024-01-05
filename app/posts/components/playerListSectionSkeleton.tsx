@@ -1,16 +1,7 @@
+import Club from '@/app/constants/Club';
+import National from '@/app/constants/National';
 import React from 'react';
 import { SelectedPlayerBox } from './playerBox';
-
-const National = ['ENG', 'ESP', 'ITA', 'GER', 'NED', 'FRA', 'POR'];
-const Club = [
-  ['MCI', 'LIV', 'ARS', 'CHE', 'MUN'],
-  ['MAD', 'FCB', 'ATM'],
-  ['INT', 'JUV', 'MIL', 'NAP', 'ROM'],
-  ['BAY', 'DOR', 'RBL'],
-  ['AJA', 'PSV', 'FEY'],
-  ['PSG', 'LYO', 'OLM'],
-  ['POR', 'SLB', 'SLI'],
-];
 
 function PlayerListSectionSkeleton() {
   return (

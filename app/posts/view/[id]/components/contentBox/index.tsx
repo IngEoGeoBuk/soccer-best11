@@ -1,30 +1,23 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import PostDetailSkeleton from '@/app/posts/components/skeleton';
 import AlertBox from '@/app/components/common/alertBox';
 import dateFormat from '@/app/hook/dateFormat';
-import { useQuery } from '@tanstack/react-query';
 import { useSession } from 'next-auth/react';
 import { useParams } from 'next/navigation';
-import { ViewPost } from '@/app/types/Post';
 import Link from 'next/link';
+import usePostQuery from '@/app/hook/useQuery/usePostQuery';
 import ViewPlayersSection from './viewPlayersSection';
 import Modal from './modal';
-
-async function getPost(id: string) {
-  const { data } = await axios.get(`/api/posts/${id}`);
-  return data;
-}
 
 function Index() {
   const { id } = useParams();
   const email = useSession().data?.user?.email;
 
-  const { isLoading, error, data } = useQuery<ViewPost>({
-    queryKey: ['posts', id],
-    queryFn: () => getPost(id as string),
-    staleTime: 1000 * 60 * 1,
-  });
+  const {
+    isLoading,
+    error,
+    data,
+  } = usePostQuery(id as string);
 
   const [showModal, setShowModal] = useState(false);
 

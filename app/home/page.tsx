@@ -13,7 +13,7 @@ import AlertBox from '../components/common/alertBox';
 import PostSkeletonList from './components/postSkeletonList';
 import dateFormat from '../hook/dateFormat';
 import { ViewPostList } from '../types/Post';
-import usePostsQuery from '../hook/usePostsQuery';
+import usePostsQuery from '../hook/useQuery/usePostsQuery';
 
 function Home() {
   const searchParams = useSearchParams();

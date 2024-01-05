@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { ViewReply } from '@/app/types/Reply';
 
 import AlertBox from '@/app/components/common/alertBox';
-import useRepliesQuery from '@/app/hook/useRepliesQuery';
 import { useParams } from 'next/navigation';
+import useRepliesQuery from '@/app/hook/useQuery/useRepliesQuery';
 import Modal from './components/modal';
 import ReplyItem from './components/replyItem';
 import Skeleton from './components/skeleton';
