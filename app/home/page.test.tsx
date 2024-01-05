@@ -5,10 +5,10 @@ import 'intersection-observer';
 import { render, screen } from '@testing-library/react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import Home from './page';
-import usePostsQuery from '../hook/usePostsQuery';
 import posts from '../__mocks__/posts.json';
 import nextAuthData from '../utils/jest/nextAuthData';
 import queryClient from '../utils/jest/queryClient';
+import usePostsQuery from '../hook/useQuery/usePostsQuery';
 
 jest.mock('next/navigation', () => ({
   useRouter() {
@@ -36,7 +36,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUseUsersQuery = usePostsQuery as jest.Mock<any>;
-jest.mock('../hook/usePostsQuery');
+jest.mock('../hook/useQuery/usePostsQuery');
 
 beforeAll(() => {
   queryClient.clear();

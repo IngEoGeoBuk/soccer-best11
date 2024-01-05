@@ -14,22 +14,21 @@ function Index() {
   const email = useSession().data?.user?.email;
 
   const {
-    isLoading,
-    error,
+    status,
     data,
   } = usePostQuery(id as string);
 
   const [showModal, setShowModal] = useState(false);
 
-  if (isLoading) {
+  if (status === 'pending') {
     return <PostDetailSkeleton />;
   }
 
-  if (error) {
-    return <AlertBox />;
+  if (status === 'error') {
+    return <AlertBox data-testid="content-box-error" />;
   }
 
-  if (data) {
+  if (status === 'success' && data) {
     return (
       <div data-testid={`content-box-${id}`}>
         <div className="flex justify-between">
@@ -49,6 +48,7 @@ function Index() {
         <div className="text-right">
           <Link href={`/posts/modify/${id}`} className="btn-secondary">modify</Link>
           <button
+            data-testid="delete-post-btn"
             className="btn-primary"
             type="button"
             onClick={() => setShowModal(true)}
