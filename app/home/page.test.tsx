@@ -3,10 +3,12 @@ import '@testing-library/jest-dom';
 import React from 'react';
 import 'intersection-observer';
 import { render, screen } from '@testing-library/react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
 import Home from './page';
 import usePostsQuery from '../hook/usePostsQuery';
 import posts from '../__mocks__/posts.json';
+import nextAuthData from '../utils/jest/nextAuthData';
+import queryClient from '../utils/jest/queryClient';
 
 jest.mock('next/navigation', () => ({
   useRouter() {
@@ -29,27 +31,8 @@ jest.mock('next-auth/react', () => {
   return {
     __esModule: true,
     ...originalModule,
-    useSession: jest.fn(() => ({
-      data: {
-        expires: new Date(Date.now() + 2 * 86400).toISOString(),
-        user: {
-          name: '강성우',
-          email: 'you3667@gmail.com',
-          image: 'https://lh3.googleusercontent.com/a/ACg8ocKJP_8_zdi8WHxRNSHDePNI5TN3l-X2UnsWDn_9K-4W=s96-c',
-        },
-      },
-      status: 'authenticated',
-    })),
+    useSession: jest.fn(() => (nextAuthData)),
   };
-});
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      // ✅ turns retries off
-      retry: false,
-    },
-  },
 });
 
 const mockedUseUsersQuery = usePostsQuery as jest.Mock<any>;

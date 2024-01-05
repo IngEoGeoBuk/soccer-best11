@@ -2,8 +2,10 @@ import '@testing-library/jest-dom';
 import React from 'react';
 import axios from 'axios';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
 import userEvent from '@testing-library/user-event';
+import nextAuthData from '@/app/utils/jest/nextAuthData';
+import queryClient from '@/app/utils/jest/queryClient';
 import Create from './write';
 
 jest.mock('next/navigation', () => ({
@@ -22,27 +24,8 @@ jest.mock('next-auth/react', () => {
   return {
     __esModule: true,
     ...originalModule,
-    useSession: jest.fn(() => ({
-      data: {
-        expires: new Date(Date.now() + 2 * 86400).toISOString(),
-        user: {
-          name: '강성우',
-          email: 'you3667@vaultmicro.com',
-          image: 'https://lh3.googleusercontent.com/a/ACg8ocK2DDbv4myKc_vRIPDJAfg4kkKfn7tr-cSDil4sLvpONw=s96-c',
-        },
-      },
-      status: 'authenticated',
-    })),
+    useSession: jest.fn(() => (nextAuthData)),
   };
-});
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      // ✅ turns retries off
-      retry: false,
-    },
-  },
 });
 
 beforeAll(() => {
