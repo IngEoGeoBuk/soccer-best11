@@ -8,10 +8,10 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import nextAuthData from '@/app/utils/jest/nextAuthData';
 import queryClient from '@/app/utils/jest/queryClient';
 import useLikeQuery from '@/app/hook/useQuery/useLikeQuery';
-import VoteBox from '.';
 
 import noLike from '../../../../../__mocks__/post/likes_no.json';
 import yesLike from '../../../../../__mocks__/post/likes.json';
+import VoteBox from '.';
 
 jest.mock('next/navigation', () => ({
   useParams() {

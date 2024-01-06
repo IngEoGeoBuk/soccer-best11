@@ -95,6 +95,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
               {comment.repliesCount !== 0 && (
                 <div className="flex items-center mt-2 space-x-4">
                   <button
+                    data-testid={`show-replies-${comment.id}`}
                     type="button"
                     className="flex items-center text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 rounded"
                     onClick={() => setShowReplies(!showReplies)}

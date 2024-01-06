@@ -16,28 +16,8 @@
       "createdAt": "2023-11-27T11:45:10.890Z",
       "updatedAt": "2023-11-27T11:45:10.890Z"
     },
-    "replies": [
-      {
-        "id": 1,
-        "userId": "clpgue4mh0000vcjg9k57h466",
-        "postId": 6,
-        "commentId": 1,
-        "content": "reply 1",
-        "createdAt": "2023-12-25T12:32:03.475Z",
-        "updatedAt": null,
-        "user": {
-          "id": "clpgue4mh0000vcjg9k57h466",
-          "name": "강성우",
-          "email": "you3667@gmail.com",
-          "emailVerified": null,
-          "image": "https://lh3.googleusercontent.com/a/ACg8ocKJP_8_zdi8WHxRNSHDePNI5TN3l-X2UnsWDn_9K-4W=s96-c",
-          "createdAt": "2023-11-27T11:45:10.890Z",
-          "updatedAt": "2023-11-27T11:45:10.890Z"
-        },
-        "email": "you3667@gmail.com"
-      }
-    ],
-    "email": "you3667@gmail.com"
+    "email": "you3667@gmail.com",
+    "repliesCount": 8
   },
   {
     "id": 2,
@@ -56,8 +36,8 @@
       "createdAt": "2023-12-25T12:31:40.646Z",
       "updatedAt": "2023-12-25T12:31:40.646Z"
     },
-    "replies": [],
-    "email": "you3667@vaultmicro.com"
+    "email": "you3667@vaultmicro.com",
+    "repliesCount": 0
   },
   {
     "id": 3,
@@ -76,8 +56,8 @@
       "createdAt": "2023-12-25T12:31:40.646Z",
       "updatedAt": "2023-12-25T12:31:40.646Z"
     },
-    "replies": [],
-    "email": "you3667@vaultmicro.com"
+    "email": "you3667@vaultmicro.com",
+    "repliesCount": 0
   },
   {
     "id": 4,
@@ -96,27 +76,7 @@
       "createdAt": "2023-11-27T11:45:10.890Z",
       "updatedAt": "2023-11-27T11:45:10.890Z"
     },
-    "replies": [
-      {
-        "id": 2,
-        "userId": "clpgue4mh0000vcjg9k57h466",
-        "postId": 6,
-        "commentId": 4,
-        "content": "reply 2",
-        "createdAt": "2023-12-25T12:32:17.731Z",
-        "updatedAt": null,
-        "user": {
-          "id": "clpgue4mh0000vcjg9k57h466",
-          "name": "강성우",
-          "email": "you3667@gmail.com",
-          "emailVerified": null,
-          "image": "https://lh3.googleusercontent.com/a/ACg8ocKJP_8_zdi8WHxRNSHDePNI5TN3l-X2UnsWDn_9K-4W=s96-c",
-          "createdAt": "2023-11-27T11:45:10.890Z",
-          "updatedAt": "2023-11-27T11:45:10.890Z"
-        },
-        "email": "you3667@gmail.com"
-      }
-    ],
-    "email": "you3667@gmail.com"
+    "email": "you3667@gmail.com",
+    "repliesCount": 2
   }
 ]
