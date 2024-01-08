@@ -6,7 +6,7 @@ import { useSession } from 'next-auth/react';
 import AlertBox from '@/app/components/common/alertBox';
 import { useInView } from 'react-intersection-observer';
 import { ViewComment } from '@/app/types/Comment';
-import useCommentsQuery from '@/app/hook/useQuery/useCommentsQuery';
+import useCommentsQuery from '@/app/hooks/useQuery/useCommentsQuery';
 import AddCommentBox from './components/addCommentBox';
 import CommentItem from './components/commentItem';
 import Modal from './components/modal';
@@ -24,7 +24,7 @@ function Index() {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useCommentsQuery(id as string);
+  } = useCommentsQuery(+id);
 
   useEffect(() => {
     if (inView) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { useSession } from 'next-auth/react';
-import dateFormat from '@/app/hook/dateFormat';
+import dateFormat from '@/app/utils/dateFormat';
 
 import { ViewComment } from '@/app/types/Comment';
 import EditCommentBox from './editCommentBox';

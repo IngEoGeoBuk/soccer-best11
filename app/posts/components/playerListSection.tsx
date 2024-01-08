@@ -6,7 +6,7 @@ import ToastBox from '@/app/components/common/toastBox';
 import usePostStore from '@/app/store/post';
 import Club from '@/app/constants/Club';
 import National from '@/app/constants/National';
-import usePlayersQuery from '@/app/hook/useQuery/usePlayersQuery';
+import usePlayersQuery from '@/app/hooks/useQuery/usePlayersQuery';
 import { ListPlayerBox } from './playerBox';
 import PlayerListSectionSkeleton from './playerListSectionSkeleton';
 

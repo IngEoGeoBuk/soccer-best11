@@ -11,7 +11,7 @@ import {
 import AlertBox from '@/app/components/common/alertBox';
 import { UpdatePost, ViewPlayer } from '@/app/types/Post';
 import usePostStore from '@/app/store/post';
-import usePostQuery from '@/app/hook/useQuery/usePostQuery';
+import usePostQuery from '@/app/hooks/useQuery/usePostQuery';
 import PostDetailSkeleton from '../../components/skeleton';
 import SelectPlayerSection from '../../components/selectPlayerSection';
 import PlayerListSection from '../../components/playerListSection';
@@ -19,13 +19,6 @@ import PlayerListSection from '../../components/playerListSection';
 function Index() {
   const { id } = useParams();
   const router = useRouter();
-
-  const { data: session } = useSession({
-    required: true,
-    onUnauthenticated() {
-      redirect('/signIn');
-    },
-  });
 
   const {
     selectedPlayers,
@@ -38,14 +31,21 @@ function Index() {
     isLoading,
     error,
     data,
-  } = usePostQuery(id as string);
+  } = usePostQuery(+id);
+
+  const { data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      redirect('/signIn');
+    },
+  });
 
   const queryClient = useQueryClient();
   const updatePost = async (post: UpdatePost) => axios.put(`/api/posts/${id}`, post);
   const updatePostMutation = useMutation({
     mutationFn: updatePost,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['posts', id] });
+      queryClient.invalidateQueries({ queryKey: ['posts', +id] });
       resetPost();
       router.push(`/posts/view/${id}`);
     },
@@ -54,9 +54,9 @@ function Index() {
     },
   });
 
-  const [title, setTitle] = useState<string>(data?.title!);
-  const [description, setDescription] = useState<string>(data?.description!);
-  const [initialSelectedPlayers, setInitialSelectedPlayers] = useState<ViewPlayer[]>([]);
+  const [title, setTitle] = useState<string>(data!.title);
+  const [description, setDescription] = useState<string>(data!.description);
+  const [initialSelectedPlayers] = useState<ViewPlayer[]>(data!.players);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -86,10 +86,9 @@ function Index() {
 
   useEffect(() => {
     if (data?.players) {
-      setInitialSelectedPlayers(data.players);
       updateSelectedPlayers(data.players);
     }
-  }, [data?.players, updateSelectedPlayers]);
+  }, [data, updateSelectedPlayers]);
 
   if (isLoading) {
     return <PostDetailSkeleton />;
@@ -99,7 +98,7 @@ function Index() {
     return <AlertBox />;
   }
 
-  if (session?.user?.email !== data?.email) {
+  if (session?.user!.email && session.user.email !== data!.email) {
     // 다른 사람 게시글 수정 들어갈 경우 로그인 페이지로 이동시키기.
     router.push('/signIn');
   }

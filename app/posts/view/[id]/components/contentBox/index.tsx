@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PostDetailSkeleton from '@/app/posts/components/skeleton';
 import AlertBox from '@/app/components/common/alertBox';
-import dateFormat from '@/app/hook/dateFormat';
+import dateFormat from '@/app/utils/dateFormat';
 import { useSession } from 'next-auth/react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import usePostQuery from '@/app/hook/useQuery/usePostQuery';
+import usePostQuery from '@/app/hooks/useQuery/usePostQuery';
 import ViewPlayersSection from './viewPlayersSection';
 import Modal from './modal';
 
@@ -16,7 +16,7 @@ function Index() {
   const {
     status,
     data,
-  } = usePostQuery(id as string);
+  } = usePostQuery(+id);
 
   const [showModal, setShowModal] = useState(false);
 

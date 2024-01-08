@@ -16,7 +16,7 @@ function Modal({ setShowModal }: Interface) {
   const deletePostMutation = useMutation({
     mutationFn: deletePost,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['posts', id] });
+      queryClient.invalidateQueries({ queryKey: ['posts', +id] });
       router.push('/');
     },
     onError: (error: Error) => {

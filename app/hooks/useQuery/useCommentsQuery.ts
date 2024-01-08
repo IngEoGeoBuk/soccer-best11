@@ -1,14 +1,9 @@
+import getComments from '@/app/utils/getComments';
 import { keepPreviousData, useInfiniteQuery } from '@tanstack/react-query';
-import axios from 'axios';
 
-async function getComments(id: string, nextLastId: number) {
-  const { data } = await axios.get(`/api/posts/comments/${id}?commentId=${nextLastId}`);
-  return data;
-}
-
-const useCommentsQuery = (id: string) => {
+const useCommentsQuery = (id: number) => {
   const query = useInfiniteQuery({
-    queryKey: ['comments', { postId: +id }],
+    queryKey: ['comments', { postId: id }],
     initialPageParam: 0,
     queryFn: ({ pageParam }) => getComments(id, pageParam),
     getNextPageParam: (lastPage) => lastPage.nextLastId ?? undefined,

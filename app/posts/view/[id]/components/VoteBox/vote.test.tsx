@@ -7,7 +7,7 @@ import { render, screen } from '@testing-library/react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import nextAuthData from '@/app/utils/jest/nextAuthData';
 import queryClient from '@/app/utils/jest/queryClient';
-import useLikeQuery from '@/app/hook/useQuery/useLikeQuery';
+import useLikeQuery from '@/app/hooks/useQuery/useLikeQuery';
 
 import noLike from '../../../../../__mocks__/post/likes_no.json';
 import yesLike from '../../../../../__mocks__/post/likes.json';
@@ -39,7 +39,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUseLikeQuery = useLikeQuery as jest.Mock<any>;
-jest.mock('../../../../../hook/useQuery/useLikeQuery');
+jest.mock('../../../../../hooks/useQuery/useLikeQuery');
 
 beforeAll(() => {
   queryClient.clear();

@@ -1,12 +1,7 @@
 import Club from '@/app/constants/Club';
+import getPlayersByClub from '@/app/utils/getPlayers';
 import { Player } from '@prisma/client';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-
-async function getPlayersByClub(club: string) {
-  const { data } = await axios.get(`/api/players?club=${club}`);
-  return data;
-}
 
 const usePlayersQuery = (national: number, club: number) => {
   const query = useQuery<Player[]>({

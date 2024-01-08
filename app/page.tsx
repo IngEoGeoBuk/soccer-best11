@@ -1,15 +1,24 @@
 import React from 'react';
-import Home from './home/page';
+import { QueryClient, HydrationBoundary, dehydrate } from '@tanstack/react-query';
+import getPosts from './utils/getPosts';
+import Home from './home/home';
 
 export const metadata = {
   title: 'Soccer Best11',
   description: 'Generate your best team!',
 };
 
-const page = () => (
-  <div>
-    <Home />
-  </div>
-);
+export default async function HomePage() {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchInfiniteQuery({
+    queryKey: ['posts', { type: '' }, { search: '' }],
+    queryFn: ({ pageParam }) => getPosts(pageParam, '', ''),
+    initialPageParam: 0,
+  });
 
-export default page;
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <Home />
+    </HydrationBoundary>
+  );
+}

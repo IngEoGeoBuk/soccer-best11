@@ -4,7 +4,7 @@ import React from 'react';
 import { redirect } from 'next/navigation';
 import { useSession, signIn } from 'next-auth/react';
 
-function Index() {
+function SignIn() {
   const { data: session } = useSession();
   if (session) {
     redirect('/');
@@ -35,4 +35,4 @@ function Index() {
   }
 }
 
-export default Index;
+export default SignIn;

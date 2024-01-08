@@ -1,16 +1,11 @@
 import { ViewPost } from '@/app/types/Post';
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import getPost from '@/app/utils/getPost';
 
-async function getPost(id: string) {
-  const { data } = await axios.get(`/api/posts/${id}`);
-  return data;
-}
-
-const usePostQuery = (id: string) => {
+const usePostQuery = (id: number) => {
   const query = useQuery<ViewPost>({
     queryKey: ['posts', id],
-    queryFn: () => getPost(id as string),
+    queryFn: () => getPost(id),
     staleTime: 1000 * 60 * 1,
   });
   return query;

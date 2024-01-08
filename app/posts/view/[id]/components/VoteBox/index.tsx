@@ -10,7 +10,7 @@ import {
 } from '@tanstack/react-query';
 import axios from 'axios';
 import AlertBox from '@/app/components/common/alertBox';
-import useLikeQuery from '@/app/hook/useQuery/useLikeQuery';
+import useLikeQuery from '@/app/hooks/useQuery/useLikeQuery';
 import Skeleton from './skeleton';
 
 function Index() {
@@ -51,9 +51,7 @@ function Index() {
   };
 
   if (status === 'pending') {
-    return (
-      <Skeleton />
-    );
+    return <Skeleton />;
   }
 
   if (status === 'error') {

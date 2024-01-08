@@ -6,9 +6,9 @@ async function getRepliesByCommentId(id: number, nextLastId: number) {
   return data;
 }
 
-const useRepliesQuery = (postId: string, commentId: number) => {
+const useRepliesQuery = (postId: number, commentId: number) => {
   const query = useInfiniteQuery({
-    queryKey: ['comments', { postId: +postId, commentId }],
+    queryKey: ['comments', { postId, commentId }],
     initialPageParam: 0,
     queryFn: ({ pageParam }) => getRepliesByCommentId(commentId, pageParam),
     getNextPageParam: (lastPage) => lastPage.nextLastId ?? undefined,

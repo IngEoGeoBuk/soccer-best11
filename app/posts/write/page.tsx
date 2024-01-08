@@ -1,4 +1,8 @@
 import React from 'react';
+import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
+import Club from '@/app/constants/Club';
+import getPlayersByClub from '@/app/utils/getPlayers';
+import { Player } from '@prisma/client';
 import Write from './write';
 
 export const metadata = {
@@ -6,10 +10,15 @@ export const metadata = {
   description: 'Generate your best team!',
 };
 
-const page = () => (
-  <div>
-    <Write />
-  </div>
-);
-
-export default page;
+export default async function WritePage() {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery<Player[]>({
+    queryKey: ['players', Club[3][0]],
+    queryFn: () => getPlayersByClub(Club[3][0]),
+  });
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <Write />
+    </HydrationBoundary>
+  );
+}

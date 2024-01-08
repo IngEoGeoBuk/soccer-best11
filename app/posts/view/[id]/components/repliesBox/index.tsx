@@ -3,7 +3,7 @@ import { ViewReply } from '@/app/types/Reply';
 
 import AlertBox from '@/app/components/common/alertBox';
 import { useParams } from 'next/navigation';
-import useRepliesQuery from '@/app/hook/useQuery/useRepliesQuery';
+import useRepliesQuery from '@/app/hooks/useQuery/useRepliesQuery';
 import Modal from './components/modal';
 import ReplyItem from './components/replyItem';
 import Skeleton from './components/skeleton';
@@ -18,7 +18,7 @@ function Index({ commentId } : { commentId : number }) {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useRepliesQuery(id as string, commentId);
+  } = useRepliesQuery(+id, commentId);
 
   if (status === 'pending') {
     return <Skeleton />;

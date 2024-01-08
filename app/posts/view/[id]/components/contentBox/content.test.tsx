@@ -7,7 +7,7 @@ import { render, screen } from '@testing-library/react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import nextAuthData from '@/app/utils/jest/nextAuthData';
 import queryClient from '@/app/utils/jest/queryClient';
-import usePostQuery from '@/app/hook/useQuery/usePostQuery';
+import usePostQuery from '@/app/hooks/useQuery/usePostQuery';
 import post from '../../../../../__mocks__/post/post.json';
 import ContentBox from '.';
 
@@ -37,7 +37,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUsePostQuery = usePostQuery as jest.Mock<any>;
-jest.mock('../../../../../hook/useQuery/usePostQuery');
+jest.mock('../../../../../hooks/useQuery/usePostQuery');
 
 beforeAll(() => {
   queryClient.clear();

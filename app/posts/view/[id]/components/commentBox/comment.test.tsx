@@ -6,7 +6,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import nextAuthData from '@/app/utils/jest/nextAuthData';
 import queryClient from '@/app/utils/jest/queryClient';
 
-import useCommentsQuery from '@/app/hook/useQuery/useCommentsQuery';
+import useCommentsQuery from '@/app/hooks/useQuery/useCommentsQuery';
 import CommentBox from '.';
 import comments from '../../../../../__mocks__/post/comments.json';
 
@@ -36,7 +36,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUseCommentsQuery = useCommentsQuery as jest.Mock<any>;
-jest.mock('../../../../../hook/useQuery/useCommentsQuery');
+jest.mock('../../../../../hooks/useQuery/useCommentsQuery');
 
 beforeAll(() => {
   queryClient.clear();
