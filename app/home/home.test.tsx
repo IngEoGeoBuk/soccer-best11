@@ -4,7 +4,7 @@ import React from 'react';
 import 'intersection-observer';
 import { render, screen } from '@testing-library/react';
 import { QueryClientProvider } from '@tanstack/react-query';
-import Home from './page';
+import Home from './home';
 import posts from '../__mocks__/posts.json';
 import nextAuthData from '../utils/jest/nextAuthData';
 import queryClient from '../utils/jest/queryClient';

@@ -9,13 +9,13 @@ import { useSearchParams, redirect, useRouter } from 'next/navigation';
 import { useInView } from 'react-intersection-observer';
 
 import { useSession } from 'next-auth/react';
-import AlertBox from '../components/common/alertBox';
+import usePostsQuery from '@/app/hook/useQuery/usePostsQuery';
+import AlertBox from '@/app/components/common/alertBox';
+import { ViewPostList } from '@/app/types/Post';
+import dateFormat from '@/app/hook/dateFormat';
 import PostSkeletonList from './components/postSkeletonList';
-import dateFormat from '../hook/dateFormat';
-import { ViewPostList } from '../types/Post';
-import usePostsQuery from '../hook/useQuery/usePostsQuery';
 
-function Home() {
+export default function Home() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { ref, inView } = useInView();
@@ -167,5 +167,3 @@ function Home() {
   }
   return null;
 }
-
-export default Home;
