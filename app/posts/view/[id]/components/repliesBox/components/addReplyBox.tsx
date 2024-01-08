@@ -26,7 +26,7 @@ function AddReplyBox({ showReply, setShowReply }: Interface) {
       throw error;
     },
   });
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     addReplyMutation.mutate(value);
   };

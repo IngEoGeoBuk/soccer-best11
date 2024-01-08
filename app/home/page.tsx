@@ -41,7 +41,7 @@ function Home() {
   } = usePostsQuery(type, search);
 
   const [value, setValue] = useState<string>('');
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     const typeQuery = type ? `?type=${type}&` : '?';
     router.push(`/${typeQuery}search=${value}`);

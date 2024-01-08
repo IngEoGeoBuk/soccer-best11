@@ -32,7 +32,7 @@ function EditCommentBox({ defaultValue, showModify, setShowModify } : Interface)
     },
   });
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     updateCommentMutation.mutate(value);
   };

@@ -37,7 +37,7 @@ function Create() {
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (selectedPlayers.filter((item) => item?.id).length < 11) {
       updateToastMessage('Please select 11 players.');

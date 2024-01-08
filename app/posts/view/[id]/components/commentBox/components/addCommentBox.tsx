@@ -21,7 +21,7 @@ function AddCommentBox() {
     },
   });
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     addCommentMutation.mutate(value);
   };

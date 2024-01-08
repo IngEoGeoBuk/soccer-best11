@@ -58,7 +58,7 @@ function Index() {
   const [description, setDescription] = useState<string>(data?.description!);
   const [initialSelectedPlayers, setInitialSelectedPlayers] = useState<ViewPlayer[]>([]);
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (selectedPlayers.filter((item) => item?.id).length < 11) {
       updateToastMessage('Please select 11 players.');

@@ -32,7 +32,7 @@ function EditReplyBox({ defaultValue, showModify, setShowModify } : Interface) {
     },
   });
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     updateReplyMutation.mutate(value);
   };

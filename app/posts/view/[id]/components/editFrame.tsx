@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Interface {
   id: number;
-  handleSubmit: (event: any) => void;
+  handleSubmit: (event: React.FormEvent) => void;
   type: string;
   value: string;
   setValue: (value: string) => void;
