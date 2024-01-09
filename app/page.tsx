@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Generate your best team!',
 };
 
-export default async function Index() {
+export default async function HomePage() {
   const queryClient = new QueryClient();
   await queryClient.prefetchInfiniteQuery({
     queryKey: ['posts', { type: '' }, { search: '' }],
