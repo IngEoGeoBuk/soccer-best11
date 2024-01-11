@@ -43,6 +43,19 @@ beforeAll(() => {
   mockedUseCommentsQuery.mockImplementation(() => ({ isLoading: true }));
 });
 
+beforeEach(() => {
+  mockedUseCommentsQuery.mockImplementation(() => ({
+    status: 'success',
+    data: {
+      pages: [{
+        data: comments,
+      }],
+      pageParams: [0],
+    },
+  }));
+  render(<QueryClientProvider client={queryClient}><CommentBox /></QueryClientProvider>);
+});
+
 afterEach(() => {
   jest.clearAllMocks();
 });
@@ -63,46 +76,16 @@ describe('View post', () => {
     expect(screen.getByText('An error has occurred')).toBeInTheDocument();
   });
   it('you can check Edited mark modified comments/replies', async () => {
-    mockedUseCommentsQuery.mockImplementation(() => ({
-      status: 'success',
-      data: {
-        pages: [{
-          data: comments,
-        }],
-        pageParams: [0],
-      },
-    }));
-    render(<QueryClientProvider client={queryClient}><CommentBox /></QueryClientProvider>);
     expect(screen.getByTestId('comment-1')).not.toHaveTextContent('(Edited)');
     expect(screen.getByTestId('comment-3')).toHaveTextContent('(Edited)');
   });
   it('you can see delete and modify button in comment components only you made', async () => {
-    mockedUseCommentsQuery.mockImplementation(() => ({
-      status: 'success',
-      data: {
-        pages: [{
-          data: comments,
-        }],
-        pageParams: [0],
-      },
-    }));
-    render(<QueryClientProvider client={queryClient}><CommentBox /></QueryClientProvider>);
     expect(screen.getByTestId('comment-1')).toHaveTextContent('delete');
     expect(screen.getByTestId('comment-1')).toHaveTextContent('modify');
     expect(screen.getByTestId('comment-2')).not.toHaveTextContent('delete');
     expect(screen.getByTestId('comment-2')).not.toHaveTextContent('modify');
   });
   it('you can see delete modal if you click delete comment btn', async () => {
-    mockedUseCommentsQuery.mockImplementation(() => ({
-      status: 'success',
-      data: {
-        pages: [{
-          data: comments,
-        }],
-        pageParams: [0],
-      },
-    }));
-    render(<QueryClientProvider client={queryClient}><CommentBox /></QueryClientProvider>);
     expect(screen.getByTestId('comment-box-8')).not.toHaveTextContent('Do you want to delete this comment?');
     // click delete comment-1 btn
     await userEvent.click(screen.getByTestId('delete-comment-1'));
@@ -112,31 +95,11 @@ describe('View post', () => {
     expect(screen.getByTestId('comment-box-8')).not.toHaveTextContent('Do you want to delete this comment?');
   });
   it('you can see modify comment textarea if you click modify comment btn', async () => {
-    mockedUseCommentsQuery.mockImplementation(() => ({
-      status: 'success',
-      data: {
-        pages: [{
-          data: comments,
-        }],
-        pageParams: [0],
-      },
-    }));
-    render(<QueryClientProvider client={queryClient}><CommentBox /></QueryClientProvider>);
     await userEvent.click(screen.getByTestId('modify-comment-1'));
     expect(screen.getByTestId('edit-comment-1-form')).toBeInTheDocument();
     await userEvent.click(screen.getByTestId('edit-comment-1-no-btn'));
   });
   it('you can see x replies if that comment has replies', async () => {
-    mockedUseCommentsQuery.mockImplementation(() => ({
-      status: 'success',
-      data: {
-        pages: [{
-          data: comments,
-        }],
-        pageParams: [0],
-      },
-    }));
-    render(<QueryClientProvider client={queryClient}><CommentBox /></QueryClientProvider>);
     expect(screen.getByTestId('comment-1')).toHaveTextContent('8 replies');
     expect(screen.getByTestId('comment-2')).not.toHaveTextContent('replies');
   });

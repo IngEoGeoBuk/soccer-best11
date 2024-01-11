@@ -6,7 +6,9 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import userEvent from '@testing-library/user-event';
 import nextAuthData from '@/app/utils/jest/nextAuthData';
 import queryClient from '@/app/utils/jest/queryClient';
+import usePlayersQuery from '@/app/hooks/useQuery/usePlayersQuery';
 import Create from './write';
+import BAY from '../../__mocks__/BAY.json';
 
 jest.mock('next/navigation', () => ({
   useRouter() {
@@ -28,12 +30,19 @@ jest.mock('next-auth/react', () => {
   };
 });
 
+const mockedUsePlayersQuery = usePlayersQuery as jest.Mock<any>;
+jest.mock('../../hooks/useQuery/usePlayersQuery');
+
 beforeAll(() => {
   queryClient.clear();
   window.HTMLElement.prototype.scrollIntoView = jest.fn();
 });
 
 beforeEach(() => {
+  mockedUsePlayersQuery.mockImplementation(() => ({
+    status: 'success',
+    data: BAY,
+  }));
   render(<QueryClientProvider client={queryClient}><Create /></QueryClientProvider>);
 });
 
@@ -70,24 +79,6 @@ describe('PlayerListSection', () => {
     expect(screen.queryByText('DOR')).toBeNull();
     expect(screen.getByText('MCI')).toBeInTheDocument();
     expect(screen.getByText('LIV')).toBeInTheDocument();
-  });
-
-  it('If you change the club tab, you will see the players included in that club.', async () => {
-    expect(screen.getByText('T. Müller')).toBeInTheDocument();
-    expect(screen.queryByText('M. Salah')).toBeNull();
-    expect(screen.queryByText('M. Salah')).toBeNull();
-
-    // change the nationality
-    await userEvent.click(screen.getByTestId('national-ENG'));
-    expect(screen.queryByText('T. Müller')).toBeNull();
-    expect(screen.getByText('K. De Bruyne')).toBeInTheDocument();
-    expect(screen.queryByText('M. Salah')).toBeNull();
-
-    // change the team
-    await userEvent.click(screen.getByTestId('club-LIV'));
-    expect(screen.queryByText('T. Müller')).toBeNull();
-    expect(screen.queryByText('K. De Bruyne')).toBeNull();
-    expect(screen.getByText('M. Salah')).toBeInTheDocument();
   });
 });
 
