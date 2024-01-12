@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
 
 import { useParams } from 'next/navigation';
 import { useSession } from 'next-auth/react';

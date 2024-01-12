@@ -1,10 +1,11 @@
 import React from 'react';
-import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
+import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import getPlayersByClub from '@/app/utils/getPlayers';
 import Club from '@/app/constants/Club';
 import { ViewPost } from '@/app/types/Post';
 import { Player } from '@prisma/client';
 import getPost from '@/app/utils/getPost';
+import getQueryClient from '@/app/utils/getQueryClient';
 import Modify from './modify';
 
 export const metadata = {
@@ -13,7 +14,7 @@ export const metadata = {
 };
 
 export default async function ModifyPage({ params }: { params: { id: number } }) {
-  const queryClient = new QueryClient();
+  const queryClient = getQueryClient();
   await queryClient.prefetchQuery<Player[]>({
     queryKey: ['players', Club[3][0]],
     queryFn: () => getPlayersByClub(Club[3][0]),

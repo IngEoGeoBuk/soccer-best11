@@ -1,11 +1,12 @@
 import React from 'react';
-import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
+import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import { Metadata } from 'next';
 
 import axios from 'axios';
 import { ViewPost } from '@/app/types/Post';
 import getPost from '@/app/utils/getPost';
 import getComments from '@/app/utils/getComments';
+import getQueryClient from '@/app/utils/getQueryClient';
 import View from './view';
 
 type Props = {
@@ -23,7 +24,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 
 export default async function ViewPage({ params }: { params: { id: number } }) {
   // replies, likes는 prefetch 제외
-  const queryClient = new QueryClient();
+  const queryClient = getQueryClient();
   await queryClient.prefetchQuery<ViewPost>({
     queryKey: ['posts', +params.id],
     queryFn: () => getPost(+params.id),

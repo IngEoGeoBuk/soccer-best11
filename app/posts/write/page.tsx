@@ -1,8 +1,9 @@
 import React from 'react';
-import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
+import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import Club from '@/app/constants/Club';
 import getPlayersByClub from '@/app/utils/getPlayers';
 import { Player } from '@prisma/client';
+import getQueryClient from '@/app/utils/getQueryClient';
 import Write from './write';
 
 export const metadata = {
@@ -11,7 +12,7 @@ export const metadata = {
 };
 
 export default async function WritePage() {
-  const queryClient = new QueryClient();
+  const queryClient = getQueryClient();
   await queryClient.prefetchQuery<Player[]>({
     queryKey: ['players', Club[3][0]],
     queryFn: () => getPlayersByClub(Club[3][0]),
