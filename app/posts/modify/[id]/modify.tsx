@@ -8,10 +8,10 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 
-import AlertBox from '@/app/components/common/alertBox';
-import usePostQuery from '@/app/hooks/useQuery/usePostQuery';
-import usePostStore from '@/app/store/post';
-import { UpdatePost, ViewPlayer } from '@/app/types/Post';
+import AlertBox from '@/app/_components/common/alertBox';
+import usePostQuery from '@/app/_hooks/useQuery/usePostQuery';
+import usePostStore from '@/app/_store/post';
+import { UpdatePost, ViewPlayer } from '@/app/_types/Post';
 
 import PlayerListSection from '../../components/playerListSection';
 import SelectPlayerSection from '../../components/selectPlayerSection';
@@ -33,7 +33,7 @@ function Index() {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
-      redirect('/signIn');
+      redirect('/sign');
     },
   });
 
@@ -98,7 +98,7 @@ function Index() {
 
   if (session?.user!.email && session.user.email !== data!.email) {
     // 다른 사람 게시글 수정 들어갈 경우 로그인 페이지로 이동시키기.
-    router.push('/signIn');
+    router.push('/sign');
   }
 
   if (data) {

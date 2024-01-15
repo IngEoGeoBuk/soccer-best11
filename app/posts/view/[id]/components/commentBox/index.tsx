@@ -5,9 +5,9 @@ import { useParams } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useInView } from 'react-intersection-observer';
 
-import AlertBox from '@/app/components/common/alertBox';
-import useCommentsQuery from '@/app/hooks/useQuery/useCommentsQuery';
-import { ViewComment } from '@/app/types/Comment';
+import AlertBox from '@/app/_components/common/alertBox';
+import useCommentsQuery from '@/app/_hooks/useQuery/useCommentsQuery';
+import { ViewComment } from '@/app/_types/Comment';
 
 import AddCommentBox from './components/addCommentBox';
 import CommentItem from './components/commentItem';

@@ -3,11 +3,11 @@ import React from 'react';
 import { Player } from '@prisma/client';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
-import Club from '@/app/constants/Club';
-import { ViewPost } from '@/app/types/Post';
-import getPlayersByClub from '@/app/utils/getPlayers';
-import getPost from '@/app/utils/getPost';
-import getQueryClient from '@/app/utils/getQueryClient';
+import getPlayersByClub from '@/app/_actions/getPlayers';
+import getPost from '@/app/_actions/getPost';
+import getQueryClient from '@/app/_actions/getQueryClient';
+import Club from '@/app/_constants/Club';
+import { ViewPost } from '@/app/_types/Post';
 
 import Modify from './modify';
 

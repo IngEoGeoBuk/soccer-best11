@@ -5,10 +5,10 @@ import { useParams } from 'next/navigation';
 
 import { useSession } from 'next-auth/react';
 
-import AlertBox from '@/app/components/common/alertBox';
-import usePostQuery from '@/app/hooks/useQuery/usePostQuery';
+import AlertBox from '@/app/_components/common/alertBox';
+import usePostQuery from '@/app/_hooks/useQuery/usePostQuery';
+import dateFormat from '@/app/_utils/dateFormat';
 import PostDetailSkeleton from '@/app/posts/components/skeleton';
-import dateFormat from '@/app/utils/dateFormat';
 
 import Modal from './modal';
 import ViewPlayersSection from './viewPlayersSection';

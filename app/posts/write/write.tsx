@@ -8,8 +8,8 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 
-import usePostStore from '@/app/store/post';
-import { CreatePost } from '@/app/types/Post';
+import usePostStore from '@/app/_store/post';
+import { CreatePost } from '@/app/_types/Post';
 
 import PlayerListSection from '../components/playerListSection';
 import SelectPlayerSection from '../components/selectPlayerSection';
@@ -18,7 +18,7 @@ function Create() {
   useSession({
     required: true,
     onUnauthenticated() {
-      redirect('/signIn');
+      redirect('/sign');
     },
   });
 

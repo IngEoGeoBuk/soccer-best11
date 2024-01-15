@@ -3,9 +3,9 @@ import React from 'react';
 import { Player } from '@prisma/client';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
-import Club from '@/app/constants/Club';
-import getPlayersByClub from '@/app/utils/getPlayers';
-import getQueryClient from '@/app/utils/getQueryClient';
+import getPlayersByClub from '@/app/_actions/getPlayers';
+import getQueryClient from '@/app/_actions/getQueryClient';
+import Club from '@/app/_constants/Club';
 
 import Write from './write';
 

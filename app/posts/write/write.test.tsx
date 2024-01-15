@@ -6,12 +6,12 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import axios from 'axios';
 
-import usePlayersQuery from '@/app/hooks/useQuery/usePlayersQuery';
-import nextAuthData from '@/app/utils/jest/nextAuthData';
-import queryClient from '@/app/utils/jest/queryClient';
+import BAY from '@/app/__mocks__/BAY.json';
+import usePlayersQuery from '@/app/_hooks/useQuery/usePlayersQuery';
+import nextAuthData from '@/app/_utils/jest/nextAuthData';
+import queryClient from '@/app/_utils/jest/queryClient';
 
 import Create from './write';
-import BAY from '../../__mocks__/BAY.json';
 
 jest.mock('next/navigation', () => ({
   useRouter() {
@@ -34,7 +34,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUsePlayersQuery = usePlayersQuery as jest.Mock<any>;
-jest.mock('../../hooks/useQuery/usePlayersQuery');
+jest.mock('../../_hooks/useQuery/usePlayersQuery');
 
 beforeAll(() => {
   queryClient.clear();

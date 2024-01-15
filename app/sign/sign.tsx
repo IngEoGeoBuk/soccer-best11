@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 
 import { useSession, signIn } from 'next-auth/react';
 
-function SignIn() {
+function Sign() {
   const { data: session } = useSession();
   if (session) {
     redirect('/');
@@ -43,4 +43,4 @@ function SignIn() {
   }
 }
 
-export default SignIn;
+export default Sign;

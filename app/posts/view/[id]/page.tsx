@@ -5,10 +5,10 @@ import { Metadata } from 'next';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import axios from 'axios';
 
-import { ViewPost } from '@/app/types/Post';
-import getComments from '@/app/utils/getComments';
-import getPost from '@/app/utils/getPost';
-import getQueryClient from '@/app/utils/getQueryClient';
+import getComments from '@/app/_actions/getComments';
+import getPost from '@/app/_actions/getPost';
+import getQueryClient from '@/app/_actions/getQueryClient';
+import { ViewPost } from '@/app/_types/Post';
 
 import View from './view';
 

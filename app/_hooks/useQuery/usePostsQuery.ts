@@ -1,12 +1,12 @@
 import { keepPreviousData, useInfiniteQuery } from '@tanstack/react-query';
 
-import getComments from '@/app/utils/getComments';
+import getPosts from '@/app/_actions/getPosts';
 
-const useCommentsQuery = (id: number) => {
+const usePostsQuery = (type: string, search: string) => {
   const query = useInfiniteQuery({
-    queryKey: ['comments', { postId: id }],
+    queryKey: ['posts', { type }, { search }],
     initialPageParam: 0,
-    queryFn: ({ pageParam }) => getComments(id, pageParam),
+    queryFn: ({ pageParam }) => getPosts(pageParam, type, search),
     getNextPageParam: (lastPage) => lastPage.nextLastId ?? undefined,
     refetchOnWindowFocus: false,
     refetchOnReconnect: true,
@@ -16,4 +16,4 @@ const useCommentsQuery = (id: number) => {
   return query;
 };
 
-export default useCommentsQuery;
+export default usePostsQuery;

@@ -2,9 +2,10 @@ import React from 'react';
 
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
+import getPosts from '@/app/_actions/getPosts';
+import getQueryClient from '@/app/_actions/getQueryClient';
+
 import Home from './home/home';
-import getPosts from './utils/getPosts';
-import getQueryClient from './utils/getQueryClient';
 
 export const metadata = {
   title: 'Soccer Best11',

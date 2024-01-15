@@ -4,9 +4,9 @@ import { NextResponse } from 'next/server';
 
 import { Prisma } from '@prisma/client';
 
-import getCurrentUser from '@/app/actions/getCurrentUser';
-import prisma from '@/app/libs/prismadb';
-import { ViewPostList } from '@/app/types/Post';
+import getCurrentUser from '@/app/_actions/getCurrentUser';
+import prisma from '@/app/_libs/prismadb';
+import { ViewPostList } from '@/app/_types/Post';
 
 export async function GET(request: Request) {
   try {

@@ -2,7 +2,7 @@
 /* eslint-disable import/prefer-default-export */
 import { NextResponse } from 'next/server';
 
-import prisma from '@/app/libs/prismadb';
+import prisma from '@/app/_libs/prismadb';
 
 // request 안 쓰여도 선언해야 함. 지우면 에러 남.
 export async function GET(

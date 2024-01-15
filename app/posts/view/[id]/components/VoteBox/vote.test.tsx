@@ -7,16 +7,13 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import useLikeQuery from '@/app/hooks/useQuery/useLikeQuery';
-import nextAuthData from '@/app/utils/jest/nextAuthData';
-import queryClient from '@/app/utils/jest/queryClient';
-
-import yesLike from '../../../../../__mocks__/post/likes.json';
-import noLike from '../../../../../__mocks__/post/likes_no.json';
+import yesLike from '@/app/__mocks__/post/likes.json';
+import noLike from '@/app/__mocks__/post/likes_no.json';
+import useLikeQuery from '@/app/_hooks/useQuery/useLikeQuery';
+import nextAuthData from '@/app/_utils/jest/nextAuthData';
+import queryClient from '@/app/_utils/jest/queryClient';
 
 import VoteBox from '.';
-
-
 
 jest.mock('next/navigation', () => ({
   useParams() {
@@ -44,7 +41,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUseLikeQuery = useLikeQuery as jest.Mock<any>;
-jest.mock('../../../../../hooks/useQuery/useLikeQuery');
+jest.mock('../../../../../_hooks/useQuery/useLikeQuery');
 
 beforeAll(() => {
   queryClient.clear();

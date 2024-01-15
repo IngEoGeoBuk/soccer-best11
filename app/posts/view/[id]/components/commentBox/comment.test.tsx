@@ -5,15 +5,12 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import useCommentsQuery from '@/app/hooks/useQuery/useCommentsQuery';
-import nextAuthData from '@/app/utils/jest/nextAuthData';
-import queryClient from '@/app/utils/jest/queryClient';
-
-import comments from '../../../../../__mocks__/post/comments.json';
+import comments from '@/app/__mocks__/post/comments.json';
+import useCommentsQuery from '@/app/_hooks/useQuery/useCommentsQuery';
+import nextAuthData from '@/app/_utils/jest/nextAuthData';
+import queryClient from '@/app/_utils/jest/queryClient';
 
 import CommentBox from '.';
-
-
 
 jest.mock('next/navigation', () => ({
   useParams() {
@@ -41,7 +38,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUseCommentsQuery = useCommentsQuery as jest.Mock<any>;
-jest.mock('../../../../../hooks/useQuery/useCommentsQuery');
+jest.mock('../../../../../_hooks/useQuery/useCommentsQuery');
 
 beforeAll(() => {
   queryClient.clear();

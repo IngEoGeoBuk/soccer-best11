@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 
-import AlertBox from '@/app/components/common/alertBox';
-import ToastBox from '@/app/components/common/toastBox';
-import Club from '@/app/constants/Club';
-import National from '@/app/constants/National';
-import usePlayersQuery from '@/app/hooks/useQuery/usePlayersQuery';
-import usePostStore from '@/app/store/post';
+import AlertBox from '@/app/_components/common/alertBox';
+import ToastBox from '@/app/_components/common/toastBox';
+import Club from '@/app/_constants/Club';
+import National from '@/app/_constants/National';
+import usePlayersQuery from '@/app/_hooks/useQuery/usePlayersQuery';
+import usePostStore from '@/app/_store/post';
 
 import { ListPlayerBox } from './playerBox';
 import PlayerListSectionSkeleton from './playerListSectionSkeleton';

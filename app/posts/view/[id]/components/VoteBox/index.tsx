@@ -10,8 +10,8 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 
-import AlertBox from '@/app/components/common/alertBox';
-import useLikeQuery from '@/app/hooks/useQuery/useLikeQuery';
+import AlertBox from '@/app/_components/common/alertBox';
+import useLikeQuery from '@/app/_hooks/useQuery/useLikeQuery';
 
 import Skeleton from './skeleton';
 

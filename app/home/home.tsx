@@ -9,10 +9,10 @@ import { useSearchParams, redirect, useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useInView } from 'react-intersection-observer';
 
-import AlertBox from '@/app/components/common/alertBox';
-import usePostsQuery from '@/app/hooks/useQuery/usePostsQuery';
-import { ViewPostList } from '@/app/types/Post';
-import dateFormat from '@/app/utils/dateFormat';
+import AlertBox from '@/app/_components/common/alertBox';
+import usePostsQuery from '@/app/_hooks/useQuery/usePostsQuery';
+import { ViewPostList } from '@/app/_types/Post';
+import dateFormat from '@/app/_utils/dateFormat';
 
 import PostSkeletonList from './components/postSkeletonList';
 
@@ -28,7 +28,7 @@ export default function Home() {
     required: true,
     onUnauthenticated() {
       if (type === 'my' && !session?.user?.email) {
-        redirect('/signIn');
+        redirect('/sign');
       }
     },
   });

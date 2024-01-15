@@ -4,9 +4,10 @@ import React from 'react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 
+import nextAuthData from '@/app/_utils/jest/nextAuthData';
+import queryClient from '@/app/_utils/jest/queryClient';
+
 import Header from './header';
-import nextAuthData from '../utils/jest/nextAuthData';
-import queryClient from '../utils/jest/queryClient';
 
 jest.mock('next/navigation', () => ({
   useRouter() {

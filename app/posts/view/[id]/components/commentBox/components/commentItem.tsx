@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import { useSession } from 'next-auth/react';
 
-import { ViewComment } from '@/app/types/Comment';
-import dateFormat from '@/app/utils/dateFormat';
+import { ViewComment } from '@/app/_types/Comment';
+import dateFormat from '@/app/_utils/dateFormat';
 
 import DeletedCommentItem from './deletedCommentItem';
 import EditCommentBox from './editCommentBox';

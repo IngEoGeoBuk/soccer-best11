@@ -1,8 +1,8 @@
 import { Player } from '@prisma/client';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 
-import Club from '@/app/constants/Club';
-import getPlayersByClub from '@/app/utils/getPlayers';
+import getPlayersByClub from '@/app/_actions/getPlayers';
+import Club from '@/app/_constants/Club';
 
 const usePlayersQuery = (national: number, club: number) => {
   const query = useQuery<Player[]>({
