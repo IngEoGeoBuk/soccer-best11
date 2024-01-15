@@ -1,14 +1,16 @@
 // https://www.js-howto.com/react-query-how-to-test-infinite-query-with-jest-and-react-testing-library/
 import '@testing-library/jest-dom';
 import React from 'react';
+
 import 'intersection-observer';
-import { render, screen } from '@testing-library/react';
 import { QueryClientProvider } from '@tanstack/react-query';
+import { render, screen } from '@testing-library/react';
+
 import Home from './home';
 import posts from '../__mocks__/posts.json';
+import usePostsQuery from '../hooks/useQuery/usePostsQuery';
 import nextAuthData from '../utils/jest/nextAuthData';
 import queryClient from '../utils/jest/queryClient';
-import usePostsQuery from '../hooks/useQuery/usePostsQuery';
 
 jest.mock('next/navigation', () => ({
   useRouter() {

@@ -1,5 +1,6 @@
-import { ViewPost } from '@/app/types/Post';
 import { useQuery } from '@tanstack/react-query';
+
+import { ViewPost } from '@/app/types/Post';
 import getPost from '@/app/utils/getPost';
 
 const usePostQuery = (id: number) => {

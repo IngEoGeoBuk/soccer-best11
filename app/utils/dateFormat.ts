@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
+import advanced from 'dayjs/plugin/advancedFormat';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
-import advanced from 'dayjs/plugin/advancedFormat';
 
 export default function dateFormat(date: Date) {
   dayjs.extend(utc);

@@ -1,6 +1,9 @@
 import React from 'react';
+
 import Image from 'next/image';
+
 import { Player } from '@prisma/client';
+
 import usePostStore from '@/app/store/post';
 
 const firebaseStorageUrl = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_URL;

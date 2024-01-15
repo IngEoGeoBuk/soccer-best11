@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
 import { useSession } from 'next-auth/react';
-import dateFormat from '@/app/utils/dateFormat';
 
 import { ViewComment } from '@/app/types/Comment';
-import EditCommentBox from './editCommentBox';
-import AddReplyBox from '../../repliesBox/components/addReplyBox';
+import dateFormat from '@/app/utils/dateFormat';
+
 import DeletedCommentItem from './deletedCommentItem';
+import EditCommentBox from './editCommentBox';
 import RepliesBox from '../../repliesBox';
+import AddReplyBox from '../../repliesBox/components/addReplyBox';
 
 interface Interface {
   comment: ViewComment;

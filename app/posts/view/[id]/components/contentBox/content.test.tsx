@@ -2,14 +2,20 @@
 
 import '@testing-library/jest-dom';
 import React from 'react';
-import userEvent from '@testing-library/user-event';
-import { render, screen } from '@testing-library/react';
+
 import { QueryClientProvider } from '@tanstack/react-query';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import usePostQuery from '@/app/hooks/useQuery/usePostQuery';
 import nextAuthData from '@/app/utils/jest/nextAuthData';
 import queryClient from '@/app/utils/jest/queryClient';
-import usePostQuery from '@/app/hooks/useQuery/usePostQuery';
+
 import post from '../../../../../__mocks__/post/post.json';
+
 import ContentBox from '.';
+
+
 
 jest.mock('next/navigation', () => ({
   useParams() {

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+
 import { useParams } from 'next/navigation';
+
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import axios from 'axios';
 
 function AddCommentBox() {
   const { id } = useParams();

@@ -3,12 +3,16 @@
 // 2. 사용자 수 많아 보이게 하기 위해 (추천 수가 많을 수록 좋음)
 
 import React, { useState } from 'react';
+
 import { useParams } from 'next/navigation';
-import { useSession } from 'next-auth/react';
+
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
+import { useSession } from 'next-auth/react';
+
 import AlertBox from '@/app/components/common/alertBox';
 import useLikeQuery from '@/app/hooks/useQuery/useLikeQuery';
+
 import Skeleton from './skeleton';
 
 function Index() {

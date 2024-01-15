@@ -1,6 +1,8 @@
+import React from 'react';
+
 import Club from '@/app/constants/Club';
 import National from '@/app/constants/National';
-import React from 'react';
+
 import { SelectedPlayerBox } from './playerBox';
 
 function PlayerListSectionSkeleton() {

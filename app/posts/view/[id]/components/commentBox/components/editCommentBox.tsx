@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
+import { useParams } from 'next/navigation';
+
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import { useParams } from 'next/navigation';
+
 import EditFrame from '../../editFrame';
 
 interface Interface {

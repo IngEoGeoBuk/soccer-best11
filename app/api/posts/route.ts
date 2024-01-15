@@ -1,10 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 // export async default로 하니까 안 됨.
 import { NextResponse } from 'next/server';
+
 import { Prisma } from '@prisma/client';
 
-import prisma from '@/app/libs/prismadb';
 import getCurrentUser from '@/app/actions/getCurrentUser';
+import prisma from '@/app/libs/prismadb';
 import { ViewPostList } from '@/app/types/Post';
 
 export async function GET(request: Request) {

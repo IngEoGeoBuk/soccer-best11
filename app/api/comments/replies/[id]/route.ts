@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable import/prefer-default-export */
 import { NextResponse } from 'next/server';
+
 import prisma from '@/app/libs/prismadb';
 
 // request 안 쓰여도 선언해야 함. 지우면 에러 남.

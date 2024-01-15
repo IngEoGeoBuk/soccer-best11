@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useQueryClient } from '@tanstack/react-query';
 
-import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+
+import { useQueryClient } from '@tanstack/react-query';
 import { signOut, signIn, useSession } from 'next-auth/react';
+
 import './styles.css';
 import Spinner from './common/spinner';
 

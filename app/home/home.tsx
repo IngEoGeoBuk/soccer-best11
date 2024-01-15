@@ -1,18 +1,19 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 
+import Image from 'next/image';
+import Link from 'next/link';
 import { useSearchParams, redirect, useRouter } from 'next/navigation';
 
+import { useSession } from 'next-auth/react';
 import { useInView } from 'react-intersection-observer';
 
-import { useSession } from 'next-auth/react';
-import usePostsQuery from '@/app/hooks/useQuery/usePostsQuery';
 import AlertBox from '@/app/components/common/alertBox';
+import usePostsQuery from '@/app/hooks/useQuery/usePostsQuery';
 import { ViewPostList } from '@/app/types/Post';
 import dateFormat from '@/app/utils/dateFormat';
+
 import PostSkeletonList from './components/postSkeletonList';
 
 export default function Home() {

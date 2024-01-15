@@ -1,5 +1,6 @@
-import getComments from '@/app/utils/getComments';
 import { keepPreviousData, useInfiniteQuery } from '@tanstack/react-query';
+
+import getComments from '@/app/utils/getComments';
 
 const useCommentsQuery = (id: number) => {
   const query = useInfiniteQuery({

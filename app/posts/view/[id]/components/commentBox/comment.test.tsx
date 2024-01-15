@@ -1,14 +1,19 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import userEvent from '@testing-library/user-event';
-import { render, screen } from '@testing-library/react';
+
 import { QueryClientProvider } from '@tanstack/react-query';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import useCommentsQuery from '@/app/hooks/useQuery/useCommentsQuery';
 import nextAuthData from '@/app/utils/jest/nextAuthData';
 import queryClient from '@/app/utils/jest/queryClient';
 
-import useCommentsQuery from '@/app/hooks/useQuery/useCommentsQuery';
-import CommentBox from '.';
 import comments from '../../../../../__mocks__/post/comments.json';
+
+import CommentBox from '.';
+
+
 
 jest.mock('next/navigation', () => ({
   useParams() {

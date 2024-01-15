@@ -1,14 +1,18 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+
 import { redirect, useRouter } from 'next/navigation';
-import axios from 'axios';
+
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import axios from 'axios';
 import { useSession } from 'next-auth/react';
-import { CreatePost } from '@/app/types/Post';
+
 import usePostStore from '@/app/store/post';
-import SelectPlayerSection from '../components/selectPlayerSection';
+import { CreatePost } from '@/app/types/Post';
+
 import PlayerListSection from '../components/playerListSection';
+import SelectPlayerSection from '../components/selectPlayerSection';
 
 function Create() {
   useSession({

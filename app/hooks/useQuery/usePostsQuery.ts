@@ -1,5 +1,6 @@
-import getPosts from '@/app/utils/getPosts';
 import { keepPreviousData, useInfiniteQuery } from '@tanstack/react-query';
+
+import getPosts from '@/app/utils/getPosts';
 
 const usePostsQuery = (type: string, search: string) => {
   const query = useInfiniteQuery({

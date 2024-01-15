@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
 import { useParams } from 'next/navigation';
+
 import { useSession } from 'next-auth/react';
-import AlertBox from '@/app/components/common/alertBox';
 import { useInView } from 'react-intersection-observer';
-import { ViewComment } from '@/app/types/Comment';
+
+import AlertBox from '@/app/components/common/alertBox';
 import useCommentsQuery from '@/app/hooks/useQuery/useCommentsQuery';
+import { ViewComment } from '@/app/types/Comment';
+
 import AddCommentBox from './components/addCommentBox';
 import CommentItem from './components/commentItem';
 import Modal from './components/modal';

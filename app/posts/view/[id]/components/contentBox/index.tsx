@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import PostDetailSkeleton from '@/app/posts/components/skeleton';
-import AlertBox from '@/app/components/common/alertBox';
-import dateFormat from '@/app/utils/dateFormat';
-import { useSession } from 'next-auth/react';
-import { useParams } from 'next/navigation';
+
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
+
+import { useSession } from 'next-auth/react';
+
+import AlertBox from '@/app/components/common/alertBox';
 import usePostQuery from '@/app/hooks/useQuery/usePostQuery';
-import ViewPlayersSection from './viewPlayersSection';
+import PostDetailSkeleton from '@/app/posts/components/skeleton';
+import dateFormat from '@/app/utils/dateFormat';
+
 import Modal from './modal';
+import ViewPlayersSection from './viewPlayersSection';
 
 function Index() {
   const { id } = useParams();

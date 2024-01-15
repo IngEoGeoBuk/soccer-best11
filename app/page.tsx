@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
-import getPosts from './utils/getPosts';
+
 import Home from './home/home';
+import getPosts from './utils/getPosts';
 import getQueryClient from './utils/getQueryClient';
 
 export const metadata = {

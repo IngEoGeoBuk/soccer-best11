@@ -1,12 +1,15 @@
 import React from 'react';
-import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
+
 import { Metadata } from 'next';
 
+import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import axios from 'axios';
+
 import { ViewPost } from '@/app/types/Post';
-import getPost from '@/app/utils/getPost';
 import getComments from '@/app/utils/getComments';
+import getPost from '@/app/utils/getPost';
 import getQueryClient from '@/app/utils/getQueryClient';
+
 import View from './view';
 
 type Props = {

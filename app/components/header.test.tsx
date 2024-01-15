@@ -1,7 +1,9 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+
 import { QueryClientProvider } from '@tanstack/react-query';
+import { render, screen } from '@testing-library/react';
+
 import Header from './header';
 import nextAuthData from '../utils/jest/nextAuthData';
 import queryClient from '../utils/jest/queryClient';

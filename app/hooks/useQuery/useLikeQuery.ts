@@ -1,6 +1,7 @@
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
+
 import { Vote } from '@/app/types/Vote';
 import getLikes from '@/app/utils/getLike';
-import { keepPreviousData, useQuery } from '@tanstack/react-query';
 
 const useLikeQuery = (id: number) => {
   const query = useQuery<Vote>({

@@ -1,10 +1,10 @@
-const posts = require('./posts.json');
 const BAY = require('./BAY.json');
-const MCI = require('./MCI.json');
 const LIV = require('./LIV.json');
-const post = require('./post/post.json');
+const MCI = require('./MCI.json');
 const comments = require('./post/comments.json');
 const likes = require('./post/likes.json');
+const post = require('./post/post.json');
+const posts = require('./posts.json');
 
 export {};
 

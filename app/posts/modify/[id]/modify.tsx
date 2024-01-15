@@ -1,18 +1,21 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+
+import { useParams, redirect, useRouter } from 'next/navigation';
+
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 
-import { useParams, redirect, useRouter } from 'next/navigation';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import AlertBox from '@/app/components/common/alertBox';
-import { UpdatePost, ViewPlayer } from '@/app/types/Post';
-import usePostStore from '@/app/store/post';
 import usePostQuery from '@/app/hooks/useQuery/usePostQuery';
-import PostDetailSkeleton from '../../components/skeleton';
-import SelectPlayerSection from '../../components/selectPlayerSection';
+import usePostStore from '@/app/store/post';
+import { UpdatePost, ViewPlayer } from '@/app/types/Post';
+
 import PlayerListSection from '../../components/playerListSection';
+import SelectPlayerSection from '../../components/selectPlayerSection';
+import PostDetailSkeleton from '../../components/skeleton';
 
 function Index() {
   const { id } = useParams();

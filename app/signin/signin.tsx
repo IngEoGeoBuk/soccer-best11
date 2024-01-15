@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
+
 import { redirect } from 'next/navigation';
+
 import { useSession, signIn } from 'next-auth/react';
 
 function SignIn() {
