@@ -5,9 +5,7 @@ import axios from 'axios';
 import { useSession } from 'next-auth/react';
 
 import { useParams, redirect, useRouter } from 'next/navigation';
-import {
-  useMutation, useQueryClient,
-} from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import AlertBox from '@/app/components/common/alertBox';
 import { UpdatePost, ViewPlayer } from '@/app/types/Post';
 import usePostStore from '@/app/store/post';
@@ -27,11 +25,7 @@ function Index() {
     resetPost,
   } = usePostStore((store) => store);
 
-  const {
-    isLoading,
-    error,
-    data,
-  } = usePostQuery(+id);
+  const { isLoading, error, data } = usePostQuery(+id);
 
   const { data: session } = useSession({
     required: true,
@@ -41,7 +35,8 @@ function Index() {
   });
 
   const queryClient = useQueryClient();
-  const updatePost = async (post: UpdatePost) => axios.put(`/api/posts/${id}`, post);
+  const updatePost = async (post: UpdatePost) =>
+    axios.put(`/api/posts/${id}`, post);
   const updatePostMutation = useMutation({
     mutationFn: updatePost,
     onSuccess: () => {
@@ -109,7 +104,9 @@ function Index() {
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label htmlFor="title">
-              <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</p>
+              <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Title
+              </p>
               <input
                 type="text"
                 id="title"
@@ -126,7 +123,9 @@ function Index() {
           <br />
           <div className="mb-6">
             <label htmlFor="description">
-              <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</p>
+              <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Description
+              </p>
               <textarea
                 id="description"
                 rows={4}

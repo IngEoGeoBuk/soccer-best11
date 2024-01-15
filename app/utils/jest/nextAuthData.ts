@@ -4,7 +4,8 @@ const nextAuthData = {
     user: {
       name: '강성우',
       email: 'you3667@gmail.com',
-      image: 'https://lh3.googleusercontent.com/a/ACg8ocKJP_8_zdi8WHxRNSHDePNI5TN3l-X2UnsWDn_9K-4W=s96-c',
+      image:
+        'https://lh3.googleusercontent.com/a/ACg8ocKJP_8_zdi8WHxRNSHDePNI5TN3l-X2UnsWDn_9K-4W=s96-c',
     },
   },
   status: 'authenticated',

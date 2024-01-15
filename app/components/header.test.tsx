@@ -28,7 +28,7 @@ jest.mock('next-auth/react', () => {
   return {
     __esModule: true,
     ...originalModule,
-    useSession: jest.fn(() => (nextAuthData)),
+    useSession: jest.fn(() => nextAuthData),
     // // no login spec
     // data: null,
     // status: 'unauthenticated',
@@ -37,15 +37,17 @@ jest.mock('next-auth/react', () => {
 
 beforeEach(() => {
   queryClient.clear(); // Clear the query client before each test
-  render(<QueryClientProvider client={queryClient}><Header /></QueryClientProvider>);
+  render(
+    <QueryClientProvider client={queryClient}>
+      <Header />
+    </QueryClientProvider>,
+  );
 });
 
 describe('Header', () => {
   // login result
   it('If you are logged in, you can check the logout text.', async () => {
-    expect(
-      screen.getByText('logout'),
-    ).toBeInTheDocument();
+    expect(screen.getByText('logout')).toBeInTheDocument();
   });
 
   // // logout result

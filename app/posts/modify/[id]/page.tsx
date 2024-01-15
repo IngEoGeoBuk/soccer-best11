@@ -13,7 +13,11 @@ export const metadata = {
   description: 'Generate your best team!',
 };
 
-export default async function ModifyPage({ params }: { params: { id: number } }) {
+export default async function ModifyPage({
+  params,
+}: {
+  params: { id: number };
+}) {
   const queryClient = getQueryClient();
   await queryClient.prefetchQuery<Player[]>({
     queryKey: ['players', Club[3][0]],

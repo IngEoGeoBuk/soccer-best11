@@ -20,7 +20,9 @@ function Create() {
 
   const queryClient = useQueryClient();
   const router = useRouter();
-  const { selectedPlayers, updateToastMessage, resetPost } = usePostStore((store) => store);
+  const { selectedPlayers, updateToastMessage, resetPost } = usePostStore(
+    (store) => store,
+  );
   const addPost = async (post: CreatePost) => axios.post('/api/posts', post);
   const addPostMutation = useMutation({
     mutationFn: addPost,
@@ -63,7 +65,9 @@ function Create() {
       <form onSubmit={handleSubmit}>
         <div className="mb-6">
           <label htmlFor="title">
-            <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</p>
+            <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Title
+            </p>
             <input
               type="text"
               aria-label="title"
@@ -82,7 +86,9 @@ function Create() {
         <br />
         <div className="mb-6">
           <label htmlFor="description">
-            <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</p>
+            <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Description
+            </p>
             <textarea
               id="description"
               aria-label="description"

@@ -11,19 +11,22 @@ interface Interface {
   setShowModify: (value: number) => void;
 }
 
-function EditReplyBox({ defaultValue, showModify, setShowModify } : Interface) {
+function EditReplyBox({ defaultValue, showModify, setShowModify }: Interface) {
   const { id } = useParams();
   const queryClient = useQueryClient();
 
   const [value, setValue] = useState<string>(defaultValue);
 
-  const updateReply = async (content: string) => axios.put(`/api/replies/${showModify}`, {
-    content,
-  });
+  const updateReply = async (content: string) =>
+    axios.put(`/api/replies/${showModify}`, {
+      content,
+    });
   const updateReplyMutation = useMutation({
     mutationFn: updateReply,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['comments', { postId: +id }] });
+      queryClient.invalidateQueries({
+        queryKey: ['comments', { postId: +id }],
+      });
       setShowModify(0);
       setValue('');
     },

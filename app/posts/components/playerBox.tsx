@@ -5,19 +5,14 @@ import usePostStore from '@/app/store/post';
 
 const firebaseStorageUrl = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_URL;
 
-function PlayerPaceImg({ src } : { src: string }) {
-  return (
-    <Image
-      src={src}
-      width={60}
-      height={60}
-      alt="player-box"
-    />
-  );
+function PlayerPaceImg({ src }: { src: string }) {
+  return <Image src={src} width={60} height={60} alt="player-box" />;
 }
 
-function SelectedPlayerBox({ value } : { value: number }) {
-  const { selectedCard, updateSelectedCard, selectedPlayers } = usePostStore((store) => store);
+function SelectedPlayerBox({ value }: { value: number }) {
+  const { selectedCard, updateSelectedCard, selectedPlayers } = usePostStore(
+    (store) => store,
+  );
 
   const player = selectedPlayers[value];
   if (player) {
@@ -25,7 +20,9 @@ function SelectedPlayerBox({ value } : { value: number }) {
       <button
         type="button"
         onClick={() => updateSelectedCard(value)}
-        className={selectedCard === value ? 'player-card-selected' : 'player-card'}
+        className={
+          selectedCard === value ? 'player-card-selected' : 'player-card'
+        }
         data-testid={`selected-player-${value}`}
       >
         <Image
@@ -47,12 +44,12 @@ function SelectedPlayerBox({ value } : { value: number }) {
     <button
       type="button"
       onClick={() => updateSelectedCard(value)}
-      className={selectedCard === value ? 'player-card-selected' : 'player-card'}
+      className={
+        selectedCard === value ? 'player-card-selected' : 'player-card'
+      }
       data-testid={`selected-player-${value}`}
     >
-      <div
-        className="w-[36px] h-[36px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-      />
+      <div className="w-[36px] h-[36px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" />
       <Image
         src="/images/avatar.png"
         width={60}
@@ -66,9 +63,13 @@ function SelectedPlayerBox({ value } : { value: number }) {
   );
 }
 
-function ListPlayerBox({ player } : { player: Player }) {
+function ListPlayerBox({ player }: { player: Player }) {
   const {
-    selectedCard, updateSelectedCard, selectedPlayers, updateSelectedPlayers, updateToastMessage,
+    selectedCard,
+    updateSelectedCard,
+    selectedPlayers,
+    updateSelectedPlayers,
+    updateToastMessage,
   } = usePostStore((store) => store);
 
   const clickFnc = () => {
@@ -118,7 +119,7 @@ function ListPlayerBox({ player } : { player: Player }) {
   );
 }
 
-function ViewPlayerBox({ player } : { player: Player }) {
+function ViewPlayerBox({ player }: { player: Player }) {
   return (
     <button
       type="button"

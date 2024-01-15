@@ -14,11 +14,14 @@ function AddReplyBox({ showReply, setShowReply }: Interface) {
   const queryClient = useQueryClient();
   const [value, setValue] = useState<string>('');
 
-  const addReply = async (content: string) => axios.post('/api/replies', { postId: +id, commentId: +showReply, content });
+  const addReply = async (content: string) =>
+    axios.post('/api/replies', { postId: +id, commentId: +showReply, content });
   const addReplyMutation = useMutation({
     mutationFn: addReply,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['comments', { postId: +id }] });
+      queryClient.invalidateQueries({
+        queryKey: ['comments', { postId: +id }],
+      });
       setValue('');
       setShowReply(0);
     },
@@ -46,10 +49,7 @@ function AddReplyBox({ showReply, setShowReply }: Interface) {
           />
         </div>
         <div className="items-center justify-between px-3 py-2 border-t dark:border-gray-600">
-          <button
-            type="submit"
-            className="btn-primary"
-          >
+          <button type="submit" className="btn-primary">
             Add reply
           </button>
           <button

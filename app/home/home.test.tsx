@@ -31,7 +31,7 @@ jest.mock('next-auth/react', () => {
   return {
     __esModule: true,
     ...originalModule,
-    useSession: jest.fn(() => (nextAuthData)),
+    useSession: jest.fn(() => nextAuthData),
   };
 });
 
@@ -52,27 +52,41 @@ describe('view posts', () => {
     mockedUseUsersQuery.mockImplementation(() => ({
       status: 'pending',
     }));
-    render(<QueryClientProvider client={queryClient}><Home /></QueryClientProvider>);
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Home />
+      </QueryClientProvider>,
+    );
     expect(screen.getByTestId('home-loading')).toBeInTheDocument();
   });
   it('you can see error component if the status is error.', async () => {
     mockedUseUsersQuery.mockImplementation(() => ({
       status: 'error',
     }));
-    render(<QueryClientProvider client={queryClient}><Home /></QueryClientProvider>);
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Home />
+      </QueryClientProvider>,
+    );
     expect(screen.getByText('An error has occurred')).toBeInTheDocument();
   });
   it('you can see posts after loading.', async () => {
     mockedUseUsersQuery.mockImplementation(() => ({
       status: 'success',
       data: {
-        pages: [{
-          data: posts,
-        }],
+        pages: [
+          {
+            data: posts,
+          },
+        ],
         pageParams: [0],
       },
     }));
-    render(<QueryClientProvider client={queryClient}><Home /></QueryClientProvider>);
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Home />
+      </QueryClientProvider>,
+    );
     expect(screen.getByTestId('home-success')).toBeInTheDocument();
   });
 });

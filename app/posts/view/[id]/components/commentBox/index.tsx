@@ -17,19 +17,14 @@ function Index() {
   const email = useSession().data?.user?.email;
   const [showModal, setShowModal] = useState<number>(0);
 
-  const {
-    status,
-    data,
-    isFetchingNextPage,
-    fetchNextPage,
-    hasNextPage,
-  } = useCommentsQuery(+id);
+  const { status, data, isFetchingNextPage, fetchNextPage, hasNextPage } =
+    useCommentsQuery(+id);
 
   useEffect(() => {
     if (inView) {
       fetchNextPage();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
 
   if (status === 'pending') {
@@ -65,18 +60,27 @@ function Index() {
                 fetchNextPage();
               }}
             >
-              <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1v12m0 0 4-4m-4 4L1 9" />
+              <svg
+                className="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 14"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 1v12m0 0 4-4m-4 4L1 9"
+                />
                 show-more
               </svg>
             </button>
           </div>
         )}
         {showModal !== 0 && (
-          <Modal
-            showModal={showModal}
-            setShowModal={setShowModal}
-          />
+          <Modal showModal={showModal} setShowModal={setShowModal} />
         )}
       </div>
     );

@@ -8,7 +8,7 @@ type State = {
 };
 
 type Action = {
-  updateSelectedCard: (selectedCard: State['selectedCard']) => void
+  updateSelectedCard: (selectedCard: State['selectedCard']) => void;
   updateSelectedPlayers: (selectedPlayers: State['selectedPlayers']) => void;
   updateToastMessage: (toastMessage: State['toastMessage']) => void;
   resetPost: () => void;

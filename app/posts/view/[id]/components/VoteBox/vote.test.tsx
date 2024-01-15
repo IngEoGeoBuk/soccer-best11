@@ -34,7 +34,7 @@ jest.mock('next-auth/react', () => {
   return {
     __esModule: true,
     ...originalModule,
-    useSession: jest.fn(() => (nextAuthData)),
+    useSession: jest.fn(() => nextAuthData),
   };
 });
 
@@ -51,39 +51,57 @@ describe('View post', () => {
     mockedUseLikeQuery.mockImplementation(() => ({
       status: 'pending',
     }));
-    render(<QueryClientProvider client={queryClient}><VoteBox /></QueryClientProvider>);
+    render(
+      <QueryClientProvider client={queryClient}>
+        <VoteBox />
+      </QueryClientProvider>,
+    );
     expect(screen.getByTestId('vote-box-loading')).toBeInTheDocument();
   });
   it('you can see error component if the status is error.', async () => {
     mockedUseLikeQuery.mockImplementation(() => ({
       status: 'error',
     }));
-    render(<QueryClientProvider client={queryClient}><VoteBox /></QueryClientProvider>);
+    render(
+      <QueryClientProvider client={queryClient}>
+        <VoteBox />
+      </QueryClientProvider>,
+    );
     expect(screen.getByText('An error has occurred')).toBeInTheDocument();
   });
-  it('you can vote If you haven\'t clicked on it', async () => {
+  it("you can vote If you haven't clicked on it", async () => {
     mockedUseLikeQuery.mockImplementation(() => ({
       status: 'success',
       data: noLike,
     }));
     render(
-      <QueryClientProvider client={queryClient}><VoteBox /></QueryClientProvider>,
+      <QueryClientProvider client={queryClient}>
+        <VoteBox />
+      </QueryClientProvider>,
     );
-    const spanElement = screen.getByTestId('vote-box-8').querySelector('#check-voted'); // select lower div
+    const spanElement = screen
+      .getByTestId('vote-box-8')
+      .querySelector('#check-voted'); // select lower div
     expect(spanElement).not.toHaveClass('text-yellow-500');
   });
-  it('you can\'t vot If you already have clicked on it', async () => {
+  it("you can't vot If you already have clicked on it", async () => {
     mockedUseLikeQuery.mockImplementation(() => ({
       status: 'success',
       data: yesLike,
     }));
     render(
-      <QueryClientProvider client={queryClient}><VoteBox /></QueryClientProvider>,
+      <QueryClientProvider client={queryClient}>
+        <VoteBox />
+      </QueryClientProvider>,
     );
-    const spanElement = screen.getByTestId('vote-box-8').querySelector('#check-voted'); // select lower div
+    const spanElement = screen
+      .getByTestId('vote-box-8')
+      .querySelector('#check-voted'); // select lower div
     expect(spanElement).toHaveClass('text-yellow-500');
 
-    expect(screen.getByTestId('vote-box-8')).not.toHaveTextContent('You have already liked it.');
+    expect(screen.getByTestId('vote-box-8')).not.toHaveTextContent(
+      'You have already liked it.',
+    );
 
     // click the like btn
     await userEvent.click(screen.getByTestId('vote-btn'));

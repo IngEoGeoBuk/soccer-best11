@@ -32,7 +32,8 @@ export async function GET(
 
     return NextResponse.json({
       data: data.map((item) => ({ ...item, email: item.user.email })),
-      nextLastId: data.length === perQuery ? data[data.length - 1].id : undefined,
+      nextLastId:
+        data.length === perQuery ? data[data.length - 1].id : undefined,
     });
   } catch (error) {
     return new NextResponse('Error', { status: 500 });

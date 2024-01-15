@@ -8,17 +8,12 @@ import Modal from './components/modal';
 import ReplyItem from './components/replyItem';
 import Skeleton from './components/skeleton';
 
-function Index({ commentId } : { commentId : number }) {
+function Index({ commentId }: { commentId: number }) {
   const { id } = useParams();
   const [showModal, setShowModal] = useState<number>(0);
 
-  const {
-    status,
-    data,
-    isFetchingNextPage,
-    fetchNextPage,
-    hasNextPage,
-  } = useRepliesQuery(+id, commentId);
+  const { status, data, isFetchingNextPage, fetchNextPage, hasNextPage } =
+    useRepliesQuery(+id, commentId);
 
   if (status === 'pending') {
     return <Skeleton />;
@@ -43,10 +38,7 @@ function Index({ commentId } : { commentId : number }) {
         ))}
 
         {showModal !== 0 && (
-        <Modal
-          showModal={showModal}
-          setShowModal={setShowModal}
-        />
+          <Modal showModal={showModal} setShowModal={setShowModal} />
         )}
         {hasNextPage && (
           <div className="pl-10 pb-6 text-base">
@@ -58,7 +50,13 @@ function Index({ commentId } : { commentId : number }) {
                 fetchNextPage();
               }}
             >
-              <svg className="mr-1 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 10">
+              <svg
+                className="mr-1 w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 10"
+              >
                 <path d="m1 7 4 4 4-4M1 1l4 4 4-4" />
               </svg>
               show more

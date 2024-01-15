@@ -31,7 +31,7 @@ jest.mock('next-auth/react', () => {
   return {
     __esModule: true,
     ...originalModule,
-    useSession: jest.fn(() => (nextAuthData)),
+    useSession: jest.fn(() => nextAuthData),
   };
 });
 
@@ -47,13 +47,19 @@ beforeEach(() => {
   mockedUseCommentsQuery.mockImplementation(() => ({
     status: 'success',
     data: {
-      pages: [{
-        data: comments,
-      }],
+      pages: [
+        {
+          data: comments,
+        },
+      ],
       pageParams: [0],
     },
   }));
-  render(<QueryClientProvider client={queryClient}><CommentBox /></QueryClientProvider>);
+  render(
+    <QueryClientProvider client={queryClient}>
+      <CommentBox />
+    </QueryClientProvider>,
+  );
 });
 
 afterEach(() => {
@@ -65,14 +71,22 @@ describe('View post', () => {
     mockedUseCommentsQuery.mockImplementation(() => ({
       status: 'pending',
     }));
-    render(<QueryClientProvider client={queryClient}><CommentBox /></QueryClientProvider>);
+    render(
+      <QueryClientProvider client={queryClient}>
+        <CommentBox />
+      </QueryClientProvider>,
+    );
     expect(screen.getByTestId('comment-box-loading')).toBeInTheDocument();
   });
   it('you can see error component if the status is error.', async () => {
     mockedUseCommentsQuery.mockImplementation(() => ({
       status: 'error',
     }));
-    render(<QueryClientProvider client={queryClient}><CommentBox /></QueryClientProvider>);
+    render(
+      <QueryClientProvider client={queryClient}>
+        <CommentBox />
+      </QueryClientProvider>,
+    );
     expect(screen.getByText('An error has occurred')).toBeInTheDocument();
   });
   it('you can check Edited mark modified comments/replies', async () => {
@@ -86,13 +100,19 @@ describe('View post', () => {
     expect(screen.getByTestId('comment-2')).not.toHaveTextContent('modify');
   });
   it('you can see delete modal if you click delete comment btn', async () => {
-    expect(screen.getByTestId('comment-box-8')).not.toHaveTextContent('Do you want to delete this comment?');
+    expect(screen.getByTestId('comment-box-8')).not.toHaveTextContent(
+      'Do you want to delete this comment?',
+    );
     // click delete comment-1 btn
     await userEvent.click(screen.getByTestId('delete-comment-1'));
-    expect(screen.getByText('Do you want to delete this comment?')).toBeInTheDocument();
+    expect(
+      screen.getByText('Do you want to delete this comment?'),
+    ).toBeInTheDocument();
     // click x button
     await userEvent.click(screen.getByTestId('hide-modal-btn'));
-    expect(screen.getByTestId('comment-box-8')).not.toHaveTextContent('Do you want to delete this comment?');
+    expect(screen.getByTestId('comment-box-8')).not.toHaveTextContent(
+      'Do you want to delete this comment?',
+    );
   });
   it('you can see modify comment textarea if you click modify comment btn', async () => {
     await userEvent.click(screen.getByTestId('modify-comment-1'));

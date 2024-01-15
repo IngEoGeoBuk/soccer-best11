@@ -2,7 +2,9 @@ import { keepPreviousData, useInfiniteQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 async function getRepliesByCommentId(id: number, nextLastId: number) {
-  const { data } = await axios.get(`/api/comments/replies/${id}?replyId=${nextLastId}`);
+  const { data } = await axios.get(
+    `/api/comments/replies/${id}?replyId=${nextLastId}`,
+  );
   return data;
 }
 

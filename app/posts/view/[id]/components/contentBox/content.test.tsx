@@ -32,7 +32,7 @@ jest.mock('next-auth/react', () => {
   return {
     __esModule: true,
     ...originalModule,
-    useSession: jest.fn(() => (nextAuthData)),
+    useSession: jest.fn(() => nextAuthData),
   };
 });
 
@@ -49,7 +49,11 @@ beforeEach(() => {
     status: 'success',
     data: post,
   }));
-  render(<QueryClientProvider client={queryClient}><ContentBox /></QueryClientProvider>);
+  render(
+    <QueryClientProvider client={queryClient}>
+      <ContentBox />
+    </QueryClientProvider>,
+  );
 });
 
 describe('View post', () => {
@@ -57,29 +61,45 @@ describe('View post', () => {
     mockedUsePostQuery.mockImplementation(() => ({
       status: 'pending',
     }));
-    render(<QueryClientProvider client={queryClient}><ContentBox /></QueryClientProvider>);
+    render(
+      <QueryClientProvider client={queryClient}>
+        <ContentBox />
+      </QueryClientProvider>,
+    );
     expect(screen.getByTestId('content-box-loading')).toBeInTheDocument();
   });
   it('you can see error component if the status is error.', async () => {
     mockedUsePostQuery.mockImplementation(() => ({
       status: 'error',
     }));
-    render(<QueryClientProvider client={queryClient}><ContentBox /></QueryClientProvider>);
+    render(
+      <QueryClientProvider client={queryClient}>
+        <ContentBox />
+      </QueryClientProvider>,
+    );
     expect(screen.getByText('An error has occurred')).toBeInTheDocument();
   });
   it('you can see post detail if the status is success.', async () => {
     expect(screen.getByText('post3')).toBeInTheDocument();
     expect(screen.getByText('post3 description')).toBeInTheDocument();
-    expect(screen.getByTestId('view-player-209658')).toHaveTextContent('L. Goretzka');
+    expect(screen.getByTestId('view-player-209658')).toHaveTextContent(
+      'L. Goretzka',
+    );
   });
   it('you can see delete modal if the click the delete the post btn.', async () => {
     await userEvent.click(screen.getByTestId('delete-post-btn'));
-    expect(screen.getByText('Do you want to delete this post?')).toBeInTheDocument();
+    expect(
+      screen.getByText('Do you want to delete this post?'),
+    ).toBeInTheDocument();
     await userEvent.click(screen.getByTestId('no-modal-btn'));
-    expect(screen.getByTestId('content-box-8')).not.toHaveTextContent('Do you want to delete this post?');
+    expect(screen.getByTestId('content-box-8')).not.toHaveTextContent(
+      'Do you want to delete this post?',
+    );
     await userEvent.click(screen.getByTestId('delete-post-btn'));
     await userEvent.click(screen.getByTestId('hide-modal-btn'));
-    expect(screen.getByTestId('content-box-8')).not.toHaveTextContent('Do you want to delete this post?');
+    expect(screen.getByTestId('content-box-8')).not.toHaveTextContent(
+      'Do you want to delete this post?',
+    );
     // screen.debug(undefined, Infinity);
   });
 });

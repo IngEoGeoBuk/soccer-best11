@@ -12,7 +12,9 @@ export async function GET(
   try {
     const { id } = params;
     const perQuery = 5;
-    const commentId = Number(new URL(request.url).searchParams.get('commentId'));
+    const commentId = Number(
+      new URL(request.url).searchParams.get('commentId'),
+    );
 
     const data = await prisma!.comment.findMany({
       where: {
@@ -34,24 +36,25 @@ export async function GET(
         },
       ],
     });
-    const filteredData = data.map((item) => (
+    const filteredData = data.map((item) =>
       item.deletedAt
         ? {
-          ...item,
-          userId: '',
-          content: '',
-          email: '',
-          repliesCount: item._count.replies,
-        }
+            ...item,
+            userId: '',
+            content: '',
+            email: '',
+            repliesCount: item._count.replies,
+          }
         : {
-          ...item,
-          email: item.user.email,
-          repliesCount: item._count.replies,
-        }
-    ));
+            ...item,
+            email: item.user.email,
+            repliesCount: item._count.replies,
+          },
+    );
     return NextResponse.json({
       data: filteredData,
-      nextLastId: data.length === perQuery ? data[data.length - 1].id : undefined,
+      nextLastId:
+        data.length === perQuery ? data[data.length - 1].id : undefined,
     });
   } catch (error) {
     return new NextResponse('Error', { status: 500 });

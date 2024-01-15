@@ -10,10 +10,12 @@ import getQueryClient from '@/app/utils/getQueryClient';
 import View from './view';
 
 type Props = {
-  params: { id: number }
+  params: { id: number };
 };
 
-export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
   const url = `${process.env.NEXT_PUBLIC_SOCCER_BEST11_SERVER as string}/api/posts/${params.id}`;
   const { data } = await axios.get(url);
   return {

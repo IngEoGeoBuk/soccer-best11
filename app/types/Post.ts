@@ -14,7 +14,7 @@ export interface ChangedPlayer {
 export interface UpdatePost {
   title: string;
   description: string;
-  changedPlayers: ChangedPlayer[]
+  changedPlayers: ChangedPlayer[];
 }
 
 export interface ViewPostList {

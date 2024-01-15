@@ -109,7 +109,8 @@ export async function PUT(
     });
 
     return NextResponse.json({
-      post, players,
+      post,
+      players,
     });
   } catch (error) {
     return new NextResponse('Error', { status: 500 });

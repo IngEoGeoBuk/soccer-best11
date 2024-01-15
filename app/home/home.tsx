@@ -32,9 +32,8 @@ export default function Home() {
     },
   });
 
-  const {
-    status, data, isFetchingNextPage, fetchNextPage, hasNextPage,
-  } = usePostsQuery(type, search);
+  const { status, data, isFetchingNextPage, fetchNextPage, hasNextPage } =
+    usePostsQuery(type, search);
 
   const [value, setValue] = useState<string>('');
   const handleSubmit = (event: React.FormEvent) => {
@@ -146,9 +145,7 @@ export default function Home() {
                         {dateFormat(new Date(item.createdAt))}
                       </div>
                       <div className="text-sm text-gray-500 dark:text-gray-400">
-                        Like:
-                        {' '}
-                        {String(item.likes)}
+                        Like: {String(item.likes)}
                       </div>
                     </div>
                   </div>

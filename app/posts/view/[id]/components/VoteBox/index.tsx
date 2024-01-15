@@ -5,9 +5,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import {
-  useMutation, useQueryClient,
-} from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import AlertBox from '@/app/components/common/alertBox';
 import useLikeQuery from '@/app/hooks/useQuery/useLikeQuery';
@@ -19,9 +17,7 @@ function Index() {
   const { data: session } = useSession();
   const [showToast, setShowToast] = useState<string>('');
 
-  const {
-    status, data,
-  } = useLikeQuery(Number(id));
+  const { status, data } = useLikeQuery(Number(id));
 
   const postLike = async () => axios.post('/api/likes', { postId: +id });
   const postLikeMutation = useMutation({
@@ -72,20 +68,33 @@ function Index() {
             onClick={async () => clickLike()}
           >
             <div className="flex flex-col justify-center items-center gap-1">
-              <svg id="check-voted" className={`h-8 w-8 ${data?.clicked ? 'text-yellow-500' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                id="check-voted"
+                className={`h-8 w-8 ${data?.clicked ? 'text-yellow-500' : ''}`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
               </svg>
               <p>{String(data?.like)}</p>
             </div>
           </button>
         </div>
-        {showToast
-          ? (
-            <div id="toast-default" className="flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-500" role="alert">
-              <div className="ml-3 text-sm font-normal">{showToast}</div>
-            </div>
-          )
-          : <div style={{ height: '6px' }} />}
+        {showToast ? (
+          <div
+            id="toast-default"
+            className="flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-500"
+            role="alert"
+          >
+            <div className="ml-3 text-sm font-normal">{showToast}</div>
+          </div>
+        ) : (
+          <div style={{ height: '6px' }} />
+        )}
         <br />
       </div>
     );

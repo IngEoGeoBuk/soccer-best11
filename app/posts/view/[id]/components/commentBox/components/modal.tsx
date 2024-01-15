@@ -17,7 +17,9 @@ function Modal({ showModal, setShowModal }: Interface) {
   const deleteCommentMutation = useMutation({
     mutationFn: deleteComment,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['comments', { postId: +id }] });
+      queryClient.invalidateQueries({
+        queryKey: ['comments', { postId: +id }],
+      });
       setShowModal(0);
     },
     onError: (error: Error) => {

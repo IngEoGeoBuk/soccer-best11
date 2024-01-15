@@ -4,9 +4,7 @@ import { NextResponse } from 'next/server';
 
 import prisma from '@/app/libs/prismadb';
 
-export async function GET(
-  request: Request,
-) {
+export async function GET(request: Request) {
   try {
     const club = new URL(request.url).searchParams.get('club');
     const data = await prisma!.player.findMany({

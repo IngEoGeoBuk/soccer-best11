@@ -16,7 +16,7 @@ function EditFrame({
   value,
   setValue,
   cancelFunc,
-} : Interface) {
+}: Interface) {
   return (
     <form onSubmit={handleSubmit} data-testid={`edit-${type}-${id}-form`}>
       <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
@@ -33,10 +33,7 @@ function EditFrame({
           />
         </div>
         <div className="items-center justify-between px-3 py-2 border-t dark:border-gray-600">
-          <button
-            type="submit"
-            className="btn-primary"
-          >
+          <button type="submit" className="btn-primary">
             {`Edit ${type}`}
           </button>
           <button
