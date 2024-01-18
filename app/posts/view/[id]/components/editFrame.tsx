@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface Interface {
   id: number;
   handleSubmit: (event: React.FormEvent) => void;

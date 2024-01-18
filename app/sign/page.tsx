@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Sign from './sign';
 
 export const metadata = {

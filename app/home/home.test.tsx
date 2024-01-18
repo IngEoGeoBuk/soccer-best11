@@ -1,6 +1,5 @@
 // https://www.js-howto.com/react-query-how-to-test-infinite-query-with-jest-and-react-testing-library/
 import '@testing-library/jest-dom';
-import React from 'react';
 
 import 'intersection-observer';
 import { QueryClientProvider } from '@tanstack/react-query';

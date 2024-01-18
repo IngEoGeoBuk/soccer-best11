@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Metadata } from 'next';
 
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';

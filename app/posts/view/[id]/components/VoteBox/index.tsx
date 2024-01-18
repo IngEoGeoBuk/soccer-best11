@@ -2,7 +2,7 @@
 // 1. request 많아짐 (추천 -> 추천 취소 -> 추천 이렇게 번복하는 사람들 있는데, 그때마다 request)
 // 2. 사용자 수 많아 보이게 하기 위해 (추천 수가 많을 수록 좋음)
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { useParams } from 'next/navigation';
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface Interface {
   body: string;
   hideModal: () => void;

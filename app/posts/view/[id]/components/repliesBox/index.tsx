@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, Fragment } from 'react';
 
 import { useParams } from 'next/navigation';
 
@@ -28,7 +28,7 @@ function Index({ commentId }: { commentId: number }) {
     return (
       <>
         {data.pages.map((page) => (
-          <React.Fragment key={page.nextLastId ?? 0}>
+          <Fragment key={page.nextLastId ?? 0}>
             {page.data?.map((item: ViewReply) => (
               <ReplyItem
                 key={item.id}
@@ -36,7 +36,7 @@ function Index({ commentId }: { commentId: number }) {
                 setShowModal={setShowModal}
               />
             ))}
-          </React.Fragment>
+          </Fragment>
         ))}
 
         {showModal !== 0 && (

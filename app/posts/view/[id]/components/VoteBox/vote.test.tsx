@@ -1,7 +1,6 @@
 // https://www.js-howto.com/testing-react-query-with-jest-and-react-testing-library/
 
 import '@testing-library/jest-dom';
-import React from 'react';
 
 import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';

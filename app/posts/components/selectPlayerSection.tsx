@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 import { SelectedPlayerBox } from './playerBox';
 
 function SelectPlayerSection() {

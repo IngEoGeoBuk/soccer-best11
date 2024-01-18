@@ -1,5 +1,3 @@
-import React from 'react';
-
 function DeletedCommentItem() {
   return (
     <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">

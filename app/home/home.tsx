@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -111,7 +111,7 @@ export default function Home() {
         </form>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
           {data.pages.map((page) => (
-            <React.Fragment key={page.nextLastId ?? 0}>
+            <Fragment key={page.nextLastId ?? 0}>
               {page.data?.map((item: ViewPostList) => (
                 <button
                   key={item.id}
@@ -152,7 +152,7 @@ export default function Home() {
                   </div>
                 </button>
               ))}
-            </React.Fragment>
+            </Fragment>
           ))}
           {isFetchingNextPage && <PostSkeletonList />}
         </div>

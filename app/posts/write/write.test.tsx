@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom';
-import React from 'react';
 
 import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen, fireEvent } from '@testing-library/react';

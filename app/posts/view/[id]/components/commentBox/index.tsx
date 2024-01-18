@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, Fragment } from 'react';
 
 import { useParams } from 'next/navigation';
 
@@ -43,7 +43,7 @@ function Index() {
       <div data-testid={`comment-box-${id}`}>
         {email && <AddCommentBox />}
         {data.pages.map((page) => (
-          <React.Fragment key={page.nextLastId ?? 0}>
+          <Fragment key={page.nextLastId ?? 0}>
             {page.data?.map((item: ViewComment) => (
               <CommentItem
                 key={item.id}
@@ -51,7 +51,7 @@ function Index() {
                 setShowModal={setShowModal}
               />
             ))}
-          </React.Fragment>
+          </Fragment>
         ))}
         {hasNextPage && (
           <div className="flex py-5 justify-center">

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Player } from '@prisma/client';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 

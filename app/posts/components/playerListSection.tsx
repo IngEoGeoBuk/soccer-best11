@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import AlertBox from '@/app/_components/common/alertBox';
 import ToastBox from '@/app/_components/common/toastBox';

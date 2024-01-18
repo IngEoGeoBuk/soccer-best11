@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Player } from '@prisma/client';
 
 import { ViewPlayerBox } from '@/app/posts/components/playerBox';
