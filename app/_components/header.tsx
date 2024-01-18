@@ -9,6 +9,8 @@ import { useQueryClient } from '@tanstack/react-query';
 import { signOut, signIn, useSession } from 'next-auth/react';
 
 import './styles.css';
+import Logo from '@/public/images/logo.png';
+
 import Spinner from './common/spinner';
 
 function LoginAndLogout({ className }: { className: string }) {
@@ -98,7 +100,7 @@ function Header() {
               }}
             >
               <Image
-                src="/images/logo.png"
+                src={Logo}
                 className="mr-3 dark:brightness-0 dark:invert"
                 alt="Flowbite Logo"
                 width={30}

@@ -13,6 +13,7 @@ import AlertBox from '@/app/_components/common/alertBox';
 import usePostsQuery from '@/app/_hooks/useQuery/usePostsQuery';
 import { ViewPostList } from '@/app/_types/Post';
 import dateFormat from '@/app/_utils/dateFormat';
+import Champions from '@/public/images/champions.png';
 
 import PostSkeletonList from './components/postSkeletonList';
 
@@ -122,12 +123,7 @@ export default function Home() {
                   }}
                 >
                   <div className="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700 relative">
-                    <Image
-                      src="/images/champions.png"
-                      fill
-                      alt="champs"
-                      priority
-                    />
+                    <Image src={Champions} fill alt="champs" priority />
                   </div>
                   <div className="flex items-start space-x-4">
                     <Image

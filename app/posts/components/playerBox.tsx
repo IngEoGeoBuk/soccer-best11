@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import { Player } from '@prisma/client';
 
 import usePostStore from '@/app/_store/post';
+import Avatar from '@/public/images/avatar.png';
 
 const firebaseStorageUrl = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_URL;
 
 function PlayerPaceImg({ src }: { src: string }) {
-  const [imgSrc, setImgSrc] = useState(src);
+  const [imgSrc, setImgSrc] = useState<string | StaticImageData>(src);
   useEffect(() => {
     setImgSrc(src);
   }, [src]);
@@ -21,7 +22,7 @@ function PlayerPaceImg({ src }: { src: string }) {
       height={60}
       alt="player-box"
       onError={() => {
-        setImgSrc('/images/avatar.png');
+        setImgSrc(Avatar);
       }}
     />
   );
@@ -68,12 +69,7 @@ function SelectedPlayerBox({ value }: { value: number }) {
       data-testid={`selected-player-${value}`}
     >
       <div className="w-[36px] h-[36px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" />
-      <Image
-        src="/images/avatar.png"
-        width={60}
-        height={60}
-        alt="empty-player"
-      />
+      <Image src={Avatar} width={60} height={60} alt="empty-player" />
       <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
         Name
       </p>
