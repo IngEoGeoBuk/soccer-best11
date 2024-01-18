@@ -1,786 +1,689 @@
-ID,Name,Nationality,Club
-209658,L. Goretzka,GER,BAY
-212198,Bruno Fernandes,POR,MUN
-192985,K. De Bruyne,Belgium,MCI
-224232,N. Barella,ITA,INT
-212622,J. Kimmich,GER,BAY
-197445,D. Alaba,Austria,MAD
-208333,E. Can,GER,DOR
-210514,João Cancelo,POR,MCI
-177003,L. Modrić,Croatia,MAD
-226161,Marcos Llorente,ESP,ATM
-212616,R. De Paul,Argentina,ATM
-228702,F. de Jong,NED,FCB
-194765,A. Griezmann,FRA,ATM
-193082,J. Cuadrado,Colombia,JUV
-231281,T. Alexander-Arnold,ENG,LIV
-216352,M. Brozović,Croatia,INT
-209331,M. Salah,Egypt,LIV
-241096,S. Tonali,ITA,MIL
-189509,Thiago,ESP,LIV
-238074,R. James,ENG,CHE
-189332,Jordi Alba,ESP,FCB
-213565,T. Lemar,FRA,ATM
-226754,I. Bennacer,Algeria,MIL
-238744,W. McKennie,United States,JUV
-200145,Casemiro,Brazil,MAD
-230938,F. Kessié,Côte d'Ivoire,FCB
-188545,R. Lewandowski,Poland,FCB
-181872,22 A. Vidal,Chile,INT
-232411,C. Nkunku,FRA,RBL
-188377,K. Walker,ENG,MCI
-232656,T. Hernández,FRA,MIL
-186942,İ. Gündoğan,GER,MCI
-223697,R. Gosens,GER,INT
-219683,C. Tolisso,FRA,PSG
-193747,Koke,ESP,ATM
-183711,J. Henderson,ENG,LIV
-214047,M. Uribe,Colombia,SLB
-239053,F. Valverde,Uruguay,MAD
-208722,S. Mané,Senegal,BAY
-233927,Lucas Paquetá,Brazil,PSG
-209297,Fred,Brazil,MUN
-218667,Bernardo Silva,POR,MCI
-210035,Grimaldo,ESP,OLM
-224458,Diogo Jota,POR,LIV
-252371,J. Bellingham,ENG,DOR
-201455,G. Kondogbia,Central African Republic,ATM
-173210,19 C. Marchisio,ITA,JUV
-204923,M. Sabitzer,Austria,BAY
-208128,H. Çalhanoğlu,Turkey,INT
-209889,R. Guerreiro,POR,DOR
-234396,A. Davies,Canada,BAY
-172522,D. Wass,Denmark,ATM
-201519,J. Veretout,FRA,LYO
-195864,P. Pogba,FRA,JUV
-209499,Fabinho,Brazil,LIV
-208421,Saúl,ESP,ATM
-231478,L. Martínez,Argentina,INT
-201942,Roberto Firmino,Brazil,LIV
-20801,Cristiano Ronaldo,POR,MUN
-228618,F. Mendy,FRA,MAD
-225375,K. Laimer,Austria,RBL
-188350,M. Reus,GER,DOR
-215914,N. Kanté,FRA,CHE
-216267,A. Robertson,Scotland,LIV
-203551,A. Florenzi,ITA,MIL
-208418,Y. Carrasco,Belgium,ATM
-208618,Lucas Vázquez,ESP,MAD
-251573,Renan Lodi,Brazil,ATM
-165153,K. Benzema,FRA,MAD
-182521,T. Kroos,GER,MAD
-121939,17 P. Lahm,GER,BAY
-243576,Pedro Porro,ESP,POR
-209989,T. Partey,Ghana,ARS
-241637,A. Tchouaméni,FRA,MAD
-183898,Á. Di María,Argentina,JUV
-164169,19 Filipe Luís,Brazil,ATM
-207410,M. Kovačić,Croatia,CHE
-189596,T. Müller,GER,BAY
-214997,Á. Correa,Argentina,ATM
-192638,Marcos Alonso,ESP,CHE
-180206,M. Pjanić,Bosnia and Herzegovina,FCB
-176676,22 Marcelo,Brazil,MAD
-231866,Rodri,ESP,MCI
-252060,T. Pobega,ITA,MIL
-227813,O. Zinchenko,Ukraine,ARS
-247090,E. Fernández,Argentina,OLM
-239231,Cucurella,ESP,CHE
-233419,Raphinha,Brazil,FCB
-230658,Arthur,Brazil,JUV
-205498,Jorginho,ITA,CHE
-236496,M. Guendouzi,FRA,LYO
-210008,A. Rabiot,FRA,JUV
-203483,D. Klaassen,NED,AJA
-192883,H. Mkhitaryan,Armenia,INT
-248243,E. Camavinga,FRA,MAD
-138412,J. Milner,ENG,LIV
-246191,J. Álvarez,Argentina,MCI
-223874,V. Rongier,FRA,LYO
+id,name,nationality,club
+231747,K. Mbappé,France,PSG
 239085,E. Haaland,Norway,MCI
-222077,M. Locatelli,ITA,JUV
-239301,L. Martínez,Argentina,MUN
-233064,M. Mount,ENG,CHE
-199304,Danilo,Brazil,JUV
-221363,D. van de Beek,NED,MUN
-203376,V. van Dijk,NED,LIV
-229927,Gerson,Brazil,LYO
-146954,18 Gabi,ESP,ATM
-210411,Otávio,POR,SLB
-242444,João Félix,POR,ATM
-222665,M. Ødegaard,Norway,ARS
-251854,Pedri,ESP,FCB
-135507,22 Fernandinho,Brazil,MCI
-199434,D. Tadić,Serbia,AJA
-229984,B. Chilwell,ENG,CHE
-204963,Carvajal,ESP,MAD
-236401,N. Mazraoui,Morocco,BAY
-198784,A. Oxlade-Chamberlain,ENG,LIV
-208141,Gabriel,Brazil,OLM
-10535,15 Xavi,ESP,FCB
-253124,Matheus Nunes,POR,POR
-202652,R. Sterling,ENG,CHE
-246104,R. Gravenberch,NED,BAY
-246669,B. Saka,ENG,ARS
-191043,Alex Sandro,Brazil,JUV
-224081,K. Phillips,ENG,MCI
-226491,K. Tierney,Scotland,ARS
-202371,T. Meunier,Belgium,DOR
-239093,J. Clauss,FRA,LYO
-226268,F. Dimarco,ITA,INT
-237238,S. McTominay,Scotland,MUN
-146530,22 Dani Alves,Brazil,FCB
-231913,F. Aursnes,Norway,FEY
-243245,O. Kökçü,Turkey,FEY
-202556,M. Depay,NED,FCB
-240950,Pedro Gonçalves,POR,POR
-220971,N. Keïta,Guinea,LIV
-222492,L. Sané,GER,BAY
-242577,R. Faivre,FRA,PSG
-229758,R. Krunić,Bosnia and Herzegovina,MIL
-220018,A. Rebić,Croatia,MIL
-237692,P. Foden,ENG,MCI
-205988,L. Shaw,ENG,MUN
-218339,M. Dahoud,GER,DOR
-208670,H. Ziyech,Morocco,CHE
-230666,Gabriel Jesus,Brazil,ARS
-231390,Diogo Gonçalves,POR,OLM
-235805,F. Chiesa,ITA,JUV
-234906,H. Aouar,FRA,PSG
-211256,N. Tagliafico,Argentina,PSG
-231677,M. Rashford,ENG,MUN
-190815,D. Blind,NED,AJA
-228941,André Silva,POR,RBL
-251470,C. De Ketelaere,Belgium,MIL
-153079,22 S. Agüero,Argentina,FCB
-200260,S. Berghuis,NED,AJA
-253072,D. Núñez,Uruguay,LIV
-204485,R. Mahrez,Algeria,MCI
-184432,Azpilicueta,ESP,CHE
-203486,T. Hazard,Belgium,DOR
-233096,D. Dumfries,NED,INT
-206113,S. Gnabry,GER,BAY
-233195,X. Schlager,Austria,RBL
-236703,D. Raum,GER,RBL
-238463,A. Haidara,Mali,RBL
-235407,S. Özcan,Turkey,DOR
-199564,Sergi Roberto,ESP,FCB
-245235,A. Bah,Denmark,OLM
-229261,D. Zakaria,Switzerland,JUV
-213874,Thiago Mendes,Brazil,PSG
-184941,A. Sánchez,Chile,LYO
-238216,C. Gallagher,ENG,CHE
-193301,A. Lacazette,FRA,PSG
-112316,20 J. Mathieu,FRA,POR
-241084,L. Díaz,Colombia,LIV
-212814,João Mário,POR,OLM
-195365,K. Kampl,Slovenia,RBL
-183277,E. Hazard,Belgium,MAD
-179944,21 David Luiz,Brazil,ARS
-240130,Éder Militão,Brazil,MAD
-15723,17 D. Kuyt,NED,FEY
-172871,J. Vertonghen,Belgium,OLM
-210736,Emerson,ITA,CHE
-224425,M. Wolf,GER,DOR
-179813,22 E. Cavani,Uruguay,MUN
-244260,Dani Olmo,ESP,RBL
-251517,J. Gvardiol,Croatia,RBL
-225953,S. Bergwijn,NED,AJA
-234574,Diogo Dalot,POR,MUN
-220834,Marco Asensio,ESP,MAD
-242664,A. Saelemaekers,Belgium,MIL
-192505,R. Lukaku,Belgium,INT
-252143,Daniel Bragança,POR,POR
-232099,M. Grujić,Serbia,SLB
-228881,D. Calabria,ITA,MIL
-241461,Ferran Torres,ESP,FCB
-222028,J. Weigl,GER,OLM
-181783,21 M. Mandžukić,Croatia,MIL
-188567,P. Aubameyang,Gabon,FCB
-212213,Ricardo Esgaio,POR,POR
-212194,J. Brandt,GER,DOR
-226851,B. Pavard,FRA,BAY
-178603,M. Hummels,GER,DOR
-190483,21 Douglas Costa,Brazil,BAY
-236572,O. Wijndal,NED,AJA
-232223,K. Tsimikas,Greece,LIV
-245155,M. Kudus,Ghana,AJA
-240243,Matheus Cunha,Brazil,ATM
-231447,D. Malen,NED,DOR
-206517,J. Grealish,ENG,MCI
-211567,Gilberto,Brazil,OLM
-4098,17 Tiago,POR,ATM
-177388,D. Payet,FRA,LYO
-220814,L. Hernández,FRA,BAY
-233084,N. Molina,Argentina,ATM
-204472,B. Sarr,Senegal,BAY
-164240,Thiago Silva,Brazil,CHE
-205452,A. Rüdiger,GER,MAD
-264240,Gavi,ESP,FCB
-256790,J. Musiala,GER,BAY
-255475,Antony,Brazil,AJA
-222509,Dani Ceballos,ESP,MAD
-198946,D. D'Ambrosio,ITA,INT
-243627,Y. Adli,FRA,MIL
-238041,T. Malacia,NED,MUN
-204259,S. Arias,Colombia,ATM
-204884,22 B. Mendy,FRA,MCI
-231443,O. Dembélé,FRA,FCB
-189511,Sergio Busquets,ESP,FCB
-177413,A. Witsel,Belgium,ATM
-215639,Kenedy,Brazil,CHE
-176769,19 Jonas,Brazil,OLM
-190460,C. Eriksen,Denmark,MUN
-205600,S. Umtiti,FRA,FCB
-184392,M. Darmian,ITA,INT
-216547,Rafa,POR,OLM
-212188,T. Werner,GER,RBL
-201118,Cédric,POR,ARS
-251804,S. Dest,United States,FCB
-242380,Stephen Eustáquio,Canada,SLB
-229668,Mario Hermoso,ESP,ATM
-179605,A. Taarabt,Morocco,OLM
-236772,D. Szoboszlai,Hungary,RBL
-234035,Odriozola,ESP,MAD
-213666,R. Loftus-Cheek,ENG,CHE
-238794,Vinícius Jr.,Brazil,MAD
-207791,Y. Poulsen,Denmark,RBL
-226853,J. St. Juste,NED,POR
-246646,M. Caqueret,FRA,PSG
-235243,M. de Ligt,NED,BAY
-213345,K. Coman,FRA,BAY
-235875,Pol Lirola,ESP,LYO
-216289,M. Diemers,NED,FEY
-235844,E. Álvarez,Mexico,AJA
-208920,N. Aké,NED,MCI
-233049,J. Sancho,ENG,MUN
-212823,20 Gabriel Barbosa,Brazil,INT
-213400,22 D. Laxalt,Uruguay,MIL
-247819,N. Schlotterbeck,GER,DOR
-226110,N. Pépé,Côte d'Ivoire,ARS
-179844,21 Diego Costa,ESP,ATM
-211300,A. Martial,FRA,MUN
-241928,A. Sambi Lokonga,Belgium,ARS
-246147,22 M. Greenwood,ENG,MUN
-225782,A. Maitland-Niles,ENG,ARS
-241721,Rafael Leão,POR,MIL
-21146,18 M. Carrick,ENG,MUN
-199189,R. Barkley,ENG,CHE
-236045,Reinildo,Mozambique,ATM
-230625,Matheus Reis,Brazil,POR
-205391,S. Meïté,FRA,OLM
-194022,André Almeida,POR,OLM
-41236,Z. Ibrahimović,Sweden,MIL
-255009,K. Taylor,NED,AJA
-229237,M. Akanji,Switzerland,DOR
-180403,22 Willian,Brazil,ARS
-203574,J. Stones,ENG,MCI
-193290,M. Braithwaite,Denmark,FCB
-255069,Nico González,ESP,FCB
-244193,Jovane Cabral,Cape Verde Islands,POR
-215330,J. Correa,Argentina,INT
-212218,A. Laporte,ESP,MCI
-152729,Piqué,ESP,FCB
-242434,C. Jones,ENG,LIV
-207993,S. Kolašinac,Bosnia and Herzegovina,LYO
-228080,F. Passlack,GER,DOR
-241788,M. Taremi,Iran,SLB
-245152,S. Giménez,Mexico,FEY
-240938,Junior Messias,Brazil,MIL
-199503,G. Xhaka,Switzerland,ARS
-257290,João Mário,POR,SLB
-245158,L. Suárez,Colombia,LYO
-227796,C. Pulisic,United States,CHE
-180930,E. Džeko,Bosnia and Herzegovina,INT
-228579,B. Henrichs,GER,RBL
-203747,Héctor Bellerín,ESP,ARS
-251805,J. Timber,NED,AJA
-243812,Rodrygo,Brazil,MAD
-216531,Paulinho,POR,POR
-199813,G. Trauner,Austria,FEY
-221639,Mariano,Dominican Republic,MAD
-255654,P. Kalulu,FRA,MIL
-205693,S. Haller,Côte d'Ivoire,DOR
-184344,L. Bonucci,ITA,JUV
-212153,R. Gagliardini,ITA,INT
-208448,E. Forsberg,Sweden,RBL
-221660,V. Lindelöf,Sweden,MUN
-253306,M. Ugarte,Uruguay,POR
-229880,A. Wan-Bissaka,ENG,MUN
-255001,N. Rovella,ITA,JUV
-189712,K. Strootman,NED,LYO
-241,14 R. Giggs,Wales,MUN
-211454,M. Elneny,Egypt,ARS
-242087,H. Morita,Japan,POR
-241854,P. Schuurs,NED,AJA
-241187,L. Geertruida,NED,FEY
-222716,22 Everton,Brazil,OLM
-251806,Q. Timber,NED,FEY
-238857,Wilson Manafá,POR,SLB
-178509,O. Giroud,FRA,MIL
-201153,Morata,ESP,ATM
-240740,C. Hudson-Odoi,ENG,CHE
-241486,J. Koundé,FRA,FCB
-240702,R. Yaremchuk,Ukraine,OLM
-205175,A. Milik,Poland,LYO
-203263,H. Maguire,ENG,MUN
-245541,G. Reyna,United States,DOR
-228509,J. Reine-Adélaïde,FRA,PSG
-229453,Gil Dias,POR,OLM
-251566,Gabriel Martinelli,Brazil,ARS
-212755,J. Hendrix,NED,FEY
-253004,Ansu Fati,ESP,FCB
-246430,D. Vlahović,Serbia,JUV
-243657,J. Garner,ENG,MUN
-260823,N. Fagioli,ITA,JUV
-215871,A. Jahanbakhsh,Iran,FEY
-201535,R. Varane,FRA,MUN
-176949,18 B. Ruíz,Costa Rica,POR
-175254,22 F. Caicedo,Ecuador,INT
-236632,David Neres,Brazil,OLM
-253163,R. Araujo,Uruguay,FCB
-217699,I. Slimani,Algeria,POR
-235889,C. Ünder,Turkey,LYO
-222331,L. Klostermann,GER,RBL
-229593,M. Pjaca,Croatia,JUV
-232862,S. Nakajima,Japan,SLB
-224069,K. Toko Ekambi,Cameroon,PSG
-251852,K. Adeyemi,GER,DOR
-256903,Gonçalo Ramos,POR,OLM
-197061,J. Matip,Cameroon,LIV
-251530,Nuno Tavares,POR,LYO
-216549,A. Sørloth,Norway,RBL
-192366,N. Otamendi,Argentina,OLM
-206058,M. De Sciglio,ITA,JUV
-239818,Rúben Dias,POR,MCI
-200724,Nacho Fernández,ESP,MAD
-200536,22 N. Schulz,GER,DOR
-243414,B. Williams,ENG,MUN
-228747,O. Idrissi,Morocco,FEY
-259307,M. Gusto,FRA,PSG
-243686,Chiquinho,POR,OLM
-237383,A. Bastoni,ITA,INT
-243237,L. Pellegrini,ITA,JUV
-239482,Galeno,Brazil,SLB
-120533,Pepe,POR,SLB
-236723,F. Ballo-Touré,Senegal,MIL
-211591,M. Dembélé,FRA,PSG
-241436,C. Bassey,Nigeria,AJA
-235454,M. Sarr,FRA,CHE
-264699,K. Asllani,Albania,INT
-182212,A. Modeste,FRA,DOR
-236610,M. Kean,ITA,JUV
-243481,M. Pedersen,Norway,FEY
-240223,M. Ristić,Serbia,OLM
-7826,19 R. van Persie,NED,FEY
-229148,Dalbert,Brazil,INT
-232756,F. Tomori,ENG,MIL
-1041,14 J. Zanetti,Argentina,INT
-198176,S. de Vrij,NED,INT
-244778,Trincão,POR,POR
-179645,S. Kjær,Denmark,MIL
-247185,A. Palaversa,Croatia,MCI
-239580,Bremer,Brazil,JUV
-258826,D. Rensch,NED,AJA
-232363,M. Škriniar,Slovakia,INT
-219809,T. Bakayoko,FRA,MIL
-204529,M. Batshuayi,Belgium,CHE
-247641,Tetê,Brazil,PSG
-198951,C. Bakambu,Congo DR,LYO
-183907,J. Boateng,GER,PSG
-259233,I. Moriba,Guinea,RBL
-13038,14 Puyol,ESP,FCB
-213135,D. Origi,Belgium,MIL
-256958,Fábio Vieira,POR,ARS
-209620,B. Rahman,Ghana,CHE
-245992,B. Gilmour,Scotland,CHE
-210897,C. Mbemba,Congo DR,LYO
-188802,22 M. Schmelzer,GER,DOR
-246014,M. López,Peru,FEY
-235973,S. Szymański,Poland,FEY
-241707,P. Gueye,Senegal,LYO
-244797,P. Musa,Croatia,OLM
-229558,D. Upamecano,FRA,BAY
-212190,N. Süle,GER,DOR
-268802,F. Miretti,ITA,JUV
-232938,T. Tomiyasu,Japan,ARS
-262138,C. Lukeba,FRA,PSG
-235619,M. Edwards,ENG,POR
-254089,22 Rodrigo Fernandes,POR,POR
-178088,22 Juan Mata,ESP,MUN
-243715,W. Saliba,FRA,ARS
-183569,E. Choupo-Moting,Cameroon,BAY
-240273,E. Smith Rowe,ENG,ARS
-257470,A. Elanga,Sweden,MUN
-246159,E. Laird,ENG,MUN
-177610,21 Javi Martínez,ESP,BAY
-262414,André Franco,POR,SLB
-246960,M. Ihattaren,NED,AJA
-216460,J. Giménez,Uruguay,ATM
-173212,17 P. De Ceglie,ITA,JUV
-246683,L. Agoumé,FRA,INT
-231410,Brahim,ESP,MIL
-252038,Romário Baró,POR,SLB
-245037,Eric García,ESP,FCB
-41635,16 P. Mexès,FRA,MIL
-222461,Rochinha,POR,POR
-226773,22 P. Diop,Senegal,PSG
-219581,S. Gigot,FRA,LYO
-251810,B. Brobbey,NED,AJA
-222160,Y. Koné,Mali,PSG
-235735,E. Ampadu,Wales,CHE
-197655,S. Coates,Uruguay,POR
-225100,J. Gomez,ENG,LIV
-248820,Mateu Morey,ESP,DOR
-245341,C. Bassett,United States,FEY
-225970,19 A. Gnoukouri,Côte d'Ivoire,INT
-254544,Reinier,Brazil,MAD
-201068,22 T. Kern,GER,BAY
-261084,B. Dieng,Senegal,LYO
-256632,22 Luis Henrique,Brazil,LYO
-263439,Paulo Bernardo,POR,OLM
-256612,Evanilson,Brazil,SLB
-231485,A. Tuanzebe,ENG,MUN
-243854,M. Simakan,FRA,RBL
-205705,22 Z. Feddal,Morocco,POR
-251528,Z. Sanusi,Nigeria,SLB
-235688,Lucas Veríssimo,Brazil,OLM
-201024,K. Koulibaly,Senegal,CHE
-237456,21 L. Agbenyenu,Ghana,POR
-221283,18 A. Nouri,NED,AJA
-256725,Fábio Carvalho,POR,LIV
-230918,T. Chalobah,ENG,CHE
-233510,T. Chong,NED,MUN
-231448,R. Nelson,ENG,ARS
-242999,Álex Collado,ESP,FCB
-225508,E. Bailly,Côte d'Ivoire,MUN
-257204,S. Diomande,Côte d'Ivoire,PSG
-235842,A. Pinamonti,ITA,INT
-244280,A. Fein,GER,BAY
-265390,Y. Regeer,NED,AJA
-234569,Florentino,POR,OLM
-213661,A. Christensen,Denmark,FCB
-244,11 G. Neville,ENG,MUN
-269852,M. El Arouch,FRA,PSG
-257179,Gonçalo Inácio,POR,POR
-207863,Felipe,Brazil,ATM
-251341,M. Aké,FRA,JUV
-234826,Toni Martínez,ESP,SLB
-258861,João Victor,Brazil,OLM
-267976,Pablo Torre,ESP,FCB
-231936,B. White,ENG,ARS
-238896,Pepê,Brazil,SLB
-204639,S. Savić,Montenegro,ATM
-253283,F. Pellistri,Uruguay,MUN
-267680,A. Fatawu Issahaku,Ghana,POR
-261530,Dário Essugo,POR,POR
-260638,B. Elmaz,Turkey,LYO
-237678,I. Konaté,FRA,LIV
-261987,Blanco,ESP,MAD
-269136,22 K. Mainoo,ENG,MUN
-224949,J. Dilrosun,NED,FEY
-256268,A. Broja,Albania,CHE
-234679,22 P. Sandler,NED,FEY
-204341,Luís Neto,POR,POR
-258619,J. Lepenant,FRA,PSG
-240833,Y. Moukoko,GER,DOR
-225263,D. Ćaleta-Car,Croatia,LYO
-232580,Gabriel,Brazil,ARS
-257534,C. Palmer,ENG,MCI
-253052,I. Kaboré,Burkina Faso,MCI
-257376,22 Lucas de Vega,Brazil,FCB
-239881,Danilo,Brazil,FEY
-259849,Gabriel Veron,Brazil,SLB
-234925,K. Pierie,NED,AJA
-246174,H. Elliott,ENG,LIV
-260644,Kaio Jorge,Brazil,JUV
-262218,K. Fitz-Jim,NED,AJA
-250961,J. Zirkzee,NED,BAY
-241410,E. Salcedo,ITA,INT
-262260,Mini,ESP,ATM
-263945,22 Alberto Moreno,ESP,ATM
-254148,P. Wålemark,Sweden,FEY
-243591,Fernando Andrade,Brazil,SLB
-263943,Javi Serrano,ESP,ATM
-225161,Vallejo,ESP,MAD
-242835,L. Balerdi,Argentina,LYO
-265695,M. Soulé,Argentina,JUV
-270390,Marquinhos,Brazil,ARS
-236988,E. Nketiah,ENG,ARS
-251570,R. Cherki,FRA,PSG
-247229,R. Bellanova,ITA,INT
-252463,M. Taabouni,NED,FEY
-253094,20 C. McCann,Republic of Ireland,MUN
-253167,Félix Correia,POR,JUV
-204638,W. Orban,Hungary,RBL
-228295,R. Holding,ENG,ARS
-261050,Francisco Conceição,POR,AJA
-228869,22 Camus,ESP,ATM
-258171,H. Mejbri,Tunisia,MUN
-269854,I. Lomami,FRA,PSG
-253482,J. Cain,ENG,LIV
-259806,F. Da Silva,FRA,PSG
-266905,Henrique Araújo,POR,OLM
-266127,22 L. Hall,ENG,CHE
-255528,21 Camilo,Brazil,PSG
-259356,C. Chukwuemeka,ENG,CHE
-253715,D. Sarmiento,Argentina,MCI
-238071,D. Sterling,ENG,CHE
-255371,Marcos Paulo,POR,ATM
-257315,21 Gustavo Maia,Brazil,FCB
-255010,N. Ünüvar,NED,AJA
-239631,D. Loader,ENG,SLB
-263637,22 L. Hartjes,NED,FEY
-253452,M. Azeez,ENG,ARS
-259096,T. Akinola,ENG,ARS
-250955,J. Stanišić,Croatia,BAY
-252961,T. Nianzou,FRA,BAY
-254088,A. Diallo,Côte d'Ivoire,MUN
-260653,B. Norton-Cuffy,ENG,ARS
-268474,L. Lucca,ITA,AJA
-242453,S. van den Berg,NED,LIV
-213917,Fábio Cardoso,POR,SLB
-194957,P. Jones,ENG,MUN
-266891,M. Lazetić,Serbia,MIL
-257025,K. de la Fuente,United States,LYO
-247166,J. Olayinka,ENG,ARS
-271118,N. Naujoks,NED,FEY
-260247,M. Rogers,ENG,MCI
-211320,D. Rugani,ITA,JUV
-245459,22 X. Emmers,Belgium,INT
-252870,E. Demir,Turkey,FCB
-263602,B. Nadir,FRA,LYO
-264416,M. Benita,NED,FEY
-263514,A. Kamara,Guinea,DOR
-263169,F. Stevanović,Serbia,MCI
-253034,D. Bernard,ENG,MUN
-5003,08 Cafu,Brazil,MIL
-265412,22 H. Vale,ENG,CHE
-268419,22 Marc Jurado,ESP,MUN
-260910,S. Shoretire,ENG,MUN
-253465,T. Mengi,ENG,MUN
-265788,22 Z. Iqbal,Iraq,MUN
-266157,22 Álvaro Sanz,ESP,FCB
-268421,M. Tel,FRA,BAY
-257042,U. Bertelli,FRA,LYO
-265396,22 Carlos Martín,ESP,ATM
-268411,22 Vinícius Tobías,Brazil,MAD
-242787,22 E. Dixon-Bonner,ENG,LIV
-263640,22 A. Milambo,NED,FEY
-238476,22 D. Zagadou,FRA,DOR
-260141,22 C. Cîrjan,Romania,ARS
-257472,22 C. Wellens,ENG,MUN
-263566,Rodrigo Conceição,POR,SLB
-237823,22 H. Abe,Japan,FCB
-225811,M. Moreno,Colombia,MCI
-268436,22 I. Hansen-Aarøen,Norway,MUN
-266160,22 Mika Mármol,ESP,FCB
-204233,22 C. Musonda,Belgium,CHE
-232207,22 I. Šaponjić,Serbia,ATM
-259097,22 S. Oulad M'Hand,NED,ARS
-260145,22 O. Hutchinson,ENG,ARS
-266448,22 A. van Axel Dongen,NED,AJA
-256008,Morato,Brazil,OLM
-140601,16 N. Vidić,Serbia,INT
-259165,J. Wosz,GER,RBL
-266461,22 João Mendes,POR,SLB
-254752,22 S. Hansen,NED,AJA
-256882,Javi Cueto,ESP,ATM
-260463,21 Mario Soriano,ESP,ATM
-268116,T. Rothe,GER,DOR
-259420,22 Bruno Iglesias,ESP,MAD
-263578,Balde,ESP,FCB
-265789,22 C. Savage,Wales,MUN
-259677,A. Robertson,ENG,MCI
-268438,22 Alejandro Garnacho,Argentina,MUN
-266032,J. Bynoe-Gittens,ENG,DOR
-271121,Q. Hartman,NED,FEY
-255768,22 B. Hardley,NED,MUN
-256884,22 J. Rahou,FRA,LYO
-260778,22 F. Tongya,ITA,LYO
-210257,Ederson,Brazil,MCI
-241160,22 G. McEachran,ENG,CHE
-251569,22 Joel López,ESP,ARS
-265781,22 H. Vogel,FRA,PSG
-264432,A. Ezzalzouli,Morocco,FCB
-256194,22 P. Delgado,Ecuador,AJA
-206654,Pablo Marí,ESP,ARS
-254798,22 A. Dionkou,Senegal,FCB
-259031,L. Delap,ENG,MCI
-264652,B. Barcola,FRA,PSG
-240277,M. Gabbia,ITA,MIL
-262053,Kayky,Brazil,MCI
-268443,22 D. Gore,ENG,MUN
-266097,Geny Catamo,Mozambique,POR
-256881,22 N. Ahmed,FRA,LYO
-262988,G. Gürpüz,GER,DOR
-268624,L. Semić,GER,DOR
-266136,Peter,ESP,MAD
-266025,João Marcelo,Brazil,SLB
-270866,Y. Chermiti,POR,POR
-254860,Valera,ESP,ATM
-261390,22 C. Webster,ENG,CHE
-256880,21 R. Richard,FRA,LYO
-268441,22 L. Pye,ENG,MUN
-266453,Gonçalo Borges,POR,SLB
-261444,22 A. Baldé,Senegal,FEY
-265578,Ilias,ESP,FCB
-267717,22 Manu Lama,ESP,ATM
-264220,Y. Baas,NED,AJA
-264845,Julen Jon,ESP,MAD
-268435,22 C. McNeill,ENG,MUN
-256610,22 D. Hoogewerf,NED,MUN
-254998,22 N. Emeran,FRA,MUN
-264115,22 D. Williams,ENG,CHE
-268439,22 T. Collyer,ENG,MUN
-251568,22 B. Cottrell,ENG,ARS
-53612,18 P. Mertesacker,GER,ARS
-269853,Y. Lagha,Algeria,PSG
-167495,M. Neuer,GER,BAY
-261531,Nazinho,POR,POR
-264490,Noel,ESP,MAD
-240926,N. Phillips,ENG,LIV
-259671,Y. Soumaré,FRA,PSG
-258938,22 L. Borges,GER,MIL
-267899,G. Vidović,Croatia,BAY
-258396,C. Özkacar,Turkey,PSG
-247507,P. Glatzel,GER,LIV
-259403,22 J. Ideho,NED,ARS
-269089,José Marsà,ESP,POR
-258972,I. Touré,FRA,LYO
-268442,22 S. Mather,ENG,MUN
-266158,22 Estanis Pedrola,ESP,FCB
-262954,22 Fabio Blanco,ESP,FCB
-251616,David Carmo,POR,SLB
-264816,S. Bonnah,NED,RBL
-234691,18 B. Kalaica,Croatia,OLM
-258922,Marvin,ESP,MAD
-215698,M. Maignan,FRA,MIL
-261495,S. Coulibaly,FRA,DOR
-258507,Obrador,ESP,MAD
-259095,22 G. Lewis,Norway,ARS
-263953,22 S. Edozie,ENG,MCI
-261621,22 L. Mbete,ENG,MCI
-261651,21 K. Lont,NED,FEY
-263606,22 A. Caprice,FRA,LYO
-253096,22 C. Stanley,ENG,MUN
-264681,22 J. Wilson-Esbrand,ENG,MCI
-1183,10 F. Cannavaro,ITA,JUV
-268444,22 E. Ennis,ENG,MUN
-264561,J. Norris,ENG,LIV
-262134,22 N. Motika,Serbia,BAY
-266235,22 L. Copado,GER,BAY
-258923,Arribas,ESP,MAD
-268434,22 J. Hugill,ENG,MUN
-263697,22 M. Guendouzi,FRA,LYO
-264221,22 A. Martha,NED,AJA
-268414,22 W. Kambwala,FRA,MUN
-260406,K. Gordon,ENG,LIV
-226753,A. Onana,Cameroon,INT
-259419,22 T. Nakai,Japan,MAD
-263355,22 R. Friedrich,GER,RBL
-269875,S. Ba,GER,RBL
-253426,20 L. Longstaff,ENG,LIV
-268437,22 O. Forson,ENG,MUN
-192448,M. ter Stegen,GER,FCB
-248408,P. Gozzi,ITA,JUV
-212831,Alisson,Brazil,LIV
-253425,20 J. Walls,ENG,LIV
-257032,22 D. Gueye,Senegal,LYO
-268445,22 R. Bennett,ENG,MUN
-193080,De Gea,ESP,MUN
-256801,A. Kamardin,Comoros,LYO
-221087,Pau López,ESP,LYO
-200389,J. Oblak,Slovenia,ATM
-200159,S. Ortega,GER,MCI
-260143,22 Z. Monlouis,ENG,ARS
-233934,A. Ramsdale,ENG,ARS
-256500,N. Collins,GER,DOR
-256611,22 W. Fish,ENG,MUN
-257110,Fran González,ESP,ATM
-258490,22 C. Riad,Morocco,FCB
-266761,M. Woltman,ENG,LIV
-266293,L. Stanga,ITA,MIL
-259424,22 Salazar,ESP,MAD
-258172,22 Mateo Mejía,ESP,MUN
-257239,22 J. Brooking,ENG,CHE
-260654,22 A. Kirk,ENG,ARS
-263433,22 J. Kada,Algeria,LYO
-258689,Diego Bri,ESP,ATM
-267462,22 D. Krasucki,Poland,RBL
-263352,22 D. Lelle,GER,RBL
-263354,22 J. Pfennig,GER,RBL
-261156,22 Z. Awe,ENG,ARS
-265772,22 Ibrahima Camara,ESP,ATM
+192985,K. De Bruyne,Belgium,MCI
+188545,R. Lewandowski,Poland,FCB
 192119,T. Courtois,Belgium,MAD
-186153,W. Szczęsny,Poland,JUV
-206585,Kepa,ESP,CHE
-185122,P. Gulácsi,Hungary,RBL
-261372,22 L. Badley-Morgan,ENG,CHE
-5479,20 Casillas,ESP,SLB
-162328,R. Pasveer,NED,AJA
-262262,J. Gorter,NED,AJA
-183375,09 Fábio Paim,POR,CHE
-198513,Cláudio Ramos,POR,SLB
-162835,S. Handanovič,Slovenia,INT
-211990,O. Vlachodimos,Greece,OLM
-163264,T. Heaton,ENG,MUN
+202126,H. Kane,England,BAY
+238794,Vini Jr.,Brazil,MAD
+212831,Alisson,Brazil,LIV
+231866,Rodri,Spain,MCI
+239818,Rúben Dias,Portugal,MCI
+192448,M. ter Stegen,Germany,FCB
+200145,Casemiro,Brazil,MUN
+203376,V. van Dijk,Netherlands,LIV
+209331,M. Salah,Egypt,LIV
+239053,F. Valverde,Uruguay,MAD
+210257,Ederson,Brazil,MCI
+212622,J. Kimmich,Germany,BAY
+194765,A. Griezmann,France,ATM
+200389,J. Oblak,Slovenia,ATM
+212198,Bruno Fernandes,Portugal,MUN
+218667,Bernardo Silva,Portugal,MCI
+222665,M. Ødegaard,Norway,ARS
+228702,F. de Jong,Netherlands,FCB
+230621,G. Donnarumma,Italy,PSG
+231478,L. Martínez,Argentina,INT
 235073,G. Kobel,Switzerland,DOR
-198009,M. Perin,ITA,JUV
-189117,22 R. Bürki,Switzerland,DOR
-232229,J. Bijlow,NED,FEY
-201325,C. Tătărușanu,Romania,MIL
-194911,Adrián,ESP,LIV
-234642,É. Mendy,Senegal,CHE
-203775,22 L. Karius,GER,LIV
-233267,M. Turner,United States,ARS
-220314,O. Marciano,Israel,FEY
-222562,R. Rúnarsson,Iceland,ARS
-2147,M. Stekelenburg,NED,AJA
-48940,19 P. Čech,Czech Republic,ARS
-240913,C. Kelleher,Republic of Ireland,LIV
-194781,22 Renan Ribeiro,Brazil,POR
-186569,S. Ulreich,GER,BAY
-213951,Helton Leite,Brazil,OLM
-224440,J. Pollersbeck,GER,PSG
-234577,Diogo Costa,POR,SLB
-243952,A. Lunin,Ukraine,MAD
-204246,M. Bettinelli,ENG,CHE
-157804,S. Carson,ENG,MCI
-246139,Iñaki Peña,ESP,FCB
-20207,10 Nuno,POR,SLB
-247479,L. Unbehaun,GER,DOR
-264116,Iturbe,ESP,ATM
+215698,M. Maignan,France,MIL
+207865,Marquinhos,Brazil,PSG
+167495,M. Neuer,Germany,BAY
+177003,L. Modrić,Croatia,MAD
+256790,J. Musiala,Germany,BAY
+251854,Pedri,Spain,FCB
+241721,Rafael Leão,Portugal,MIL
+252371,J. Bellingham,England,MAD
+253163,R. Araujo,Uruguay,FCB
+246669,B. Saka,England,ARS
+235243,M. de Ligt,Netherlands,BAY
+240130,Éder Militão,Brazil,MAD
+224232,N. Barella,Italy,INT
+231281,T. Alexander-Arnold,England,LIV
+232411,C. Nkunku,France,CHE
+231443,O. Dembélé,France,PSG
+182521,T. Kroos,Germany,MAD
+186153,W. Szczęsny,Poland,JUV
+186942,İ. Gündoğan,Germany,FCB
+210514,João Cancelo,Portugal,FCB
+216267,A. Robertson,Scotland,LIV
+243812,Rodrygo,Brazil,MAD
+232656,T. Hernández,France,MIL
+237383,A. Bastoni,Italy,INT
+237692,P. Foden,England,MCI
+241486,J. Koundé,France,FCB
+231677,M. Rashford,England,MUN
+224458,Diogo Jota,Portugal,LIV
+234378,D. Rice,England,ARS
+203574,J. Stones,England,MCI
+226753,A. Onana,Cameroon,MUN
+193041,K. Navas,Costa Rica,PSG
+197445,D. Alaba,Austria,MAD
+201535,R. Varane,France,MUN
+205452,A. Rüdiger,Germany,MAD
+206517,J. Grealish,England,MCI
+208128,H. Çalhanoğlu,Turkey,INT
+209658,L. Goretzka,Germany,BAY
+209989,T. Partey,Ghana,ARS
+213345,K. Coman,France,BAY
+241637,A. Tchouaméni,France,MAD
+226754,I. Bennacer,Algeria,MIL
+232756,F. Tomori,England,MIL
+251566,Gabriel Martinelli,Brazil,ARS
+233934,A. Ramsdale,England,ARS
+237679,R. Kolo Muani,France,PSG
+239301,L. Martínez,Argentina,MUN
+239580,Bremer,Brazil,JUV
+212190,N. Süle,Germany,DOR
+232580,Gabriel,Brazil,ARS
+235212,A. Hakimi,Morocco,PSG
+237086,Kim Min Jae,Korea Republic,BAY
+238074,R. James,England,CHE
+212194,J. Brandt,Germany,DOR
+220814,L. Hernández,France,PSG
+230666,Gabriel Jesus,Brazil,ARS
+233419,Raphinha,Brazil,FCB
+235805,F. Chiesa,Italy,JUV
+241084,L. Díaz,Colombia,LIV
+164240,Thiago Silva,Brazil,CHE
+177683,Y. Sommer,Switzerland,INT
+185122,P. Gulácsi,Hungary,RBL
+188377,K. Walker,England,MCI
+189509,Thiago,Spain,LIV
+189596,T. Müller,Germany,BAY
+193747,Koke,Spain,ATM
+202556,M. Depay,Netherlands,ATM
+206113,S. Gnabry,Germany,BAY
+210008,A. Rabiot,France,JUV
+212616,R. De Paul,Argentina,ATM
+222492,L. Sané,Germany,BAY
+226161,Marcos Llorente,Spain,ATM
+232363,M. Škriniar,Slovakia,PSG
+264240,Gavi,Spain,FCB
+243715,W. Saliba,France,ARS
+247090,E. Fernández,Argentina,CHE
+234396,A. Davies,Canada,BAY
+242516,C. Gakpo,Netherlands,LIV
+246430,D. Vlahović,Serbia,JUV
+247819,N. Schlotterbeck,Germany,DOR
+244260,Dani Olmo,Spain,RBL
+213661,A. Christensen,Denmark,FCB
+216460,J. Giménez,Uruguay,ATM
+225375,K. Laimer,Austria,BAY
+226851,B. Pavard,France,INT
+178603,M. Hummels,Germany,DOR
+183898,Á. Di María,Argentina,SLB
+188350,M. Reus,Germany,DOR
+190460,C. Eriksen,Denmark,MUN
+193301,A. Lacazette,France,LYO
+199845,F. Acerbi,Italy,INT
+200724,Nacho Fernández,Spain,MAD
+201153,Morata,Spain,ATM
+202652,R. Sterling,England,CHE
+204638,W. Orban,Hungary,RBL
+205498,Jorginho,Italy,ARS
+205693,S. Haller,Côte d'Ivoire,DOR
+205988,L. Shaw,England,MUN
+208333,E. Can,Germany,DOR
+208574,F. Kostić,Serbia,JUV
+216547,Rafa,Portugal,SLB
+220834,Marco Asensio,Spain,PSG
+248243,E. Camavinga,France,MAD
+234577,Diogo Costa,Portugal,POR
+241461,Ferran Torres,Spain,FCB
+251517,J. Gvardiol,Croatia,MCI
+253072,D. Núñez,Uruguay,LIV
+235790,K. Havertz,Germany,ARS
+252145,Nuno Mendes,Portugal,PSG
+222077,M. Locatelli,Italy,JUV
+229558,D. Upamecano,France,BAY
+233049,J. Sancho,England,MUN
+233084,N. Molina,Argentina,ATM
+236772,D. Szoboszlai,Hungary,LIV
+243245,O. Kökçü,Turkey,SLB
+243580,L. Openda,Belgium,RBL
+226268,F. Dimarco,Italy,INT
+236401,N. Mazraoui,Morocco,BAY
+240950,Pedro Gonçalves,Portugal,SLI
+225850,P. Kimpembe,France,PSG
+231447,D. Malen,Netherlands,DOR
+239837,A. Mac Allister,Argentina,LIV
+212188,T. Werner,Germany,RBL
+213565,T. Lemar,France,ATM
+229237,M. Akanji,Switzerland,MCI
+229668,Mario Hermoso,Spain,ATM
+173608,Joselu,Spain,MAD
+178509,O. Giroud,France,MIL
+192366,N. Otamendi,Argentina,SLB
+198176,S. de Vrij,Netherlands,INT
+199482,A. Lopes,Portugal,LYO
+204525,Iñigo Martínez,Spain,FCB
+204639,S. Savić,Montenegro,ATM
+204963,Carvajal,Spain,MAD
+207410,M. Kovačić,Croatia,MCI
+209889,R. Guerreiro,Portugal,BAY
+212814,João Mário,Portugal,SLB
+214997,Á. Correa,Argentina,ATM
+228618,F. Mendy,France,MAD
+231591,Javi Galán,Spain,ATM
+241788,M. Taremi,Iran,POR
+263578,Balde,Spain,FCB
+237678,I. Konaté,France,LIV
+242444,João Félix,Portugal,FCB
+255475,Antony,Brazil,MUN
+246172,S. Chukwueze,Nigeria,MIL
+253306,M. Ugarte,Uruguay,PSG
+228881,D. Calabria,Italy,MIL
+229984,B. Chilwell,England,CHE
+233064,M. Mount,England,MUN
+233195,X. Schlager,Austria,RBL
+206585,Kepa,Spain,MAD
+208920,N. Aké,Netherlands,MCI
+233096,D. Dumfries,Netherlands,INT
+120533,Pepe,Portugal,POR
+179645,S. Kjær,Denmark,MIL
+184941,A. Sánchez,Chile,INT
+192883,H. Mkhitaryan,Armenia,INT
+197655,S. Coates,Uruguay,SLI
+199304,Danilo,Brazil,JUV
+200260,S. Berghuis,Netherlands,AJA
+200888,Danilo Pereira,Portugal,PSG
+201455,G. Kondogbia,Central African Republic,OLM
+205175,A. Milik,Poland,JUV
+207421,L. Trossard,Belgium,ARS
+208618,Lucas Vázquez,Spain,MAD
+215316,G. Rulli,Argentina,AJA
+221992,H. Lozano,Mexico,PSV
+226271,Fabián Ruiz,Spain,PSG
+236045,Reinildo,Mozambique,ATM
+239093,J. Clauss,France,OLM
+251852,K. Adeyemi,Germany,DOR
+256903,Gonçalo Ramos,Portugal,PSG
+239807,D. Frattesi,Italy,INT
+246191,J. Álvarez,Argentina,MCI
+231410,Brahim,Spain,MAD
+234569,Florentino,Portugal,SLB
+235619,M. Edwards,England,SLI
+256079,M. Caicedo,Ecuador,CHE
+234574,Diogo Dalot,Portugal,MUN
+246186,Arthur Cabral,Brazil,SLB
+247103,D. Hancko,Slovakia,FEY
+255253,Vitinha,Portugal,PSG
+224158,S. Amrabat,Morocco,MUN
+229880,A. Wan-Bissaka,England,MUN
+231936,B. White,England,ARS
+220901,David Raya,Spain,ARS
+221087,Pau López,Spain,OLM
+227813,O. Zinchenko,Ukraine,ARS
+210897,C. Mbemba,Congo DR,OLM
+211300,A. Martial,France,MUN
+221660,V. Lindelöf,Sweden,MUN
+236632,David Neres,Brazil,SLB
+238896,Pepê,Brazil,POR
+178086,Adán,Spain,SLI
+184200,M. Arnautović,Austria,INT
+184392,M. Darmian,Italy,INT
+188567,P. Aubameyang,Gabon,OLM
+193082,J. Cuadrado,Colombia,INT
+197061,J. Matip,Cameroon,LIV
+199564,Sergi Roberto,Spain,FCB
+199576,Oriol Romeu,Spain,FCB
+201519,J. Veretout,France,OLM
+204923,M. Sabitzer,Austria,DOR
+205431,N. Füllkrug,Germany,DOR
+208421,Saúl,Spain,ATM
+208448,E. Forsberg,Sweden,RBL
+211256,N. Tagliafico,Argentina,LYO
+223874,V. Rongier,France,OLM
+224196,R. Bensebaini,Algeria,DOR
+227890,Nuno Santos,Portugal,SLI
+232487,W. Endo,Japan,LIV
+245367,X. Simons,Netherlands,RBL
+246104,R. Gravenberch,Netherlands,LIV
+243854,M. Simakan,France,RBL
+248695,W. Fofana,France,CHE
+251805,J. Timber,Netherlands,ARS
+257179,Gonçalo Inácio,Portugal,SLI
+241187,L. Geertruida,Netherlands,FEY
+256325,J. Šutalo,Croatia,AJA
+225100,J. Gomez,England,LIV
+229942,A. Disasi,France,CHE
+242187,C. Baumgartner,Austria,RBL
+253124,Matheus Nunes,Portugal,MCI
+258648,Carlos Augusto,Brazil,INT
+239231,Cucurella,Spain,CHE
+245235,A. Bah,Denmark,SLB
+224081,K. Phillips,England,MCI
+225953,S. Bergwijn,Netherlands,AJA
+227796,C. Pulisic,United States,MIL
+228093,M. Thuram,France,INT
+228413,E. Audero,Italy,INT
+228789,Robert Sánchez,Spain,CHE
+237238,S. McTominay,Scotland,MUN
+251573,Renan Lodi,Brazil,OLM
+222331,L. Klostermann,Germany,RBL
+224411,Gonçalo Guedes,Portugal,SLB
+226166,N. Mukiele,France,PSG
+198009,M. Perin,Italy,JUV
+215223,W. Benítez,Argentina,PSV
+222509,Dani Ceballos,Spain,MAD
+230625,Matheus Reis,Brazil,SLI
+231913,F. Aursnes,Norway,SLB
+234153,Carlos Soler,Spain,PSG
+177413,A. Witsel,Belgium,ATM
+184432,Azpilicueta,Spain,ATM
+189805,L. de Jong,Netherlands,PSV
+192638,Marcos Alonso,Spain,FCB
+195365,K. Kampl,Slovenia,RBL
+199813,G. Trauner,Austria,FEY
+200159,S. Ortega,Germany,MCI
+203263,H. Maguire,England,MUN
+219683,C. Tolisso,France,LYO
+270086,António Silva,Portugal,SLB
+236610,M. Kean,Italy,JUV
+242578,B. Badiashile,France,CHE
+243780,Lee Kang In,Korea Republic,PSG
+245541,G. Reyna,United States,DOR
+246606,Fran García,Spain,MAD
+255654,P. Kalulu,France,MIL
+256612,Evanilson,Brazil,POR
+259197,N. Jackson,Senegal,CHE
+240273,E. Smith Rowe,England,ARS
+245152,S. Giménez,Mexico,FEY
+232229,J. Bijlow,Netherlands,FEY
+232938,T. Tomiyasu,Japan,ARS
+238041,T. Malacia,Netherlands,MUN
+238216,C. Gallagher,England,CHE
+239380,N. Lang,Netherlands,PSV
+246646,M. Caqueret,France,LYO
+247138,Fran Navarro,Spain,POR
+253109,J. Veerman,Netherlands,PSV
+236703,D. Raum,Germany,RBL
+238463,A. Haidara,Mali,RBL
+240638,T. Reijnders,Netherlands,MIL
+235407,S. Özcan,Turkey,DOR
+239482,Galeno,Brazil,POR
+245279,Reguilón,Spain,MUN
+228579,B. Henrichs,Germany,RBL
+219581,S. Gigot,France,OLM
+183569,E. Choupo-Moting,Cameroon,BAY
+191043,Alex Sandro,Brazil,JUV
+195086,D. Lovren,Croatia,LYO
+224425,M. Wolf,Germany,DOR
+229158,B. van den Boomen,Netherlands,AJA
+229758,R. Krunić,Bosnia and Herzegovina,MIL
+229857,S. Sensi,Italy,INT
+242087,H. Morita,Japan,SLI
+264309,A. Güler,Turkey,MAD
+240833,Y. Moukoko,Germany,DOR
+260823,N. Fagioli,Italy,JUV
+244669,M. Hjulmand,Denmark,SLI
+246174,H. Elliott,England,LIV
+246420,J. Doku,Belgium,MCI
+250753,A. Trubin,Ukraine,SLB
+252324,Riquelme,Spain,ATM
+254796,N. Madueke,England,CHE
+256261,M. Thiaw,Germany,MIL
+262138,C. Lukeba,France,RBL
+244778,Trincão,Portugal,SLI
+246863,F. Nmecha,Germany,DOR
+251445,Samuel Lino,Brazil,ATM
+242434,C. Jones,England,LIV
+256958,Fábio Vieira,Portugal,ARS
+271400,Igor Paixão,Brazil,FEY
+230918,T. Chalobah,England,CHE
+257290,João Mário,Portugal,POR
+232432,L. Jović,Serbia,MIL
+241707,P. Gueye,Senegal,OLM
+221363,D. van de Beek,Netherlands,MUN
+226853,J. St. Juste,Netherlands,SLI
+242380,Stephen Eustáquio,Canada,POR
+243388,B. Sosa,Croatia,AJA
+229891,J. Ryerson,Norway,DOR
+213666,R. Loftus-Cheek,England,MIL
+213917,Fábio Cardoso,Portugal,POR
+232099,M. Grujić,Serbia,POR
+232119,Ç. Söyüncü,Turkey,ATM
+232223,K. Tsimikas,Greece,LIV
+173521,Marcano,Spain,POR
+202166,J. Draxler,Germany,PSG
+204092,J. Blaswich,Germany,RBL
+205069,Juan Bernat,Spain,SLB
+208364,Clinton Mata,Angola,LYO
+215330,J. Correa,Argentina,OLM
+216065,M. Sportiello,Italy,MIL
+216531,Paulinho,Portugal,SLI
+259399,R. Højlund,Denmark,MUN
+259307,M. Gusto,France,CHE
+257876,N. Seiwald,Austria,RBL
+260599,A. Varela,Argentina,POR
+264652,B. Barcola,France,PSG
+242530,N. Okafor,Switzerland,MIL
+248793,M. Wieffer,Netherlands,FEY
+251810,B. Brobbey,Netherlands,AJA
+255069,Nico González,Spain,POR
+245211,J. Teze,Netherlands,PSV
+251616,David Carmo,Portugal,POR
+251804,S. Dest,United States,PSV
+252060,T. Pobega,Italy,MIL
+255125,A. Ounahi,Morocco,OLM
+242835,L. Balerdi,Argentina,OLM
+252931,L. Ivanušec,Croatia,FEY
+263829,Vitinha,Portugal,OLM
+225863,O. Boscagli,France,PSV
+238744,W. McKennie,United States,JUV
+266872,F. Gatti,Italy,JUV
+225263,D. Ćaleta-Car,Croatia,LYO
+235353,I. Sarr,Senegal,OLM
+243647,A. Bayındır,Turkey,MUN
+252383,R. Zerrouki,Algeria,FEY
+234826,Toni Martínez,Spain,POR
+251528,Z. Sanusi,Nigeria,POR
+213418,C. Akpom,England,AJA
+232097,A. Harit,Morocco,OLM
+186190,P. van Aanholt,Netherlands,PSV
+202371,T. Meunier,Belgium,DOR
+203483,D. Klaassen,Netherlands,INT
+206058,M. De Sciglio,Italy,JUV
+207791,Y. Poulsen,Denmark,RBL
+216466,Wendell,Brazil,POR
+226662,B. Nieuwkoop,Netherlands,FEY
+243686,Chiquinho,Portugal,SLB
+268438,Alejandro Garnacho,Argentina,MUN
+268802,F. Miretti,Italy,JUV
+270673,W. Zaïre-Emery,France,PSG
+251570,R. Cherki,France,LYO
+265450,J. Bakayoko,Belgium,PSV
+246340,M. Mudryk,Ukraine,CHE
+259849,Gabriel Veron,Brazil,POR
+260592,B. Šeško,Slovenia,RBL
+270531,O. Diomande,Côte d'Ivoire,SLI
+246070,Iván Jaime,Spain,POR
+255009,K. Taylor,Netherlands,AJA
+256008,Morato,Brazil,SLB
+256268,A. Broja,Albania,CHE
+258826,D. Rensch,Netherlands,AJA
+257289,H. Ekitike,France,PSG
+236988,E. Nketiah,England,ARS
+241509,Mauro Júnior,Brazil,PSV
+241651,V. Gyökeres,Sweden,SLI
+258208,O. Lingr,Czech Republic,FEY
 258390,I. Grbić,Croatia,ATM
-213649,21 D. Iliev,North Macedonia,ARS
-2196,18 R. Weidenfeller,GER,DOR
-259065,Arnau Tenas,ESP,FCB
-264430,22 Christian Gómez,ESP,ATM
-259317,22 Cañizares,ESP,MAD
-271193,Antonio Gomís,ESP,ATM
-259067,André Paulo,POR,POR
-241050,A. Meyer,GER,DOR
-259466,T. Jansen,NED,FEY
-270141,F. Israel,Uruguay,POR
-149258,A. Cordaz,ITA,INT
-265688,Francisco Meixedo,POR,SLB
-264415,22 C. Setford,ENG,AJA
-255151,S. Ngapandouetnbu,FRA,LYO
-252032,21 M. Mbaye,Senegal,SLB
-264326,Toni Fuidias,ESP,MAD
-260169,22 T. Troost,NED,FEY
-267460,J. Nickisch,GER,RBL
-248766,22 M. Barcola,Togo,PSG
-264112,22 D. Remie,NED,FEY
-264170,22 Luis López,ESP,MAD
-259430,22 Marcelo Pitaluga,Brazil,LIV
-253097,22 O. Mastný,Czech Republic,MUN
-260978,J. Schenk,GER,BAY
-267459,22 F. Eutinger,GER,RBL
-268415,22 D. Mee,Northern Ireland,MUN
-264871,K. Bonnevie,FRA,PSG
-263399,22 M. Nazaretian,Armenia,LYO
-268592,22 T. Wooster,ENG,MUN
-257126,22 T. Sharman-Lowe,ENG,CHE
-270865,Diego Callai,Brazil,POR
-267461,22 L. Grimpe,GER,RBL
+235149,J. Schouten,Netherlands,PSV
+211320,D. Rugani,Italy,JUV
+237960,Mama Baldé,Guinea Bissau,LYO
+162328,R. Pasveer,Netherlands,AJA
+169588,J. Evans,Northern Ireland,MUN
+203551,A. Florenzi,Italy,MIL
+210007,André Ramalho,Brazil,PSV
+211454,M. Elneny,Egypt,ARS
+212213,Ricardo Esgaio,Portugal,SLI
+234777,Z. Steffen,United States,MCI
+256725,Fábio Carvalho,Portugal,RBL
+272449,Pablo Barrios,Spain,ATM
+241736,Y. Bisseck,Germany,INT
+254088,A. Diallo,Côte d'Ivoire,MUN
+261050,Francisco Conceição,Portugal,POR
+262859,L. Colwill,England,CHE
+264699,K. Asllani,Albania,INT
+268868,Tiago Gouveia,Portugal,SLB
+241811,Sergio Gómez,Spain,MCI
+248465,I. Maatsen,Netherlands,CHE
+251806,Q. Timber,Netherlands,FEY
+253177,Y. Musah,United States,MIL
+254551,G. Mikautadze,Georgia,AJA
+256853,M. Tillman,United States,PSV
+258966,A. Cambiaso,Italy,JUV
+265693,J. Kiwior,Poland,ARS
+247497,A. Bella Kotchap,Germany,PSV
+231448,R. Nelson,England,ARS
+241496,T. Weah,United States,JUV
+243952,A. Lunin,Ukraine,MAD
+252143,Daniel Bragança,Portugal,SLI
+261188,I. Ndiaye,Senegal,OLM
+269626,Đ. Petrović,Serbia,CHE
+273990,Jeffinho,Brazil,LYO
+244797,P. Musa,Croatia,SLB
+235454,M. Sarr,France,CHE
+241171,A. Obispo,Netherlands,PSV
+257204,S. Diomandé,Côte d'Ivoire,LYO
+211101,Rubén Blanco,Spain,OLM
+235663,G. Til,Netherlands,PSV
+233493,J. Sánchez,Mexico,POR
+206652,Sergio Rico,Spain,PSG
+186569,S. Ulreich,Germany,BAY
+204341,Luís Neto,Portugal,SLI
+241050,A. Meyer,Germany,DOR
+263620,R. Lavia,Belgium,CHE
+271574,R. Lewis,England,MCI
+257084,L. Ugochukwu,France,CHE
+243627,Y. Adli,France,MIL
+240913,C. Kelleher,Republic of Ireland,LIV
+246139,Iñaki Peña,Spain,FCB
+258861,João Victor,Brazil,SLB
+258619,J. Lepenant,France,LYO
+267594,D. Jurásek,Czech Republic,SLB
+236593,C. Stengs,Netherlands,FEY
+252162,A. Ueda,Japan,FEY
+262414,André Franco,Portugal,POR
+224949,J. Dilrosun,Netherlands,FEY
+228279,J. Drommel,Netherlands,PSV
+198513,Cláudio Ramos,Portugal,POR
+201118,Cédric,Portugal,ARS
+201510,L. Kurzawa,France,PSG
+212244,C. Lenz,Germany,RBL
+215871,A. Jahanbakhsh,Iran,FEY
+217821,Henrique,Brazil,LYO
+230717,T. Kadewere,Zimbabwe,LYO
+268763,E. Nuamah,Ghana,LYO
+271975,Stefan Bajcetic,Spain,LIV
+266253,Fresneda,Spain,SLI
+255882,F. Díaz,Uruguay,LIV
+255874,F. Pereira,Uruguay,LIV
+271121,Q. Hartman,Netherlands,FEY
+277823,D. Peretz,Israel,BAY
+270141,F. Israel,Uruguay,SLI
+259233,I. Moriba,Guinea,RBL
+246947,P. Akouokou,Côte d'Ivoire,LYO
+251288,J. Medić,Croatia,AJA
+260020,Y. Vertessen,Belgium,PSV
+223686,T. Wellenreuther,Germany,FEY
+225782,A. Maitland-Niles,England,LYO
+253259,A. Medina,Uruguay,LIV
+227819,Samuel Portugal,Brazil,POR
+163264,T. Heaton,England,MUN
+189342,C. Pinsoglio,Italy,JUV
+194911,Adrián,Spain,LIV
+237841,M. Murillo,Panama,OLM
+266032,J. Bynoe-Gittens,England,DOR
+268421,M. Tel,France,BAY
+272379,S. Iling-Junior,England,JUV
+251223,R. Pepi,United States,PSV
+268312,S. Kumbedi,France,LYO
+247467,G. Ávila,Argentina,AJA
+253283,F. Pellistri,Uruguay,MUN
+262262,J. Gorter,Netherlands,AJA
+239631,D. Loader,England,POR
+246683,L. Agoumé,France,INT
+248820,Mateu Morey,Spain,DOR
+259480,I. Saibari,Morocco,PSV
+140293,A. Mirante,Italy,MIL
+199715,Vitolo,Spain,ATM
+204472,B. Sarr,Senegal,BAY
+277426,Carlos Forbs,Portugal,AJA
+272596,B. Tahirović,Bosnia and Herzegovina,AJA
+266096,Tomás Araújo,Portugal,SLB
+259065,Arnau Tenas,Spain,PSG
+245338,T. van den Belt,Netherlands,FEY
+263295,M. Fall,Senegal,FCB
+252038,Romário Baró,Portugal,POR
+246014,M. López,Peru,FEY
+204246,M. Bettinelli,England,CHE
+215358,M. Meli,Argentina,LIV
+219715,R. Di Gennaro,Italy,INT
+220477,M. Caldara,Italy,MIL
+272834,João Neves,Portugal,SLB
+258467,L. Romero,Argentina,MIL
+264298,C. Bradley,Northern Ireland,LIV
+261530,Dário Essugo,Portugal,SLI
+264022,Gonçalo Esteves,Portugal,SLI
+271247,S. Alvero,France,LYO
+260099,S. Sambo,Netherlands,PSV
+274947,M. Pellegrino,Argentina,MIL
+252144,Eduardo Quaresma,Portugal,SLI
+264401,B. Meïté,Côte d'Ivoire,OLM
+168965,R. Riou,France,LYO
+205972,R. Bentancourt,Uruguay,LIV
+222546,L. Zingerle,Germany,RBL
+229882,Eduardo Henrique,Brazil,SLI
+253243,R. Rivero,Uruguay,LIV
+272978,J. Hato,Netherlands,AJA
+268837,Rodrigo Ribeiro,Portugal,SLI
+276682,C. Ndour,Italy,PSG
+263193,E. Bitshiabu,France,RBL
+276901,Afonso Moreira,Portugal,SLI
+258171,H. Mejbri,Tunisia,MUN
+261249,É. Michut,France,PSG
+263823,S. Mannsverk,Norway,AJA
+266097,Geny Catamo,Mozambique,SLI
+262298,M. Lotka,Poland,DOR
+257920,C. Tengstedt,Denmark,SLB
+266645,A. Cayetano,Uruguay,LIV
+243055,Rafael Camacho,Portugal,SLI
+137552,B. Waterman,Netherlands,PSV
+199568,K. Lamprou,Greece,FEY
+199574,A. Letellier,France,PSG
+277795,Deivid Washington,Brazil,CHE
+265194,Iker Bravo,Spain,MAD
+253715,D. Sarmiento,Argentina,MCI
+269852,M. El Arouch,France,LYO
+270039,Diego Moreira,Portugal,LYO
+274357,Alarcón,Spain,FCB
+257534,C. Palmer,England,CHE
+274208,I. Kostis,Cyprus,ATM
+273604,L. Rodríguez,Uruguay,LIV
+273975,I. Housni,France,PSG
+248478,D. Ramaj,Germany,AJA
+264728,A. Kaplan,Turkey,AJA
+266453,Gonçalo Borges,Portugal,POR
+263773,T. Beelen,Netherlands,FEY
+268728,A. Salah-Eddine,Netherlands,AJA
+264489,Trilli,Spain,FCB
+255151,S. Ngapandouetnbu,Cameroon,OLM
+240008,A. Papadopoulos,Germany,DOR
+253255,S. Lentinelly,Uruguay,LIV
+227154,S. Britos,Uruguay,LIV
+262105,J. Duranville,Belgium,DOR
+258378,M. Godts,Belgium,AJA
+275412,J. van Duiven,Netherlands,PSV
+277465,I. Babadi,Netherlands,PSV
+275507,M. Sarr,France,LYO
+277500,João Muniz,Portugal,SLI
+270060,Samuel Soares,Portugal,SLB
+266136,Peter,Spain,MAD
+271193,Antonio Gomis,Spain,ATM
+276235,F. Mughe,Cameroon,OLM
+264116,Iturbe,Spain,ATM
+266658,I. Rodríguez,Uruguay,LIV
+263279,O. Pohlmann,Germany,DOR
+253510,J. O'Brien,Republic of Ireland,LYO
+265767,G. Nápoli,Uruguay,LIV
+274122,M. Barrios,Uruguay,LIV
+253282,J. Izquierdo,Uruguay,LIV
+266448,A. van Axel Dongen,Netherlands,AJA
+259356,C. Chukwuemeka,England,CHE
+271800,Y. Minteh,Gambia,FEY
+272981,S. Vos,Netherlands,AJA
+270865,Diego Callai,Brazil,SLI
+275254,S. Nhaga,Portugal,PSG
+258507,Obrador,Spain,MAD
+269153,A. Gaaei,Denmark,AJA
+257719,Jaume Cuéllar,Bolivia,FCB
+260100,F. Oppegård,Norway,PSV
+262981,L. Fiorini,Scotland,MCI
+253162,H. Nicolussi Caviglia,Italy,JUV
+275126,Aleix Garrido,Spain,FCB
+157804,S. Carson,England,MCI
+277482,L. Sauer,Slovakia,FEY
+277179,Fermín López,Spain,FCB
+277295,O. Bobb,Norway,MCI
+277954,K. Yıldız,Turkey,JUV
+272600,Marc Casadó,Spain,FCB
+277601,E. Soglo,England,OLM
+276747,A. Laâziri,Morocco,LYO
+277118,M. Faye,Senegal,FCB
+273603,M. Antoni,Uruguay,LIV
+248732,K. Hein,Estonia,ARS
+271902,K. Amaro,Uruguay,LIV
+272606,Bernardo Folha,Portugal,POR
+273998,André Gomes,Portugal,SLB
+272445,Álvaro,Uruguay,MAD
+263640,A. Milambo,Netherlands,FEY
+264490,Noel,Spain,MAD
+272980,O. Aertssen,Netherlands,AJA
+274486,Marvel,Spain,MAD
+265688,Francisco Meixedo,Portugal,POR
+256058,Pablo Pérez,Spain,ATM
+266815,B. Doak,Scotland,LIV
+269136,K. Mainoo,England,MUN
+275411,T. Land,Netherlands,PSV
+260406,K. Gordon,England,LIV
+261621,L. Mbete,England,MCI
+274555,Mario Martín,Spain,MAD
+277013,C. Traorè,Côte d'Ivoire,MIL
+277483,G. Zechiël,Netherlands,FEY
+253452,M. Azeez,England,ARS
+260910,S. Shoretire,England,MUN
+263514,A. Kamara,Guinea,DOR
+271976,L. Chambers,England,LIV
+277846,Nico Paz,Spain,MAD
+274927,K. Hlynsson,Iceland,AJA
+273651,J. Quansah,England,LIV
+259317,Cañizares,Spain,MAD
+259096,T. Akinola,England,ARS
+263602,B. Nadir,France,OLM
+271438,Marco Moreno,Spain,ATM
+271904,M. Silva,Uruguay,LIV
+259070,Pau Víctor,Spain,FCB
+268443,D. Gore,England,MUN
+270351,K. Peersman,Belgium,PSV
+277427,N. O'Reilly,England,MCI
+274387,R. Walters,England,ARS
+268445,R. Bennett,England,MUN
+259419,T. Nakai,Japan,MAD
+267835,R. Hornos,Uruguay,LIV
+271583,G. Garofani,Italy,JUV
+258689,Diego Bri,Spain,ATM
+264115,D. Williams,England,CHE
+278023,M. van Sas,Netherlands,FEY
+268133,Y. López,Uruguay,LIV
+274985,R. Machado,Uruguay,LIV
+263655,R. Nyakossi,Switzerland,OLM
+253428,V. Jaroš,Czech Republic,LIV
+276004,T. Buchmann,Germany,BAY
+264415,C. Setford,England,AJA
+271120,M. Kleijn,Netherlands,FEY
+272503,Sergio Mestre,Spain,ATM
+277668,F. Krätzig,Germany,BAY
+257239,J. Brooking,England,CHE
+263955,B. Knight,England,MCI
+277642,Astralaga,Spain,FCB
+273925,T. Foran,England,ARS
+242532,M. Gómez,Argentina,ATM
+264167,Marc Vidal,Spain,FCB
+276869,Mario Da Costa,Spain,ATM
+271974,B. Clark,England,LIV
+271743,A. Cozier-Duberry,England,ARS
+278094,J. Bengui,France,LYO
+275298,A. Pavlovic,Germany,BAY
+271956,Moha Moukhliss,Spain,FCB
+271808,L. Sousa,England,ARS
+277928,M. Berger,Netherlands,FEY
+278095,J. Van Neck,Belgium,OLM
+247507,P. Glatzel,Germany,LIV
+270965,T. Schlieck,Germany,RBL
+274066,J. Tauriainen,Finland,CHE
+277908,D. Kochen,United States,FCB
+259430,Marcelo Pitaluga,Brazil,LIV
+277669,T. Hülsmann,Germany,BAY
+271905,F. Bregante,Uruguay,LIV
+277904,E. Beach,Wales,CHE
