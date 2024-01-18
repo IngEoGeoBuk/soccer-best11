@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import Image from 'next/image';
 
 import { Player } from '@prisma/client';
@@ -7,7 +9,22 @@ import usePostStore from '@/app/_store/post';
 const firebaseStorageUrl = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_URL;
 
 function PlayerPaceImg({ src }: { src: string }) {
-  return <Image src={src} width={60} height={60} alt="player-box" />;
+  const [imgSrc, setImgSrc] = useState(src);
+  useEffect(() => {
+    setImgSrc(src);
+  }, [src]);
+
+  return (
+    <Image
+      src={imgSrc}
+      width={60}
+      height={60}
+      alt="player-box"
+      onError={() => {
+        setImgSrc('/images/avatar.png');
+      }}
+    />
+  );
 }
 
 function SelectedPlayerBox({ value }: { value: number }) {
