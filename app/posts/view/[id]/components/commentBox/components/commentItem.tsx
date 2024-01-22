@@ -10,6 +10,8 @@ import EditCommentBox from './editCommentBox';
 import RepliesBox from '../../repliesBox';
 import AddReplyBox from '../../repliesBox/components/addReplyBox';
 
+import '@/app/posts/styles.css';
+
 interface Interface {
   comment: ViewComment;
   setShowModal: (value: number) => void;
@@ -27,13 +29,11 @@ function CommentItem({ comment, setShowModal }: Interface) {
         <DeletedCommentItem />
       ) : (
         <>
-          <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
-            <footer className="flex justify-between items-center mb-2">
+          <article className="comment-item-article">
+            <footer className="comment-item-footer">
               <div className="sm:flex items-center">
-                <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                  {comment.email}
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="comment-item-email-paragraph">{comment.email}</p>
+                <p className="comment-item-date-paragraph">
                   <time>
                     {comment.updatedAt
                       ? `${dateFormat(comment.createdAt)} (Edited)`
@@ -51,7 +51,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
                     }}
                   >
                     <svg
-                      className="w-4 h-4 text-gray-800 dark:text-white"
+                      className="comment-svg"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -68,7 +68,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
                     onClick={() => setShowModal(comment.id)}
                   >
                     <svg
-                      className="w-4 h-4 text-gray-800 dark:text-white"
+                      className="comment-svg"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -94,9 +94,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
                 setShowModify={setShowModify}
               />
             ) : (
-              <p className="text-gray-500 dark:text-gray-400">
-                {comment.content}
-              </p>
+              <p className="gray-text">{comment.content}</p>
             )}
             {email && (
               <div className="flex items-center mt-4 space-x-4">
@@ -129,7 +127,7 @@ function CommentItem({ comment, setShowModal }: Interface) {
                 <button
                   data-testid={`show-replies-${comment.id}`}
                   type="button"
-                  className="flex items-center text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 rounded"
+                  className="flex items-center text-sm gray-text hover:bg-gray-100 dark:hover:bg-gray-600 rounded"
                   onClick={() => setShowReplies(!showReplies)}
                 >
                   <svg

@@ -1,10 +1,9 @@
+import '@/app/home/styles.css';
+
 function PostSkeleton() {
   return (
-    <div
-      role="status"
-      className="max-w-full p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700"
-    >
-      <div className="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
+    <div role="status" className="post-button animate-pulse">
+      <div className="champs-img-box">
         <svg
           className="w-10 h-10 text-gray-200 dark:text-gray-600"
           aria-hidden="true"
@@ -32,11 +31,11 @@ function PostSkeleton() {
           </svg>
         </div>
         <div>
-          <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-24 mb-2" />
-          <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-24 mb-4" />
-          <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-36 mb-2" />
-          <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-36 mb-2" />
-          <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-36" />
+          <div className="h-2.5 skeleton-line-box w-24 mb-2" />
+          <div className="h-2.5 skeleton-line-box w-24 mb-4" />
+          <div className="h-2 skeleton-line-box w-36 mb-2" />
+          <div className="h-2 skeleton-line-box w-36 mb-2" />
+          <div className="h-2 skeleton-line-box w-36" />
         </div>
       </div>
       <span className="sr-only">Loading...</span>

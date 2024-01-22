@@ -15,6 +15,8 @@ import useLikeQuery from '@/app/_hooks/useQuery/useLikeQuery';
 
 import Skeleton from './skeleton';
 
+import './styles.css';
+
 function Index() {
   const { id } = useParams();
   const queryClient = useQueryClient();
@@ -64,14 +66,14 @@ function Index() {
         data-testid={`vote-box-${id}`}
         className="w-full flex flex-col items-center"
       >
-        <div className="flex justify-center gap-5">
+        <div className="container">
           <button
             data-testid="vote-btn"
             type="button"
             className="btn-primary"
             onClick={async () => clickLike()}
           >
-            <div className="flex flex-col justify-center items-center gap-1">
+            <div className="svg_paragraph_container">
               <svg
                 id="check-voted"
                 className={`h-8 w-8 ${data?.clicked ? 'text-yellow-500' : ''}`}

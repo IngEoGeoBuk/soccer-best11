@@ -1,9 +1,11 @@
+import './styles.css';
+
 function Skeleton() {
   return (
     <div data-testid="vote-box-loading">
-      <div className="flex justify-center gap-5 animate-pulse">
+      <div className="container animate-pulse">
         <div className="btn-primary cursor-default">
-          <div className="flex flex-col justify-center items-center gap-1">
+          <div className="svg_paragraph_container">
             <svg
               className="h-8 w-8"
               viewBox="0 0 24 24"

@@ -12,6 +12,9 @@ import usePostStore from '@/app/_store/post';
 import { ListPlayerBox } from './playerBox';
 import PlayerListSectionSkeleton from './playerListSectionSkeleton';
 
+import '@/app/posts/styles.css';
+import './styles.css';
+
 function PlayerListSection() {
   const { toastMessage, updateToastMessage } = usePostStore((store) => store);
 
@@ -30,11 +33,8 @@ function PlayerListSection() {
 
   if (status === 'success' && data) {
     return (
-      <div
-        id="playerListSection"
-        className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700"
-      >
-        <ul className="flex flex-wrap -mb-px">
+      <div id="playerListSection" className="player-list-section">
+        <ul className="player-list">
           {National.map((item, key) => (
             <li className="mr-2" key={item}>
               <button
@@ -53,7 +53,7 @@ function PlayerListSection() {
             </li>
           ))}
         </ul>
-        <ul className="flex flex-wrap -mb-px">
+        <ul className="player-list">
           {Club[national].map((item, key) => (
             <li className="mr-2" key={item}>
               <button
@@ -77,7 +77,7 @@ function PlayerListSection() {
           />
         )}
         <div className="w-full">
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 xl:grid-cols-12 gap-1">
+          <div className="player-box-container">
             {data.map((item) => (
               <ListPlayerBox key={item.id} player={item} />
             ))}

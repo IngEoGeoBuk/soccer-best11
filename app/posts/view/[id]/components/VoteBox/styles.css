@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply flex justify-center gap-5;
+  }
+
+  .svg_paragraph_container {
+    @apply flex flex-col justify-center items-center gap-1;
+  }
+}

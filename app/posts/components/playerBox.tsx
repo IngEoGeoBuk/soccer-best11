@@ -7,6 +7,9 @@ import { Player } from '@prisma/client';
 import usePostStore from '@/app/_store/post';
 import Avatar from '@/public/images/avatar.png';
 
+import '@/app/posts/styles.css';
+import './playerBox.css';
+
 const firebaseStorageUrl = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_URL;
 
 function PlayerPaceImg({ src }: { src: string }) {
@@ -53,9 +56,7 @@ function SelectedPlayerBox({ value }: { value: number }) {
         <PlayerPaceImg
           src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
         />
-        <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
-          {player.name}
-        </p>
+        <p className="player-box-name-paragraph">{player.name}</p>
       </button>
     );
   }
@@ -70,9 +71,7 @@ function SelectedPlayerBox({ value }: { value: number }) {
     >
       <div className="w-[36px] h-[36px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" />
       <Image src={Avatar} width={60} height={60} alt="empty-player" />
-      <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
-        Name
-      </p>
+      <p className="player-box-name-paragraph">Name</p>
     </button>
   );
 }
@@ -126,9 +125,7 @@ function ListPlayerBox({ player }: { player: Player }) {
       <PlayerPaceImg
         src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
       />
-      <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
-        {player.name}
-      </p>
+      <p className="player-box-name-paragraph">{player.name}</p>
     </button>
   );
 }
@@ -149,9 +146,7 @@ function ViewPlayerBox({ player }: { player: Player }) {
       <PlayerPaceImg
         src={`${firebaseStorageUrl}/o/face%2F${player.id}.png?alt=media`}
       />
-      <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
-        {player.name}
-      </p>
+      <p className="player-box-name-paragraph">{player.name}</p>
     </button>
   );
 }

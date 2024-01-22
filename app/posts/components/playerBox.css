@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .player-card-selected {
+    @apply w-[100px] h-[160px] gap-[5px] flex flex-col items-center bg-white border border-blue-500 rounded-lg shadow dark:bg-gray-800 dark:border-blue-500;
+  }
+
+  .player-box-name-paragraph {
+    @apply mb-3 text-sm font-normal text-gray-700 dark:text-gray-400;
+  }
+
+  .player-card {
+    @apply w-[100px] h-[160px] gap-[5px] flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700;
+  }
+}

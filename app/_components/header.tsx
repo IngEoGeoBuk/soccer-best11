@@ -8,10 +8,11 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import { useQueryClient } from '@tanstack/react-query';
 import { signOut, signIn, useSession } from 'next-auth/react';
 
-import './styles.css';
 import Logo from '@/public/images/logo.png';
 
 import Spinner from './common/spinner';
+
+import './header.css';
 
 function LoginAndLogout({ className }: { className: string }) {
   const { status } = useSession();

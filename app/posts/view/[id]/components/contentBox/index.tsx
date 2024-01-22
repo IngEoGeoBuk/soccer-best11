@@ -13,6 +13,9 @@ import PostDetailSkeleton from '@/app/posts/components/skeleton';
 import Modal from './modal';
 import ViewPlayersSection from './viewPlayersSection';
 
+import '@/app/posts/styles.css';
+import './styles.css';
+
 function Index() {
   const { id } = useParams();
   const email = useSession().data?.user?.email;
@@ -33,27 +36,19 @@ function Index() {
     return (
       <div data-testid={`content-box-${id}`}>
         <div className="flex justify-between">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Title
-          </h3>
-          <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+          <h3 className="h3-paragraph">Title</h3>
+          <p className="gray-paragraph">
             {data.updatedAt
               ? `${dateFormat(data.updatedAt)} (Edited)`
               : dateFormat(data.createdAt)}
           </p>
         </div>
-        <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-          {data.title}
-        </p>
+        <p className="gray-paragraph">{data.title}</p>
         <br />
         <ViewPlayersSection players={data.players} />
         <br />
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-          Description
-        </h3>
-        <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-          {data.description}
-        </p>
+        <h3 className="h3-paragraph">Description</h3>
+        <p className="gray-paragraph">{data.description}</p>
         <br />
         {email === data.email && (
           <div className="text-right">

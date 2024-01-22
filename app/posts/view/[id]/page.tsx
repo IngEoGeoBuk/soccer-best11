@@ -17,7 +17,9 @@ type Props = {
 export const generateMetadata = async ({
   params,
 }: Props): Promise<Metadata> => {
-  const url = `${process.env.NEXT_PUBLIC_SOCCER_BEST11_SERVER as string}/api/posts/${params.id}`;
+  const url = `${
+    process.env.NEXT_PUBLIC_SOCCER_BEST11_SERVER as string
+  }/api/posts/${params.id}`;
   const { data } = await axios.get(url);
   return {
     title: `${data?.title} - Soccer Best11`,

@@ -7,6 +7,8 @@ import dateFormat from '@/app/_utils/dateFormat';
 
 import EditReplyBox from './editReplyBox';
 
+import '@/app/posts/styles.css';
+
 interface Interface {
   reply: ViewReply;
   setShowModal: (value: number) => void;
@@ -17,14 +19,12 @@ function ReplyItem({ reply, setShowModal }: Interface) {
   const [showModify, setShowModify] = useState<number>(0);
 
   return (
-    <article className="p-6 mb-6 ml-6 lg:ml-12 text-base bg-white rounded-lg dark:bg-gray-900">
-      <footer className="flex justify-between items-center mb-2">
+    <article className="comment-item-article ml-6 lg:ml-12">
+      <footer className="comment-item-footer">
         <div className="sm:flex items-center">
-          <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-            {reply.email}
-          </p>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            <time title="February 12th, 2022">
+          <p className="comment-item-email-paragraph">{reply.email}</p>
+          <p className="comment-item-date-paragraph">
+            <time>
               {reply.updatedAt
                 ? `${dateFormat(reply.createdAt)} (Edited)`
                 : dateFormat(reply.createdAt)}
@@ -39,7 +39,7 @@ function ReplyItem({ reply, setShowModal }: Interface) {
               onClick={() => setShowModify(reply.id)}
             >
               <svg
-                className="w-4 h-4 text-gray-800 dark:text-white"
+                className="comment-svg"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -56,7 +56,7 @@ function ReplyItem({ reply, setShowModal }: Interface) {
               onClick={() => setShowModal(reply.id)}
             >
               <svg
-                className="w-4 h-4 text-gray-800 dark:text-white"
+                className="comment-svg"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -82,7 +82,7 @@ function ReplyItem({ reply, setShowModal }: Interface) {
           setShowModify={setShowModify}
         />
       ) : (
-        <p className="text-gray-500 dark:text-gray-400">{reply.content}</p>
+        <p className="gray-text">{reply.content}</p>
       )}
     </article>
   );

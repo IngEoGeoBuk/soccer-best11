@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .h3-paragraph {
+    @apply text-lg font-semibold text-gray-900 dark:text-white;
+  }
+  .gray-paragraph {
+    @apply mb-4 text-base font-normal text-gray-500 dark:text-gray-400;
+  }
+}

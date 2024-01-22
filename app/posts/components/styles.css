@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .player-list-section {
+    @apply text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700;
+  }
+
+  .player-list {
+    @apply flex flex-wrap -mb-px;
+  }
+
+  .player-box-container {
+    @apply grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 xl:grid-cols-12 gap-1;
+  }
+}

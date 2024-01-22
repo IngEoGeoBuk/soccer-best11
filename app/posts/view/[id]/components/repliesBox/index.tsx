@@ -46,7 +46,7 @@ function Index({ commentId }: { commentId: number }) {
           <div className="pl-10 pb-6 text-base">
             <button
               type="button"
-              className="flex items-center text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 rounded"
+              className="flex items-center text-sm gray-text hover:bg-gray-100 dark:hover:bg-gray-600 rounded"
               disabled={!hasNextPage || isFetchingNextPage}
               onClick={() => {
                 fetchNextPage();

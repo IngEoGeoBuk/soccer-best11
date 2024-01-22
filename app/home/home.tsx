@@ -17,6 +17,8 @@ import Champions from '@/public/images/champions.png';
 
 import PostSkeletonList from './components/postSkeletonList';
 
+import '@/app/home/styles.css';
+
 export default function Home() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -58,7 +60,7 @@ export default function Home() {
   if (status === 'pending') {
     return (
       <div className="w-full" data-testid="home-loading">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
+        <div className="post-list-box">
           <PostSkeletonList />
         </div>
       </div>
@@ -76,7 +78,7 @@ export default function Home() {
           <div className="relative">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                className="w-4 h-4 gray-text"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -110,19 +112,19 @@ export default function Home() {
             </button>
           </div>
         </form>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
+        <div className="post-list-box">
           {data.pages.map((page) => (
             <Fragment key={page.nextLastId ?? 0}>
               {page.data?.map((item: ViewPostList) => (
                 <button
                   key={item.id}
-                  className="max-w-full p-4 border border-gray-200 rounded shadow md:p-6 dark:border-gray-700 text-left"
+                  className="post-button"
                   type="button"
                   onClick={() => {
                     router.push(`/posts/view/${item.id}`);
                   }}
                 >
-                  <div className="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700 relative">
+                  <div className="champs-img-box">
                     <Image src={Champions} fill alt="champs" priority />
                   </div>
                   <div className="flex items-start space-x-4">
@@ -135,13 +137,11 @@ export default function Home() {
                     />
                     <div className="font-medium dark:text-white">
                       <div>{item.title}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                        {item.email}
-                      </div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400">
+                      <div className="text-xs mt-1 gray-text">{item.email}</div>
+                      <div className="text-sm gray-text">
                         {dateFormat(new Date(item.createdAt))}
                       </div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400">
+                      <div className="text-sm gray-text">
                         Like: {String(item.likes)}
                       </div>
                     </div>
