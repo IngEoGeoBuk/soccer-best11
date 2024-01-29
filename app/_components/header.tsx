@@ -6,48 +6,47 @@ import Image from 'next/image';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
 import { useQueryClient } from '@tanstack/react-query';
-import { signOut, signIn, useSession } from 'next-auth/react';
+import { signOut, signIn } from 'next-auth/react';
 
 import Logo from '@/public/images/logo.png';
 
-import Spinner from './common/spinner';
-
 import './header.css';
 
-function LoginAndLogout({ className }: { className: string }) {
-  const { status } = useSession();
+type User =
+  | {
+      name?: string | null | undefined;
+      email?: string | null | undefined;
+      image?: string | null | undefined;
+    }
+  | undefined;
 
+function LoginAndLogout({
+  user,
+  className,
+}: {
+  user: User;
+  className: string;
+}) {
   return (
     <div>
-      {status === 'loading' ? (
-        <Spinner />
+      {user ? (
+        <button type="button" onClick={() => signOut()} className={className}>
+          logout
+        </button>
       ) : (
-        <div>
-          {status === 'authenticated' ? (
-            <button
-              type="button"
-              onClick={() => signOut()}
-              className={className}
-            >
-              logout
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={() => signIn('google')}
-              className={className}
-            >
-              login
-            </button>
-          )}
-        </div>
+        <button
+          type="button"
+          onClick={() => signIn('google')}
+          className={className}
+        >
+          login
+        </button>
       )}
     </div>
   );
 }
 
-function Header() {
-  const { data: session } = useSession();
+function Header({ user }: { user: User }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
@@ -168,7 +167,7 @@ function Header() {
                         Best
                       </button>
                     </li>
-                    {session && (
+                    {user && (
                       <li>
                         <button
                           type="button"
@@ -188,7 +187,7 @@ function Header() {
                   </>
                 )}
                 <li>
-                  <LoginAndLogout className="header-item" />
+                  <LoginAndLogout user={user} className="header-item" />
                 </li>
               </ul>
             </div>
@@ -233,7 +232,6 @@ function Header() {
                       <span>Best</span>
                     </button>
                   </li>
-
                   <li>
                     <button
                       type="button"
@@ -254,7 +252,7 @@ function Header() {
               )}
               <li>
                 <span>
-                  <LoginAndLogout className="aside-menu" />
+                  <LoginAndLogout user={user} className="aside-menu" />
                 </span>
               </li>
             </ul>
