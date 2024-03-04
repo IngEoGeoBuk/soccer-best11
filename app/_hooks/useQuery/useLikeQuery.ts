@@ -1,10 +1,9 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 
 import getLikes from '@/app/_actions/getLike';
-import { Vote } from '@/app/_types/Vote';
 
 const useLikeQuery = (id: number) => {
-  const query = useQuery<Vote>({
+  const query = useQuery({
     queryKey: ['like', { postId: id }],
     queryFn: () => getLikes(id),
     placeholderData: keepPreviousData,

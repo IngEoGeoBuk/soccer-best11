@@ -1,6 +1,15 @@
 import axios from 'axios';
 
-const getPosts = async (nextLastId: number, type: string, search: string) => {
+import { ViewPostList } from '@/app/_types/Post';
+
+const getPosts = async (
+  nextLastId: number,
+  type: string,
+  search: string,
+): Promise<{
+  data: ViewPostList[];
+  nextLastId?: number;
+}> => {
   const typeQuery = type ? `&type=${type}` : '';
   const searchQuery = search ? `&search=${search}` : '';
   const { data } = await axios.get(

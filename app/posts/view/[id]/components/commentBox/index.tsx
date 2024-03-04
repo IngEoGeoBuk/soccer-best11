@@ -7,7 +7,6 @@ import { useInView } from 'react-intersection-observer';
 
 import AlertBox from '@/app/_components/common/alertBox';
 import useCommentsQuery from '@/app/_hooks/useQuery/useCommentsQuery';
-import { ViewComment } from '@/app/_types/Comment';
 
 import AddCommentBox from './components/addCommentBox';
 import CommentItem from './components/commentItem';
@@ -44,7 +43,7 @@ function Index() {
         {email && <AddCommentBox />}
         {data.pages.map((page) => (
           <Fragment key={page.nextLastId ?? 0}>
-            {page.data?.map((item: ViewComment) => (
+            {page.data?.map((item) => (
               <CommentItem
                 key={item.id}
                 comment={item}

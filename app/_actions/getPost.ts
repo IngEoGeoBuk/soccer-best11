@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const getPost = async (id: number) => {
+import { ViewPost } from '@/app/_types/Post';
+
+const getPost = async (id: number): Promise<ViewPost> => {
   const { data } = await axios.get(
     `${process.env.NEXT_PUBLIC_SOCCER_BEST11_SERVER as string}/api/posts/${id}`,
   );

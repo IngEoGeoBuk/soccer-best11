@@ -1,6 +1,14 @@
 import axios from 'axios';
 
-const getComments = async (id: number, nextLastId: number) => {
+import { ViewComment } from '@/app/_types/Comment';
+
+const getComments = async (
+  id: number,
+  nextLastId: number,
+): Promise<{
+  data: ViewComment[];
+  nextLastId?: number;
+}> => {
   const { data } = await axios.get(
     `${
       process.env.NEXT_PUBLIC_SOCCER_BEST11_SERVER as string

@@ -1,4 +1,3 @@
-import { Player } from '@prisma/client';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
 import getPlayersByClub from '@/app/_actions/getPlayers';
@@ -14,7 +13,7 @@ export const metadata = {
 
 export default async function WritePage() {
   const queryClient = getQueryClient();
-  await queryClient.prefetchQuery<Player[]>({
+  await queryClient.prefetchQuery({
     queryKey: ['players', Club[3][0]],
     queryFn: () => getPlayersByClub(Club[3][0]),
   });

@@ -6,7 +6,6 @@ import axios from 'axios';
 import getComments from '@/app/_actions/getComments';
 import getPost from '@/app/_actions/getPost';
 import getQueryClient from '@/app/_actions/getQueryClient';
-import { ViewPost } from '@/app/_types/Post';
 
 import View from './view';
 
@@ -30,7 +29,7 @@ export const generateMetadata = async ({
 export default async function ViewPage({ params }: { params: { id: number } }) {
   // replies, likes는 prefetch 제외
   const queryClient = getQueryClient();
-  await queryClient.prefetchQuery<ViewPost>({
+  await queryClient.prefetchQuery({
     queryKey: ['posts', +params.id],
     queryFn: () => getPost(+params.id),
   });

@@ -11,7 +11,6 @@ import { useInView } from 'react-intersection-observer';
 
 import AlertBox from '@/app/_components/common/alertBox';
 import usePostsQuery from '@/app/_hooks/useQuery/usePostsQuery';
-import { ViewPostList } from '@/app/_types/Post';
 import dateFormat from '@/app/_utils/dateFormat';
 import Champions from '@/public/images/champions.png';
 
@@ -115,7 +114,7 @@ export default function Home() {
         <div className="post-list-box">
           {data.pages.map((page) => (
             <Fragment key={page.nextLastId ?? 0}>
-              {page.data?.map((item: ViewPostList) => (
+              {page.data?.map((item) => (
                 <button
                   key={item.id}
                   className="post-button"
