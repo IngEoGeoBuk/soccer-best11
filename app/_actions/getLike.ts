@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { Vote } from '@/app/_types/Vote';
+import { Vote } from '@customTypes/Vote';
 
 const getLikes = async (id: number): Promise<Vote> => {
   const { data } = await axios.get(

@@ -3,7 +3,7 @@
 // export async default로 하니까 안 됨.
 import { NextResponse } from 'next/server';
 
-import prisma from '@/app/_libs/prismadb';
+import prisma from '@libs/prismadb';
 
 // request 안 쓰여도 선언해야 함. 지우면 에러 남.
 export async function GET(

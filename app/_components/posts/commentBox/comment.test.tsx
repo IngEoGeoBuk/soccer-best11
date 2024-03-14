@@ -5,11 +5,10 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import comments from '@/app/__mocks__/post/comments.json';
-import useCommentsQuery from '@/app/_hooks/useQuery/useCommentsQuery';
-import nextAuthData from '@/app/_utils/jest/nextAuthData';
-import queryClient from '@/app/_utils/jest/queryClient';
-
-import CommentBox from '.';
+import CommentBox from '@components/posts/commentBox';
+import useCommentsQuery from '@hooks/useQuery/useCommentsQuery';
+import nextAuthData from '@utils/jest/nextAuthData';
+import queryClient from '@utils/jest/queryClient';
 
 jest.mock('next/navigation', () => ({
   useParams() {
@@ -37,7 +36,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUseCommentsQuery = useCommentsQuery as jest.Mock<any>;
-jest.mock('../../../../../_hooks/useQuery/useCommentsQuery');
+jest.mock('../../../_hooks/useQuery/useCommentsQuery');
 
 beforeAll(() => {
   queryClient.clear();

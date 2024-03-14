@@ -3,9 +3,9 @@ import { Metadata } from 'next';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import axios from 'axios';
 
-import getComments from '@/app/_actions/getComments';
-import getPost from '@/app/_actions/getPost';
-import getQueryClient from '@/app/_actions/getQueryClient';
+import getComments from '@actions/getComments';
+import getPost from '@actions/getPost';
+import getQueryClient from '@actions/getQueryClient';
 
 import View from './view';
 

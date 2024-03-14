@@ -10,7 +10,7 @@ import { signOut, signIn } from 'next-auth/react';
 
 import Logo from '@/public/images/logo.png';
 
-import './header.css';
+import '@components/header.css';
 
 type User =
   | {

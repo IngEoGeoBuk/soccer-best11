@@ -1,10 +1,9 @@
-import Club from '@/app/_constants/Club';
-import National from '@/app/_constants/National';
-
-import { SelectedPlayerBox } from './playerBox';
+import { SelectedPlayerBox } from '@components/posts/playerBox';
+import Club from '@constants/Club';
+import National from '@constants/National';
 
 import '@/app/posts/styles.css';
-import './styles.css';
+import '@components/posts/styles.css';
 
 function PlayerListSectionSkeleton() {
   return (

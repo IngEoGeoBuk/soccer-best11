@@ -2,18 +2,17 @@
 
 import { useState } from 'react';
 
-import AlertBox from '@/app/_components/common/alertBox';
-import ToastBox from '@/app/_components/common/toastBox';
-import Club from '@/app/_constants/Club';
-import National from '@/app/_constants/National';
-import usePlayersQuery from '@/app/_hooks/useQuery/usePlayersQuery';
-import usePostStore from '@/app/_store/post';
-
-import { ListPlayerBox } from './playerBox';
-import PlayerListSectionSkeleton from './playerListSectionSkeleton';
+import AlertBox from '@components/common/alertBox';
+import ToastBox from '@components/common/toastBox';
+import { ListPlayerBox } from '@components/posts/playerBox';
+import PlayerListSectionSkeleton from '@components/posts/playerListSectionSkeleton';
+import Club from '@constants/Club';
+import National from '@constants/National';
+import usePlayersQuery from '@hooks/useQuery/usePlayersQuery';
+import usePostStore from '@stores/post';
 
 import '@/app/posts/styles.css';
-import './styles.css';
+import '@components/posts/styles.css';
 
 function PlayerListSection() {
   const { toastMessage, updateToastMessage } = usePostStore((store) => store);

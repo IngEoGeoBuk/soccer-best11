@@ -2,13 +2,12 @@ import { useState } from 'react';
 
 import { useSession } from 'next-auth/react';
 
-import { ViewComment } from '@/app/_types/Comment';
-import dateFormat from '@/app/_utils/dateFormat';
-
-import DeletedCommentItem from './deletedCommentItem';
-import EditCommentBox from './editCommentBox';
-import RepliesBox from '../../repliesBox';
-import AddReplyBox from '../../repliesBox/components/addReplyBox';
+import DeletedCommentItem from '@components/posts/commentBox/deletedCommentItem';
+import EditCommentBox from '@components/posts/commentBox/editCommentBox';
+import RepliesBox from '@components/posts/repliesBox';
+import AddReplyBox from '@components/posts/repliesBox/addReplyBox';
+import { ViewComment } from '@customTypes/Comment';
+import dateFormat from '@utils/dateFormat';
 
 import '@/app/posts/styles.css';
 

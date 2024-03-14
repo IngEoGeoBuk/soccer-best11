@@ -8,11 +8,10 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 
-import usePostStore from '@/app/_store/post';
-import { CreatePost } from '@/app/_types/Post';
-
-import PlayerListSection from '../components/playerListSection';
-import SelectPlayerSection from '../components/selectPlayerSection';
+import PlayerListSection from '@components/posts/playerListSection';
+import SelectPlayerSection from '@components/posts/selectPlayerSection';
+import { CreatePost } from '@customTypes/Post';
+import usePostStore from '@stores/post';
 
 import '@/app/posts/styles.css';
 

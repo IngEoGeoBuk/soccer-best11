@@ -4,11 +4,11 @@ import Image, { StaticImageData } from 'next/image';
 
 import { Player } from '@prisma/client';
 
-import usePostStore from '@/app/_store/post';
 import Avatar from '@/public/images/avatar.png';
+import usePostStore from '@stores/post';
 
 import '@/app/posts/styles.css';
-import './playerBox.css';
+import '@components/posts/playerBox.css';
 
 const firebaseStorageUrl = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_URL;
 

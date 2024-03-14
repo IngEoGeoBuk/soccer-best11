@@ -1,7 +1,7 @@
 import { keepPreviousData, useInfiniteQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-import { ViewReply } from '@/app/_types/Reply';
+import { ViewReply } from '@customTypes/Reply';
 
 async function getRepliesByCommentId(
   id: number,

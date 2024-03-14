@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -24,10 +20,18 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
+      "@/*": ["./*"],
+      "@actions/*": ["./app/_actions/*"],
+      "@assets/*": ["./app/_assets/*"],
+      "@components/*": ["./app/_components/*"],
+      "@constants/*": ["./app/_constants/*"],
+      "@context/*": ["./app/_context/*"],
+      "@customTypes/*": ["./app/_customTypes/*"],
+      "@hooks/*": ["./app/_hooks/*"],
+      "@libs/*": ["./app/_libs/*"],
+      "@stores/*": ["./app/_stores/*"],
+      "@utils/*": ["./app/_utils/*"]
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -38,7 +42,5 @@
     "jest.config.ts",
     "app/__mocks__/axios.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

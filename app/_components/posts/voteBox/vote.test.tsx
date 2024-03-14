@@ -8,11 +8,10 @@ import userEvent from '@testing-library/user-event';
 
 import yesLike from '@/app/__mocks__/post/likes.json';
 import noLike from '@/app/__mocks__/post/likes_no.json';
-import useLikeQuery from '@/app/_hooks/useQuery/useLikeQuery';
-import nextAuthData from '@/app/_utils/jest/nextAuthData';
-import queryClient from '@/app/_utils/jest/queryClient';
-
-import VoteBox from '.';
+import VoteBox from '@components/posts/voteBox';
+import useLikeQuery from '@hooks/useQuery/useLikeQuery';
+import nextAuthData from '@utils/jest/nextAuthData';
+import queryClient from '@utils/jest/queryClient';
 
 jest.mock('next/navigation', () => ({
   useParams() {
@@ -40,7 +39,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUseLikeQuery = useLikeQuery as jest.Mock<any>;
-jest.mock('../../../../../_hooks/useQuery/useLikeQuery');
+jest.mock('../../../_hooks/useQuery/useLikeQuery');
 
 beforeAll(() => {
   queryClient.clear();

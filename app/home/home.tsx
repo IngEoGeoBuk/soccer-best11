@@ -9,12 +9,11 @@ import { useSearchParams, redirect, useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useInView } from 'react-intersection-observer';
 
-import AlertBox from '@/app/_components/common/alertBox';
-import usePostsQuery from '@/app/_hooks/useQuery/usePostsQuery';
-import dateFormat from '@/app/_utils/dateFormat';
 import Champions from '@/public/images/champions.png';
-
-import PostSkeletonList from './components/postSkeletonList';
+import AlertBox from '@components/common/alertBox';
+import PostSkeletonList from '@components/home/postSkeletonList';
+import usePostsQuery from '@hooks/useQuery/usePostsQuery';
+import dateFormat from '@utils/dateFormat';
 
 import '@/app/home/styles.css';
 

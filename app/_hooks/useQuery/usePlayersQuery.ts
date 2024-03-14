@@ -1,7 +1,7 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 
-import getPlayersByClub from '@/app/_actions/getPlayers';
-import Club from '@/app/_constants/Club';
+import getPlayersByClub from '@actions/getPlayers';
+import Club from '@constants/Club';
 
 const usePlayersQuery = (national: number, club: number) => {
   const query = useQuery({

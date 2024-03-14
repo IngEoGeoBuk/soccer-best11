@@ -5,13 +5,12 @@ import { useParams } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useInView } from 'react-intersection-observer';
 
-import AlertBox from '@/app/_components/common/alertBox';
-import useCommentsQuery from '@/app/_hooks/useQuery/useCommentsQuery';
-
-import AddCommentBox from './components/addCommentBox';
-import CommentItem from './components/commentItem';
-import Modal from './components/modal';
-import Skeleton from './components/skeleton';
+import AlertBox from '@components/common/alertBox';
+import AddCommentBox from '@components/posts/commentBox/addCommentBox';
+import CommentItem from '@components/posts/commentBox/commentItem';
+import Modal from '@components/posts/commentBox/modal';
+import Skeleton from '@components/posts/commentBox/skeleton';
+import useCommentsQuery from '@hooks/useQuery/useCommentsQuery';
 
 function Index() {
   const { id } = useParams();

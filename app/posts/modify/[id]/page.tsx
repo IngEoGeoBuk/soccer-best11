@@ -1,9 +1,9 @@
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
-import getPlayersByClub from '@/app/_actions/getPlayers';
-import getPost from '@/app/_actions/getPost';
-import getQueryClient from '@/app/_actions/getQueryClient';
-import Club from '@/app/_constants/Club';
+import getPlayersByClub from '@actions/getPlayers';
+import getPost from '@actions/getPost';
+import getQueryClient from '@actions/getQueryClient';
+import Club from '@constants/Club';
 
 import Modify from './modify';
 

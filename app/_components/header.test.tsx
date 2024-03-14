@@ -3,10 +3,9 @@ import '@testing-library/jest-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 
-import nextAuthData from '@/app/_utils/jest/nextAuthData';
-import queryClient from '@/app/_utils/jest/queryClient';
-
-import Header from './header';
+import Header from '@components/header';
+import nextAuthData from '@utils/jest/nextAuthData';
+import queryClient from '@utils/jest/queryClient';
 
 jest.mock('next/navigation', () => ({
   useRouter() {
@@ -41,7 +40,7 @@ beforeEach(() => {
   queryClient.clear(); // Clear the query client before each test
   render(
     <QueryClientProvider client={queryClient}>
-      <Header />
+      <Header user={undefined} />
     </QueryClientProvider>,
   );
 });

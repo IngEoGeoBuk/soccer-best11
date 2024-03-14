@@ -5,16 +5,15 @@ import { useParams } from 'next/navigation';
 
 import { useSession } from 'next-auth/react';
 
-import AlertBox from '@/app/_components/common/alertBox';
-import usePostQuery from '@/app/_hooks/useQuery/usePostQuery';
-import dateFormat from '@/app/_utils/dateFormat';
-import PostDetailSkeleton from '@/app/posts/components/skeleton';
-
-import Modal from './modal';
-import ViewPlayersSection from './viewPlayersSection';
+import AlertBox from '@components/common/alertBox';
+import Modal from '@components/posts/contentBox/modal';
+import ViewPlayersSection from '@components/posts/contentBox/viewPlayersSection';
+import PostDetailSkeleton from '@components/posts/skeleton';
+import usePostQuery from '@hooks/useQuery/usePostQuery';
+import dateFormat from '@utils/dateFormat';
 
 import '@/app/posts/styles.css';
-import './styles.css';
+import '@components/posts/contentBox/styles.css';
 
 function Index() {
   const { id } = useParams();

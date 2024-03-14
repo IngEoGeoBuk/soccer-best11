@@ -1,4 +1,4 @@
-import './styles.css';
+import '@components/posts/voteBox/styles.css';
 
 function Skeleton() {
   return (

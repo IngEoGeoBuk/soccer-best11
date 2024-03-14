@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ViewComment } from '@/app/_types/Comment';
+import { ViewComment } from '@customTypes/Comment';
 
 const getComments = async (
   id: number,

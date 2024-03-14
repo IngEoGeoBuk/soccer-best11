@@ -3,7 +3,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
-import ModalFrame from '../modalFrame';
+import ModalFrame from '@components/posts/modalFrame';
 
 interface Interface {
   setShowModal: (value: boolean) => void;

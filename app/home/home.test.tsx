@@ -6,9 +6,9 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 
 import posts from '@/app/__mocks__/posts.json';
-import usePostsQuery from '@/app/_hooks/useQuery/usePostsQuery';
-import nextAuthData from '@/app/_utils/jest/nextAuthData';
-import queryClient from '@/app/_utils/jest/queryClient';
+import usePostsQuery from '@hooks/useQuery/usePostsQuery';
+import nextAuthData from '@utils/jest/nextAuthData';
+import queryClient from '@utils/jest/queryClient';
 
 import Home from './home';
 

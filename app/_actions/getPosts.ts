@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ViewPostList } from '@/app/_types/Post';
+import { ViewPostList } from '@customTypes/Post';
 
 const getPosts = async (
   nextLastId: number,

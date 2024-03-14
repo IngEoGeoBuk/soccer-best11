@@ -2,12 +2,11 @@ import { useState, Fragment } from 'react';
 
 import { useParams } from 'next/navigation';
 
-import AlertBox from '@/app/_components/common/alertBox';
-import useRepliesQuery from '@/app/_hooks/useQuery/useRepliesQuery';
-
-import Modal from './components/modal';
-import ReplyItem from './components/replyItem';
-import Skeleton from './components/skeleton';
+import AlertBox from '@components/common/alertBox';
+import Modal from '@components/posts/repliesBox/modal';
+import ReplyItem from '@components/posts/repliesBox/replyItem';
+import Skeleton from '@components/posts/repliesBox/skeleton';
+import useRepliesQuery from '@hooks/useQuery/useRepliesQuery';
 
 function Index({ commentId }: { commentId: number }) {
   const { id } = useParams();

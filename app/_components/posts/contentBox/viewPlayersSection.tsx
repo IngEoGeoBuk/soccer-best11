@@ -1,6 +1,6 @@
 import { Player } from '@prisma/client';
 
-import { ViewPlayerBox } from '@/app/posts/components/playerBox';
+import { ViewPlayerBox } from '@components/posts/playerBox';
 
 import '@/app/posts/styles.css';
 

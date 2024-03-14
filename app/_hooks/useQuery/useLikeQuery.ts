@@ -1,6 +1,6 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 
-import getLikes from '@/app/_actions/getLike';
+import getLikes from '@actions/getLike';
 
 const useLikeQuery = (id: number) => {
   const query = useQuery({

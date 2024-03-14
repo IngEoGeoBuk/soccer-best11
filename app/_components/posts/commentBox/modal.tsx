@@ -3,7 +3,7 @@ import { useParams } from 'next/navigation';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
-import ModalFrame from '../../modalFrame';
+import ModalFrame from '@components/posts/modalFrame';
 
 interface Interface {
   showModal: number;
@@ -13,9 +13,9 @@ interface Interface {
 function Modal({ showModal, setShowModal }: Interface) {
   const { id } = useParams();
   const queryClient = useQueryClient();
-  const deleteReply = async () => axios.delete(`/api/replies/${showModal}`);
-  const deleteReplyMutation = useMutation({
-    mutationFn: deleteReply,
+  const deleteComment = async () => axios.delete(`/api/comments/${showModal}`);
+  const deleteCommentMutation = useMutation({
+    mutationFn: deleteComment,
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ['comments', { postId: +id }],
@@ -29,9 +29,9 @@ function Modal({ showModal, setShowModal }: Interface) {
 
   return (
     <ModalFrame
-      body="Do you want to delete this reply?"
+      body="Do you want to delete this comment?"
       hideModal={() => setShowModal(0)}
-      deleteMutation={() => deleteReplyMutation.mutate()}
+      deleteMutation={() => deleteCommentMutation.mutate()}
     />
   );
 }

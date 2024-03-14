@@ -1,10 +1,10 @@
 import { Inter } from 'next/font/google';
 import { getServerSession } from 'next-auth/next';
 
-import Footer from '@/app/_components/footer';
-import Header from '@/app/_components/header';
-import authOptions from '@/app/_utils/authOptions';
 import Providers from '@/app/provider';
+import Footer from '@components/footer';
+import Header from '@components/header';
+import authOptions from '@utils/authOptions';
 
 import './globals.css';
 

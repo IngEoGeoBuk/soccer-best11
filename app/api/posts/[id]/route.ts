@@ -4,9 +4,9 @@ import { NextResponse } from 'next/server';
 
 import { Prisma } from '@prisma/client';
 
-import getCurrentUser from '@/app/_actions/getCurrentUser';
-import prisma from '@/app/_libs/prismadb';
-import { ChangedPlayer } from '@/app/_types/Post';
+import getCurrentUser from '@actions/getCurrentUser';
+import { ChangedPlayer } from '@customTypes/Post';
+import prisma from '@libs/prismadb';
 
 // request 안 쓰여도 선언해야 함. 지우면 에러 남.
 export async function GET(

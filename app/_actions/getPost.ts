@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ViewPost } from '@/app/_types/Post';
+import { ViewPost } from '@customTypes/Post';
 
 const getPost = async (id: number): Promise<ViewPost> => {
   const { data } = await axios.get(

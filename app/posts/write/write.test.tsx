@@ -6,9 +6,9 @@ import userEvent from '@testing-library/user-event';
 import axios from 'axios';
 
 import BAY from '@/app/__mocks__/BAY.json';
-import usePlayersQuery from '@/app/_hooks/useQuery/usePlayersQuery';
-import nextAuthData from '@/app/_utils/jest/nextAuthData';
-import queryClient from '@/app/_utils/jest/queryClient';
+import usePlayersQuery from '@hooks/useQuery/usePlayersQuery';
+import nextAuthData from '@utils/jest/nextAuthData';
+import queryClient from '@utils/jest/queryClient';
 
 import Create from './write';
 

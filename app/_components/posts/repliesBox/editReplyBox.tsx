@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
-import EditFrame from '../../editFrame';
+import EditFrame from '@components/posts/editFrame';
 
 interface Interface {
   defaultValue: string;
@@ -13,22 +13,18 @@ interface Interface {
   setShowModify: (value: number) => void;
 }
 
-function EditCommentBox({
-  defaultValue,
-  showModify,
-  setShowModify,
-}: Interface) {
+function EditReplyBox({ defaultValue, showModify, setShowModify }: Interface) {
   const { id } = useParams();
   const queryClient = useQueryClient();
 
   const [value, setValue] = useState<string>(defaultValue);
 
-  const updateComment = async (content: string) =>
-    axios.put(`/api/comments/${showModify}`, {
+  const updateReply = async (content: string) =>
+    axios.put(`/api/replies/${showModify}`, {
       content,
     });
-  const updateCommentMutation = useMutation({
-    mutationFn: updateComment,
+  const updateReplyMutation = useMutation({
+    mutationFn: updateReply,
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ['comments', { postId: +id }],
@@ -43,14 +39,14 @@ function EditCommentBox({
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    updateCommentMutation.mutate(value);
+    updateReplyMutation.mutate(value);
   };
 
   return (
     <EditFrame
       id={showModify}
       handleSubmit={handleSubmit}
-      type="comment"
+      type="reply"
       value={value}
       setValue={setValue}
       cancelFunc={() => {
@@ -61,4 +57,4 @@ function EditCommentBox({
   );
 }
 
-export default EditCommentBox;
+export default EditReplyBox;

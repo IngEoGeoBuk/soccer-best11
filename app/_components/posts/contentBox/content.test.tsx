@@ -7,11 +7,10 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import post from '@/app/__mocks__/post/post.json';
-import usePostQuery from '@/app/_hooks/useQuery/usePostQuery';
-import nextAuthData from '@/app/_utils/jest/nextAuthData';
-import queryClient from '@/app/_utils/jest/queryClient';
-
-import ContentBox from '.';
+import ContentBox from '@components/posts/contentBox';
+import usePostQuery from '@hooks/useQuery/usePostQuery';
+import nextAuthData from '@utils/jest/nextAuthData';
+import queryClient from '@utils/jest/queryClient';
 
 jest.mock('next/navigation', () => ({
   useParams() {
@@ -39,7 +38,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUsePostQuery = usePostQuery as jest.Mock<any>;
-jest.mock('../../../../../_hooks/useQuery/usePostQuery');
+jest.mock('../../../_hooks/useQuery/usePostQuery');
 
 beforeAll(() => {
   queryClient.clear();

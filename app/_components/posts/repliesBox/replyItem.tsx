@@ -2,10 +2,9 @@ import { useState } from 'react';
 
 import { useSession } from 'next-auth/react';
 
-import { ViewReply } from '@/app/_types/Reply';
-import dateFormat from '@/app/_utils/dateFormat';
-
-import EditReplyBox from './editReplyBox';
+import EditReplyBox from '@components/posts/repliesBox/editReplyBox';
+import { ViewReply } from '@customTypes/Reply';
+import dateFormat from '@utils/dateFormat';
 
 import '@/app/posts/styles.css';
 

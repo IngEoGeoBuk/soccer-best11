@@ -1,6 +1,6 @@
 'use client';
 
-import { SelectedPlayerBox } from './playerBox';
+import { SelectedPlayerBox } from '@components/posts/playerBox';
 
 import '@/app/posts/styles.css';
 

@@ -8,14 +8,13 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 
-import AlertBox from '@/app/_components/common/alertBox';
-import usePostQuery from '@/app/_hooks/useQuery/usePostQuery';
-import usePostStore from '@/app/_store/post';
-import { UpdatePost, ViewPlayer } from '@/app/_types/Post';
-
-import PlayerListSection from '../../components/playerListSection';
-import SelectPlayerSection from '../../components/selectPlayerSection';
-import PostDetailSkeleton from '../../components/skeleton';
+import AlertBox from '@components/common/alertBox';
+import PlayerListSection from '@components/posts/playerListSection';
+import SelectPlayerSection from '@components/posts/selectPlayerSection';
+import PostDetailSkeleton from '@components/posts/skeleton';
+import { UpdatePost, ViewPlayer } from '@customTypes/Post';
+import usePostQuery from '@hooks/useQuery/usePostQuery';
+import usePostStore from '@stores/post';
 
 import '@/app/posts/styles.css';
 
