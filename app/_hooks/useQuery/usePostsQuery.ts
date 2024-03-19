@@ -12,6 +12,7 @@ const usePostsQuery = (type: string, search: string) => {
     refetchOnReconnect: true,
     refetchOnMount: true,
     placeholderData: keepPreviousData,
+    staleTime: 1000 * 30,
   });
   return query;
 };
