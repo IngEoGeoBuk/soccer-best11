@@ -19,8 +19,8 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./*"],
       "@actions/*": ["./app/_actions/*"],
       "@assets/*": ["./app/_assets/*"],
       "@components/*": ["./app/_components/*"],
@@ -30,7 +30,8 @@
       "@hooks/*": ["./app/_hooks/*"],
       "@libs/*": ["./app/_libs/*"],
       "@stores/*": ["./app/_stores/*"],
-      "@utils/*": ["./app/_utils/*"]
+      "@utils/*": ["./app/_utils/*"],
+      "@/*": ["./*"]
     }
   },
   "include": [
