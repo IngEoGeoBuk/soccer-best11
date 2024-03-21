@@ -7,7 +7,6 @@ const useLikeQuery = (id: number) => {
     queryKey: ['like', { postId: id }],
     queryFn: () => getLikes(id),
     placeholderData: keepPreviousData,
-    staleTime: 1000 * 30,
   });
 
   return query;

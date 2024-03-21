@@ -6,7 +6,7 @@ const usePostQuery = (id: number) => {
   const query = useQuery({
     queryKey: ['posts', id],
     queryFn: () => getPost(id),
-    staleTime: 1000 * 60 * 1,
+    staleTime: 1000 * 30,
   });
   return query;
 };
