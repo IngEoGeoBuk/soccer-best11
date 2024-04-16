@@ -1,0 +1,98 @@
+{
+  "common": {
+    "header": {
+      "logout": "로그아웃",
+      "login": "로그인",
+      "home": "홈",
+      "best": "베스트",
+      "my": "마이"
+    }
+  },
+  "home": {
+    "metadata": {
+      "title": "Soccer Best11",
+      "description": "당신의 베스트 팀을 만드세요!"
+    },
+    "search": "검색",
+    "searchPlaceHolder": "게시글의 제목을 입력하세요.",
+    "like": "좋아요",
+    "create": "생성"
+  },
+  "post": {
+    "metadata": {
+      "title": "Soccer Best11 | {title}",
+      "description": "Soccer Best11 {description}"
+    },
+    "modifyMetadata": {
+      "title": "Soccer Best11 | 수정",
+      "description": "당신의 베스트 팀을 수정하세요!"
+    },
+    "writeMetadata": {
+      "title": "Soccer Best11 | 생성",
+      "description": "당신의 베스트 팀을 만드세요!"
+    },
+    "commentBox": {
+      "writeAComment": "댓글 작성하기...",
+      "postComment": "댓글 달기",
+      "edited": "수정됨",
+      "addReply": "답글 달기",
+      "replies": "답글",
+      "deletedComment": "해당 댓글은 삭제되었습니다.",
+      "deleteCommentDesc": "해당 댓글을 삭제하시겠습니까?"
+    },
+    "contentBox": {
+      "title": "제목",
+      "edited": "수정됨",
+      "description": "내용",
+      "modify": "수정",
+      "delete": "삭제",
+      "deletePostDesc": "해당 글을 삭제하시겠습니까?"
+    },
+    "replyBox": {
+      "writeAReply": "답글 작성하기...",
+      "addReply": "답글 달기",
+      "cancel": "취소",
+      "deleteReplyDesc": "해당 답글을 삭제하시겠습니까?",
+      "edited": "수정됨"
+    },
+    "voteBox": {
+      "pleaseLogin": "로그인을 해주세요.",
+      "alreadyLikeIt": "당신은 이미 좋아요를 눌렀습니다."
+    },
+    "editFrame": {
+      "placeholder": {
+        "comment": "댓글 수정...",
+        "reply": "답글 수정..."
+      },
+      "edit": {
+        "comment": "댓글 수정",
+        "reply": "답글 수정"
+      },
+      "cancel": "취소"
+    },
+    "modalFrame": {
+      "delete": "Delete",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "playerBox": {
+      "name": "이름",
+      "selectPosition": "포지션 카드를 먼저 선택해주세요.",
+      "alreadyChosen": "해당 선수를 이미 선택하셨습니다."
+    },
+    "select11": "11명의 선수를 선택해주세요.",
+    "title": "제목",
+    "titlePlaceholder": "여기에 제목을 입력하세요...",
+    "description": "설명",
+    "descriptionPlaceholder": "여기에 설명을 입력하세요...",
+    "submit": "제출"
+  },
+  "signIn": {
+    "metadata": {
+      "title": "Soccer Best11 - 로그인",
+      "description": "당신의 베스트 팀을 만드세요!"
+    },
+    "title": "당신의 계정을 로그인하세요",
+    "google": "구글로 로그인하기"
+  }
+}

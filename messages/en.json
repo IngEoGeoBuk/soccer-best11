@@ -1,0 +1,98 @@
+{
+  "common": {
+    "header": {
+      "logout": "logout",
+      "login": "login",
+      "home": "Home",
+      "best": "Best",
+      "my": "My"
+    }
+  },
+  "home": {
+    "metadata": {
+      "title": "Soccer Best11",
+      "description": "Generate your best team!"
+    },
+    "search": "Search",
+    "searchPlaceHolder": "Input the post's title.",
+    "like": "Like",
+    "create": "Create"
+  },
+  "post": {
+    "metadata": {
+      "title": "Soccer Best11 | {title}",
+      "description": "Soccer Best11 {description}"
+    },
+    "modifyMetadata": {
+      "title": "Soccer Best11 | Modify",
+      "description": "Modify your best team!"
+    },
+    "writeMetadata": {
+      "title": "Soccer Best11 | Write",
+      "description": "Write your best team!"
+    },
+    "commentBox": {
+      "writeAComment": "Write a comment...",
+      "postComment": "Post comment",
+      "edited": "Edited",
+      "addReply": "Add Reply",
+      "replies": "Replies",
+      "deletedComment": "That comment has been deleted.",
+      "deleteCommentDesc": "Do you want to delete this comment?"
+    },
+    "contentBox": {
+      "title": "Title",
+      "edited": "Edited",
+      "description": "Description",
+      "modify": "Modify",
+      "delete": "Delete",
+      "deletePostDesc": "Do you want to delete this post?"
+    },
+    "replyBox": {
+      "writeAReply": "Write a reply...",
+      "addReply": "Add Reply",
+      "cancel": "Cancel",
+      "deleteReplyDesc": "Do you want to delete this reply?",
+      "edited": "Edited"
+    },
+    "voteBox": {
+      "pleaseLogin": "Please login.",
+      "alreadyLikeIt": "You have already liked it."
+    },
+    "editFrame": {
+      "placeholder": {
+        "comment": "Edit a comment...",
+        "reply": "Edit a reply..."
+      },
+      "edit": {
+        "comment": "Edit comment",
+        "reply": "Edit reply"
+      },
+      "cancel": "Cancel"
+    },
+    "modalFrame": {
+      "delete": "Delete",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "playerBox": {
+      "name": "Name",
+      "selectPosition": "Please select a position card first.",
+      "alreadyChosen": "You have already chosen the player."
+    },
+    "select11": "Please select 11 players.",
+    "title": "Title",
+    "titlePlaceholder": "Write your title here...",
+    "description": "Description",
+    "descriptionPlaceholder": "Write your descriptions here...",
+    "submit": "Submit"
+  },
+  "signIn": {
+    "metadata": {
+      "title": "Soccer Best11 - SignIn",
+      "description": "Generate your best team!"
+    },
+    "title": "Sign in to your account",
+    "google": "Sign in with Google"
+  }
+}

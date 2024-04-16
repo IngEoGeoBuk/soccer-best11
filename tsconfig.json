@@ -19,18 +19,20 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@actions/*": ["./app/_actions/*"],
-      "@assets/*": ["./app/_assets/*"],
-      "@components/*": ["./app/_components/*"],
-      "@constants/*": ["./app/_constants/*"],
-      "@context/*": ["./app/_context/*"],
-      "@customTypes/*": ["./app/_customTypes/*"],
-      "@hooks/*": ["./app/_hooks/*"],
-      "@libs/*": ["./app/_libs/*"],
-      "@stores/*": ["./app/_stores/*"],
-      "@utils/*": ["./app/_utils/*"],
+      "@actions/*": ["src/app/_actions/*"],
+      "@assets/*": ["src/app/_assets/*"],
+      "@components/*": ["src/app/[lang]/_components/*"],
+      "@constants/*": ["src/app/_constants/*"],
+      "@context/*": ["src/app/_context/*"],
+      "@customTypes/*": ["src/app/_customTypes/*"],
+      "@mocks/*": ["src/app/__mocks__/*"],
+      "@hooks/*": ["src/app/_hooks/*"],
+      "@lang/*": ["src/app/[lang]/*"],
+      "@libs/*": ["src/app/_libs/*"],
+      "@stores/*": ["src/app/_stores/*"],
+      "@utils/*": ["src/app/_utils/*"],
       "@/*": ["./*"]
     }
   },
