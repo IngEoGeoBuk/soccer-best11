@@ -13,6 +13,7 @@ import Logo from '@/public/images/logo.png';
 
 import './header.css';
 import LocaleSwitcher from './LocaleSwitcher';
+import ThemeSwitcher from './ThemeSwitcher';
 
 type User =
   | {
@@ -192,6 +193,7 @@ function Header({ user }: { user: User }) {
                     )}
                   </>
                 )}
+                <ThemeSwitcher />
                 <li>
                   <LocaleSwitcher className="header-item" />
                 </li>
