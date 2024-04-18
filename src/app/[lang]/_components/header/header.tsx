@@ -12,6 +12,7 @@ import { useTranslations } from 'next-intl';
 import Logo from '@/public/images/logo.png';
 
 import './header.css';
+import LocaleSwitcher from './LocaleSwitcher';
 
 type User =
   | {
@@ -192,6 +193,9 @@ function Header({ user }: { user: User }) {
                   </>
                 )}
                 <li>
+                  <LocaleSwitcher className="header-item" />
+                </li>
+                <li>
                   <LoginAndLogout user={user} className="header-item" />
                 </li>
               </ul>
@@ -253,6 +257,11 @@ function Header({ user }: { user: User }) {
                   </li>
                 </>
               )}
+              <li>
+                <span>
+                  <LocaleSwitcher className="aside-menu" />
+                </span>
+              </li>
               <li>
                 <span>
                   <LoginAndLogout user={user} className="aside-menu" />

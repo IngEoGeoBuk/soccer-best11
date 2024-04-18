@@ -58,3 +58,4 @@
 3. Support my page(View posts I wrote.)
 4. Support best page(View posts received more than 2 recommendations. You can edit it.)
 5. Support Mobile ver(Responsive Web Design)
+6. Support i18n(korean and english)
