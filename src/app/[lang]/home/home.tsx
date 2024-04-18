@@ -18,7 +18,7 @@ import dateFormat from '@utils/dateFormat';
 
 import '@lang/home/styles.css';
 
-export default function Home() {
+export default function Home({ isLogin }: { isLogin: boolean }) {
   const t = useTranslations('home');
 
   const searchParams = useSearchParams();
@@ -183,7 +183,7 @@ export default function Home() {
           </div>
         )}
         <div className="text-right">
-          {session && (
+          {isLogin && (
             <>
               <br />
               <Link href="/posts/write" className="btn-primary">

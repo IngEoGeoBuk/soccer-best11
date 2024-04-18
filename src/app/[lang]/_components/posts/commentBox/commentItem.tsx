@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 
 import DeletedCommentItem from '@components/posts/commentBox/deletedCommentItem';
@@ -15,10 +14,10 @@ import '@lang/posts/styles.css';
 interface Interface {
   comment: ViewComment;
   setShowModal: (value: number) => void;
+  email: string | undefined;
 }
 
-function CommentItem({ comment, setShowModal }: Interface) {
-  const email = useSession().data?.user?.email;
+function CommentItem({ comment, setShowModal, email }: Interface) {
   const t = useTranslations('post.commentBox');
   const [showModify, setShowModify] = useState<number>(0);
   const [showReply, setShowReply] = useState<number>(0);

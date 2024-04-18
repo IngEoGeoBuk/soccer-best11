@@ -10,6 +10,7 @@ export async function GET(
 ) {
   try {
     const { id } = params;
+    const userId = new URL(request.url).searchParams.get('userId') ?? undefined;
 
     const like = await prisma?.like.count({
       where: {
@@ -18,12 +19,18 @@ export async function GET(
     });
 
     let clicked = null;
-    const currentUser = await getCurrentUser();
-    if (currentUser) {
+    let getUserId = null;
+    if (userId) {
+      getUserId = userId;
+    } else {
+      const currentUser = await getCurrentUser();
+      getUserId = currentUser?.id;
+    }
+    if (getUserId) {
       clicked = await prisma?.like.findFirst({
         where: {
           postId: +id,
-          userId: currentUser.id,
+          userId: getUserId,
         },
       });
     }

@@ -1,9 +1,11 @@
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
+import { getServerSession } from 'next-auth/next';
 import { getTranslations } from 'next-intl/server';
 
 import getPosts from '@actions/getPosts';
 import getQueryClient from '@actions/getQueryClient';
 import Home from '@lang/home/home';
+import authOptions from '@utils/authOptions';
 
 export async function generateMetadata({
   params,
@@ -28,10 +30,12 @@ export default async function HomePage() {
     queryFn: ({ pageParam }) => getPosts(pageParam, '', ''),
     initialPageParam: 0,
   });
+  const session = await getServerSession(authOptions);
+  const user = session?.user;
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <Home />
+      <Home isLogin={Boolean(user)} />
     </HydrationBoundary>
   );
 }

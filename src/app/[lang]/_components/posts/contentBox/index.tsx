@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
-import { useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 
 import AlertBox from '@components/common/alertBox';
@@ -16,11 +15,10 @@ import dateFormat from '@utils/dateFormat';
 import '@lang/posts/styles.css';
 import '@components/posts/contentBox/styles.css';
 
-function Index() {
+function Index({ email }: { email: string }) {
   const t = useTranslations('post.contentBox');
 
   const { id } = useParams();
-  const email = useSession().data?.user?.email;
 
   const { status, data } = usePostQuery(+id);
 

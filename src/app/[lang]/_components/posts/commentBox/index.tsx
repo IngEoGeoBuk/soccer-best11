@@ -2,7 +2,6 @@ import { useEffect, useState, Fragment } from 'react';
 
 import { useParams } from 'next/navigation';
 
-import { useSession } from 'next-auth/react';
 import { useInView } from 'react-intersection-observer';
 
 import AlertBox from '@components/common/alertBox';
@@ -12,10 +11,9 @@ import Modal from '@components/posts/commentBox/modal';
 import Skeleton from '@components/posts/commentBox/skeleton';
 import useCommentsQuery from '@hooks/useQuery/useCommentsQuery';
 
-function Index() {
+function Index({ email }: { email: string | undefined }) {
   const { id } = useParams();
   const { ref, inView } = useInView();
-  const email = useSession().data?.user?.email;
   const [showModal, setShowModal] = useState<number>(0);
 
   const { status, data, isFetchingNextPage, fetchNextPage, hasNextPage } =
@@ -47,6 +45,7 @@ function Index() {
                 key={item.id}
                 comment={item}
                 setShowModal={setShowModal}
+                email={email}
               />
             ))}
           </Fragment>

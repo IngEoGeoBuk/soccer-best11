@@ -19,6 +19,17 @@ const authOptions: NextAuthOptions = {
     strategy: 'jwt',
   },
   secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {
+    async jwt({ token, user }: any) {
+      return { ...token, ...user };
+    },
+
+    async session({ session, token }) {
+      // eslint-disable-next-line no-param-reassign
+      session.user = token as any;
+      return session;
+    },
+  },
 };
 
 export default authOptions;
