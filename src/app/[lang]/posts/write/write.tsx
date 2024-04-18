@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { redirect, useRouter } from 'next/navigation';
 
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
@@ -24,7 +24,6 @@ function Create() {
     },
   });
 
-  const queryClient = useQueryClient();
   const router = useRouter();
   const t = useTranslations('post');
 
@@ -35,7 +34,6 @@ function Create() {
   const addPostMutation = useMutation({
     mutationFn: addPost,
     onSuccess: () => {
-      queryClient.resetQueries({ queryKey: ['posts'] });
       resetPost();
       router.push('/');
     },

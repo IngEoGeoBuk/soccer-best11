@@ -69,21 +69,21 @@ function Header({ user }: { user: User }) {
 
   const clickLogoOrHome = async () => {
     if (isHome && !type) {
-      queryClient.resetQueries({ queryKey: ['posts'] });
+      queryClient.refetchQueries({ queryKey: ['posts'] });
     }
     router.push('/');
   };
 
   const clickMy = async () => {
     if (isHome && type === 'my') {
-      queryClient.resetQueries({ queryKey: ['posts'] });
+      queryClient.refetchQueries({ queryKey: ['posts'] });
     }
     router.push('/?type=my');
   };
 
   const clickBest = async () => {
     if (isHome && type === 'best') {
-      queryClient.resetQueries({ queryKey: ['posts'] });
+      queryClient.refetchQueries({ queryKey: ['posts'] });
     }
     router.push('/?type=best');
   };
