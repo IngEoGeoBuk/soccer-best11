@@ -5,7 +5,9 @@ import '@testing-library/jest-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { NextIntlClientProvider } from 'next-intl';
 
+import messages from '@/messages/en.json';
 import VoteBox from '@components/posts/voteBox';
 import useLikeQuery from '@hooks/useQuery/useLikeQuery';
 import yesLike from '@mocks/post/likes.json';
@@ -39,7 +41,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUseLikeQuery = useLikeQuery as jest.Mock<any>;
-jest.mock('../../../_hooks/useQuery/useLikeQuery');
+jest.mock('../../../../_hooks/useQuery/useLikeQuery');
 
 beforeAll(() => {
   queryClient.clear();
@@ -53,7 +55,13 @@ describe('View post', () => {
     }));
     render(
       <QueryClientProvider client={queryClient}>
-        <VoteBox />
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <VoteBox />
+        </NextIntlClientProvider>
       </QueryClientProvider>,
     );
     expect(screen.getByTestId('vote-box-loading')).toBeInTheDocument();
@@ -64,7 +72,13 @@ describe('View post', () => {
     }));
     render(
       <QueryClientProvider client={queryClient}>
-        <VoteBox />
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <VoteBox />
+        </NextIntlClientProvider>
       </QueryClientProvider>,
     );
     expect(screen.getByText('An error has occurred')).toBeInTheDocument();
@@ -76,7 +90,13 @@ describe('View post', () => {
     }));
     render(
       <QueryClientProvider client={queryClient}>
-        <VoteBox />
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <VoteBox />
+        </NextIntlClientProvider>
       </QueryClientProvider>,
     );
     const spanElement = screen
@@ -91,7 +111,13 @@ describe('View post', () => {
     }));
     render(
       <QueryClientProvider client={queryClient}>
-        <VoteBox />
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <VoteBox />
+        </NextIntlClientProvider>
       </QueryClientProvider>,
     );
     const spanElement = screen

@@ -2,7 +2,9 @@ import '@testing-library/jest-dom';
 
 import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
+import { NextIntlClientProvider } from 'next-intl';
 
+import messages from '@/messages/en.json';
 import Header from '@components/header/header';
 import nextAuthData from '@utils/jest/nextAuthData';
 import queryClient from '@utils/jest/queryClient';
@@ -40,7 +42,13 @@ beforeEach(() => {
   queryClient.clear(); // Clear the query client before each test
   render(
     <QueryClientProvider client={queryClient}>
-      <Header user={undefined} />
+      <NextIntlClientProvider
+        locale="en"
+        timeZone="Asia/Seoul"
+        messages={messages}
+      >
+        <Header user={undefined} />
+      </NextIntlClientProvider>
     </QueryClientProvider>,
   );
 });

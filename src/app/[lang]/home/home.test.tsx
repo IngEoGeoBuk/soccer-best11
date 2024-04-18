@@ -4,7 +4,9 @@ import '@testing-library/jest-dom';
 import 'intersection-observer';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
+import { NextIntlClientProvider } from 'next-intl';
 
+import messages from '@/messages/en.json';
 import usePostsQuery from '@hooks/useQuery/usePostsQuery';
 import posts from '@mocks/posts.json';
 import nextAuthData from '@utils/jest/nextAuthData';
@@ -38,7 +40,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUseUsersQuery = usePostsQuery as jest.Mock<any>;
-jest.mock('../_hooks/useQuery/usePostsQuery');
+jest.mock('../../_hooks/useQuery/usePostsQuery');
 
 beforeAll(() => {
   queryClient.clear();
@@ -56,7 +58,13 @@ describe('view posts', () => {
     }));
     render(
       <QueryClientProvider client={queryClient}>
-        <Home />
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <Home />
+        </NextIntlClientProvider>
       </QueryClientProvider>,
     );
     expect(screen.getByTestId('home-loading')).toBeInTheDocument();
@@ -67,7 +75,13 @@ describe('view posts', () => {
     }));
     render(
       <QueryClientProvider client={queryClient}>
-        <Home />
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <Home />
+        </NextIntlClientProvider>
       </QueryClientProvider>,
     );
     expect(screen.getByText('An error has occurred')).toBeInTheDocument();
@@ -86,7 +100,13 @@ describe('view posts', () => {
     }));
     render(
       <QueryClientProvider client={queryClient}>
-        <Home />
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <Home />
+        </NextIntlClientProvider>
       </QueryClientProvider>,
     );
     expect(screen.getByTestId('home-success')).toBeInTheDocument();

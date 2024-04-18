@@ -3,7 +3,9 @@ import '@testing-library/jest-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { NextIntlClientProvider } from 'next-intl';
 
+import messages from '@/messages/en.json';
 import CommentBox from '@components/posts/commentBox';
 import useCommentsQuery from '@hooks/useQuery/useCommentsQuery';
 import comments from '@mocks/post/comments.json';
@@ -36,7 +38,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUseCommentsQuery = useCommentsQuery as jest.Mock<any>;
-jest.mock('../../../_hooks/useQuery/useCommentsQuery');
+jest.mock('../../../../_hooks/useQuery/useCommentsQuery');
 
 beforeAll(() => {
   queryClient.clear();
@@ -57,7 +59,13 @@ beforeEach(() => {
   }));
   render(
     <QueryClientProvider client={queryClient}>
-      <CommentBox />
+      <NextIntlClientProvider
+        locale="en"
+        timeZone="Asia/Seoul"
+        messages={messages}
+      >
+        <CommentBox />
+      </NextIntlClientProvider>
     </QueryClientProvider>,
   );
 });
@@ -73,7 +81,13 @@ describe('View post', () => {
     }));
     render(
       <QueryClientProvider client={queryClient}>
-        <CommentBox />
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <CommentBox />
+        </NextIntlClientProvider>
       </QueryClientProvider>,
     );
     expect(screen.getByTestId('comment-box-loading')).toBeInTheDocument();
@@ -84,7 +98,13 @@ describe('View post', () => {
     }));
     render(
       <QueryClientProvider client={queryClient}>
-        <CommentBox />
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <CommentBox />
+        </NextIntlClientProvider>
       </QueryClientProvider>,
     );
     expect(screen.getByText('An error has occurred')).toBeInTheDocument();
@@ -120,7 +140,7 @@ describe('View post', () => {
     await userEvent.click(screen.getByTestId('edit-comment-1-no-btn'));
   });
   it('you can see x replies if that comment has replies', async () => {
-    expect(screen.getByTestId('comment-1')).toHaveTextContent('8 replies');
+    expect(screen.getByTestId('comment-1')).toHaveTextContent('8 Replies');
     expect(screen.getByTestId('comment-2')).not.toHaveTextContent('replies');
   });
 });

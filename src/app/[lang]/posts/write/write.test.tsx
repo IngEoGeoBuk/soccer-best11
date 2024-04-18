@@ -4,7 +4,9 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import axios from 'axios';
+import { NextIntlClientProvider } from 'next-intl';
 
+import messages from '@/messages/en.json';
 import usePlayersQuery from '@hooks/useQuery/usePlayersQuery';
 import BAY from '@mocks/BAY.json';
 import nextAuthData from '@utils/jest/nextAuthData';
@@ -33,7 +35,7 @@ jest.mock('next-auth/react', () => {
 });
 
 const mockedUsePlayersQuery = usePlayersQuery as jest.Mock<any>;
-jest.mock('../../_hooks/useQuery/usePlayersQuery');
+jest.mock('../../../_hooks/useQuery/usePlayersQuery');
 
 beforeAll(() => {
   queryClient.clear();
@@ -47,7 +49,13 @@ beforeEach(() => {
   }));
   render(
     <QueryClientProvider client={queryClient}>
-      <Create />
+      <NextIntlClientProvider
+        locale="en"
+        timeZone="Asia/Seoul"
+        messages={messages}
+      >
+        <Create />
+      </NextIntlClientProvider>
     </QueryClientProvider>,
   );
 });
