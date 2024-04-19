@@ -54,7 +54,7 @@ export default async function ViewPage({ params }: { params: { id: number } }) {
     initialPageParam: 0,
   });
   await queryClient.prefetchQuery({
-    queryKey: ['like', { postId: +params.id }],
+    queryKey: ['likes', { postId: +params.id }],
     queryFn: () => getLikes(+params.id, session?.user?.id),
   });
 

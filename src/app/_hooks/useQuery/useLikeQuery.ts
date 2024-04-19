@@ -4,7 +4,7 @@ import getLikes from '@actions/getLikes';
 
 const useLikeQuery = (id: number) => {
   const query = useQuery({
-    queryKey: ['like', { postId: id }],
+    queryKey: ['likes', { postId: id }],
     queryFn: () => getLikes(id),
     placeholderData: keepPreviousData,
   });

@@ -30,7 +30,7 @@ function Index() {
   const postLikeMutation = useMutation({
     mutationFn: postLike,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['like', { postId: +id }] });
+      queryClient.invalidateQueries({ queryKey: ['likes', { postId: +id }] });
     },
     onError: (err: Error) => {
       throw err;
