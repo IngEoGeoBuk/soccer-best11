@@ -20,7 +20,7 @@ function Create() {
   useSession({
     required: true,
     onUnauthenticated() {
-      redirect('/sign');
+      redirect('/signIn');
     },
   });
 

@@ -32,7 +32,7 @@ export default function Home({ isLogin }: { isLogin: boolean }) {
     required: true,
     onUnauthenticated() {
       if (type === 'my' && !session?.user?.email) {
-        redirect('/sign');
+        redirect('/signIn');
       }
     },
   });

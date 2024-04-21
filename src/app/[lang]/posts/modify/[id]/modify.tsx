@@ -35,7 +35,7 @@ function Index() {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
-      redirect('/sign');
+      redirect('/signIn');
     },
   });
 
@@ -100,7 +100,7 @@ function Index() {
 
   if (session?.user!.email && session.user.email !== data!.email) {
     // 다른 사람 게시글 수정 들어갈 경우 로그인 페이지로 이동시키기.
-    router.push('/sign');
+    router.push('/signIn');
   }
 
   if (data) {
