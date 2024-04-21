@@ -6,6 +6,7 @@ import Header from '@components/header';
 import Providers from '@lang/provider';
 
 import './globals.css';
+import KakaoInAppBrowserModal from '@components/common/kakaoInAppBrowserModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
               <Header />
               <main>{children}</main>
               <Footer />
+              <KakaoInAppBrowserModal />
             </NextIntlClientProvider>
           </Providers>
         </div>
