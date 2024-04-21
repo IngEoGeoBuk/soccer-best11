@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { ThemeProvider } from 'next-themes';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import ErrorFallback from '@components/errorFallback';
@@ -16,7 +17,9 @@ function Providers({ children }: { children: React.ReactNode }) {
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <AuthProvider>
         <QueryClientProvider client={queryClient}>
-          {children}
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {children}
+          </ThemeProvider>
           <ReactQueryDevtools initialIsOpen />
         </QueryClientProvider>
       </AuthProvider>

@@ -1,12 +1,12 @@
 import { Inter } from 'next/font/google';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 
+import KakaoInAppBrowserModal from '@components/common/kakaoInAppBrowserModal';
 import Footer from '@components/footer';
 import Header from '@components/header';
 import Providers from '@lang/provider';
 
 import './globals.css';
-import KakaoInAppBrowserModal from '@components/common/kakaoInAppBrowserModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   const messages = useMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         <div className="w-full mx-auto max-w-screen-xl">
           <Providers>
