@@ -23,6 +23,9 @@ jest.mock('next/navigation', () => ({
   usePathname() {
     return null;
   },
+  useParams() {
+    return null;
+  },
 }));
 
 // https://github.com/nextauthjs/next-auth/discussions/4185
@@ -32,35 +35,50 @@ jest.mock('next-auth/react', () => {
     __esModule: true,
     ...originalModule,
     useSession: jest.fn(() => nextAuthData),
-    // // no login spec
-    // data: null,
-    // status: 'unauthenticated',
   };
 });
 
 beforeEach(() => {
   queryClient.clear(); // Clear the query client before each test
-  render(
-    <QueryClientProvider client={queryClient}>
-      <NextIntlClientProvider
-        locale="en"
-        timeZone="Asia/Seoul"
-        messages={messages}
-      >
-        <Header user={undefined} />
-      </NextIntlClientProvider>
-    </QueryClientProvider>,
-  );
 });
 
 describe('Header', () => {
-  // // login result
-  // it('If you are logged in, you can check the logout text.', async () => {
-  //   expect(screen.getByText('logout')).toBeInTheDocument();
-  // });
+  // login result
+  it('If you are logged in, you can check the logout text.', async () => {
+    render(
+      <QueryClientProvider client={queryClient}>
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <Header
+            user={{
+              name: 'ksw',
+              email: 'you3667@gmail.com',
+              image: 'sdsdsd',
+            }}
+          />
+        </NextIntlClientProvider>
+      </QueryClientProvider>,
+    );
+    expect(screen.getByText('logout')).toBeInTheDocument();
+  });
 
   // logout result
   it('If you are not logged in, you can check the login text.', async () => {
+    render(
+      <QueryClientProvider client={queryClient}>
+        <NextIntlClientProvider
+          locale="en"
+          timeZone="Asia/Seoul"
+          messages={messages}
+        >
+          <Header user={undefined} />
+        </NextIntlClientProvider>
+      </QueryClientProvider>,
+    );
+    // screen.debug();
     expect(screen.getByText('login')).toBeInTheDocument();
   });
 });

@@ -59,7 +59,7 @@ beforeEach(() => {
         timeZone="Asia/Seoul"
         messages={messages}
       >
-        <ContentBox />
+        <ContentBox email="you3667@gmail.com" />
       </NextIntlClientProvider>
     </QueryClientProvider>,
   );
@@ -77,7 +77,7 @@ describe('View post', () => {
           timeZone="Asia/Seoul"
           messages={messages}
         >
-          <ContentBox />
+          <ContentBox email="you3667@gmail.com" />
         </NextIntlClientProvider>
       </QueryClientProvider>,
     );
@@ -94,7 +94,7 @@ describe('View post', () => {
           timeZone="Asia/Seoul"
           messages={messages}
         >
-          <ContentBox />
+          <ContentBox email="you3667@gmail.com" />
         </NextIntlClientProvider>
       </QueryClientProvider>,
     );

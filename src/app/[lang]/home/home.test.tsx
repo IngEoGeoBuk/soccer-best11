@@ -63,7 +63,7 @@ describe('view posts', () => {
           timeZone="Asia/Seoul"
           messages={messages}
         >
-          <Home />
+          <Home isLogin />
         </NextIntlClientProvider>
       </QueryClientProvider>,
     );
@@ -80,7 +80,7 @@ describe('view posts', () => {
           timeZone="Asia/Seoul"
           messages={messages}
         >
-          <Home />
+          <Home isLogin />
         </NextIntlClientProvider>
       </QueryClientProvider>,
     );
@@ -105,7 +105,7 @@ describe('view posts', () => {
           timeZone="Asia/Seoul"
           messages={messages}
         >
-          <Home />
+          <Home isLogin />
         </NextIntlClientProvider>
       </QueryClientProvider>,
     );
