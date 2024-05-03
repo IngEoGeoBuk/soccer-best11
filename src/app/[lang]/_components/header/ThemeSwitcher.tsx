@@ -19,7 +19,7 @@ function ThemeSwitcher() {
     >
       <svg
         id="theme-toggle-dark-icon"
-        className="w-5 h-5 mr-[-10px] mt-[5px]"
+        className="w-5 h-5 hidden dark:block"
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ function ThemeSwitcher() {
       </svg>
       <svg
         id="theme-toggle-light-icon"
-        className="w-5 h-5 mb-[5px]"
+        className="w-5 h-5 dark:hidden"
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
