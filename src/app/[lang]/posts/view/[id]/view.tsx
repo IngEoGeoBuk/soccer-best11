@@ -1,8 +1,8 @@
 'use client';
 
-import CommentBox from '@components/posts/commentBox';
-import ContentBox from '@components/posts/contentBox';
-import VoteBox from '@components/posts/voteBox';
+import CommentBox from '@components/posts/view/commentBox';
+import ContentBox from '@components/posts/view/contentBox';
+import VoteBox from '@components/posts/view/voteBox';
 
 function Index({ session }: { session: any }) {
   return (

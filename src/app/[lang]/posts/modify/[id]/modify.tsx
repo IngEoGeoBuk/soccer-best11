@@ -10,9 +10,12 @@ import { useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 
 import AlertBox from '@components/common/alertBox';
-import PlayerListSection from '@components/posts/playerListSection';
-import SelectPlayerSection from '@components/posts/selectPlayerSection';
-import PostDetailSkeleton from '@components/posts/skeleton';
+import PostDetailSkeleton from '@components/posts/common/skeleton';
+import DescriptionSection from '@components/posts/write/descriptionSection';
+import PlayerListSection from '@components/posts/write/playerListSection';
+import SelectPlayerSection from '@components/posts/write/selectPlayerSection';
+import SubmitBtn from '@components/posts/write/submitBtn';
+import TitleSection from '@components/posts/write/titleSection';
 import { UpdatePost, ViewPlayer } from '@customTypes/Post';
 import usePostQuery from '@hooks/useQuery/usePostQuery';
 import usePostStore from '@stores/post';
@@ -57,6 +60,15 @@ function Index() {
   const [title, setTitle] = useState<string>(data!.title);
   const [description, setDescription] = useState<string>(data!.description);
   const [initialSelectedPlayers] = useState<ViewPlayer[]>(data!.players);
+
+  const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.target.value);
+  };
+  const handleDescriptionChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>,
+  ) => {
+    setDescription(event.target.value);
+  };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -107,45 +119,14 @@ function Index() {
     return (
       <div className="p-5">
         <form onSubmit={handleSubmit}>
-          <div className="mb-6">
-            <label htmlFor="title">
-              <p className="input-top-paragraph">{t('title')}</p>
-              <input
-                type="text"
-                id="title"
-                className="title-input"
-                placeholder={t('titlePlaceholder')}
-                required
-                maxLength={30}
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </label>
-          </div>
+          <TitleSection title={title} handleTitleChange={handleTitleChange} />
           <SelectPlayerSection />
           <PlayerListSection />
-          <br />
-          <div className="mb-6">
-            <label htmlFor="description">
-              <p className="input-top-paragraph">{t('description')}</p>
-              <textarea
-                id="description"
-                rows={4}
-                className="description-textarea"
-                placeholder={t('descriptionPlaceholder')}
-                maxLength={300}
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </label>
-          </div>
-          <button
-            type="submit"
-            className="btn-primary"
-            data-testid="modify-post-btn"
-          >
-            {t('submit')}
-          </button>
+          <DescriptionSection
+            description={description}
+            handleDescriptionChange={handleDescriptionChange}
+          />
+          <SubmitBtn testId="modify-post-btn" />
         </form>
       </div>
     );

@@ -9,28 +9,6 @@ function Footer() {
           </a>
           . All Rights Reserved.
         </span>
-        {/* <ul className="flex flex-wrap items-center mt-3 text-sm font-medium gray-text sm:mt-0">
-          <li>
-            <button type="button" className="mr-4 hover:underline md:mr-6">
-              About
-            </button>
-          </li>
-          <li>
-            <button type="button" className="mr-4 hover:underline md:mr-6">
-              Privacy Policy
-            </button>
-          </li>
-          <li>
-            <button type="button" className="mr-4 hover:underline md:mr-6">
-              Licensing
-            </button>
-          </li>
-          <li>
-            <button type="button" className="hover:underline">
-              Contact
-            </button>
-          </li>
-        </ul> */}
       </div>
     </footer>
   );

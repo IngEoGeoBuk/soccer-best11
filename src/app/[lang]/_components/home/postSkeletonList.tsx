@@ -45,14 +45,16 @@ function PostSkeleton() {
 
 function PostSkeletonList() {
   return (
-    <>
-      {Array(6)
-        .fill('d')
-        .map((_, index) => index + 1)
-        .map((v) => (
-          <PostSkeleton key={v} />
-        ))}
-    </>
+    <div className="w-full" data-testid="home-loading">
+      <div className="post-list-box">
+        {Array(6)
+          .fill('d')
+          .map((_, index) => index + 1)
+          .map((v) => (
+            <PostSkeleton key={v} />
+          ))}
+      </div>
+    </div>
   );
 }
 
